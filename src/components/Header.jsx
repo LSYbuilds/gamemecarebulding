@@ -5,31 +5,37 @@ import { HeaderWrap } from "../styles/header.styed";
 const Header = () => {
   return (
     <HeaderWrap>
-      <div className="h_inner">
-        <div className="top_h">
-          <h1 className="logo">
-            <Link to="/"></Link>
-          </h1>
-          <form className="search_box">
-            <input type="text" />
-            <button type="submit" className="search_submit"></button>
-          </form>
+      <div className="header_top">
+        <div className="top_i">
+          <div className="site_head_title">
+            <h1 className="logo">
+              <Link to="/" className="logo_link">
+                <img src="/images/h_logo.png" alt="Logo" />
+              </Link>
+            </h1>
+            <form className="search_box">
+              <input type="text" placeholder="게임검색" />
+              <button type="submit" className="search_submit"></button>
+            </form>
+          </div>
           <div className="util">
             <div className="login">
-              <Link to="#"><p>로그인</p>
+              <Link to="#">
+                <p>로그인</p>
               </Link>
             </div>
             <div className="joinus">
-              <Link to="#"><p>회원가입</p>
+              <Link to="#">
+                <p>회원가입</p>
               </Link>
             </div>
           </div>
         </div>
-        <div className="bottom_h">
+      </div>
+      <div className="header_bottom">
+        <div className="bottom_i">
           <div className="gnb_box">
-            <button className="lnb_call">
-
-            </button>
+            <button className="lnb_call"></button>
             <ul className="gnb">
               <li>
                 <Link>뉴스</Link>

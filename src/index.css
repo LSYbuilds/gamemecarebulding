@@ -1,5 +1,70 @@
 @charset "utf-8";
 
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("./assets/fonts/WantedSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("./assets/fonts/WantedSans-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("./assets/fonts/WantedSans-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("./assets/fonts/WantedSans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("./assets/fonts/WantedSans-Black.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("./assets/fonts/WantedSans-ExtraBold.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("./assets/fonts/WantedSans-ExtraBlack.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root{
+  --primaryMain:#3130A3;
+  --primaryBold:#4F46E5;
+  --primaryReG:#818CF8;
+  --seconPup:#B297FF;
+  --seconPupSami:#B2A3D9;
+  --seconGreen:#68BAA6;
+  --accentReg:#D53635;
+  --accontBold:#C10014;
+  --accentYellow:#FFDF77;
+  --neutralBlack:#191919;
+  --neutralGray:#DEDEDE;
+  --neutralDeepGray:#979797;
+  --neutralWhite:#f4f4f4;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -26,4 +91,5 @@ html {
 
 body {
   font-size: 16px;
+  font-family: "Wanted Sans";
 }

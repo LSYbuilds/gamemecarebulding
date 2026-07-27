@@ -5,6 +5,7 @@ import { HeaderWrap } from "../styles/header.styed";
 const Header = () => {
   return (
     <HeaderWrap>
+      {/* 헤더 탑 */}
       <div className="header_top">
         <div className="top_i">
           <div className="site_head_title">
@@ -21,21 +22,25 @@ const Header = () => {
           <div className="util">
             <div className="login">
               <Link to="#">
+                <img src="/images/lock.png" alt="로그인이미지" />
                 <p>로그인</p>
               </Link>
             </div>
             <div className="joinus">
               <Link to="#">
+                <img src="/images/user.png" alt="회원가입" />
                 <p>회원가입</p>
               </Link>
             </div>
           </div>
         </div>
       </div>
+      {/* 헤더 바텀 */}
       <div className="header_bottom">
         <div className="bottom_i">
           <div className="gnb_box">
-            <button className="lnb_call"></button>
+            <div className="lnb_call">
+            </div>
             <ul className="gnb">
               <li>
                 <Link>뉴스</Link>
@@ -63,16 +68,19 @@ const Header = () => {
           <div className="fam_site_box">
             <ul className="fam_list">
               <li>
-                <Link>팸</Link>
+                <Link>
+                <img src="/images/fam.png" alt="패밀리아이콘" />
+                팸</Link>
               </li>
               <li>
-                <Link>이벤트</Link>
+                <Link><img src="/images/event.png" alt="패밀리아이콘" />이벤트</Link>
               </li>
               <li>
-                <Link>포션마켓</Link>
+                <Link>
+                <img src="/images/po.png" alt="패밀리아이콘" />포션마켓</Link>
               </li>
               <li>
-                <Link>국민트리</Link>
+                <Link to="https://trees.gamemeca.com/"><img src="/images/kugmin.png" alt="패밀리아이콘" />국민트리</Link>
               </li>
             </ul>
           </div>

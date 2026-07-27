@@ -1,11 +1,17 @@
-import { Wrap } from "./styles/header.styed";
-import { HeaderWrap } from "./styles/header.styed";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { Wrap } from "./styles/layout.styled";
+import { Route, Router , Routes } from "react-router-dom";
+import Main from "./pages/Main";
 function App() {
   return (
-    <Header>
-
-    </Header>
+    <Wrap>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Main/>}></Route>
+      </Routes>
+      <Footer />
+    </Wrap>
   );
 }
 

@@ -1,0 +1,88 @@
+{
+  "newsList": [
+    {
+      "id": 1,
+      "title": "PC게임도 구동, Xbox 차세대 콘솔 프로젝트 헬릭스 발표",
+      "summary": "필 스펜서 퇴임후 사업 방향성에 대한 우려가 이어지던 Xbox가 차세대 콘솔 ‘프로젝트 헬릭스(Project Helix)’를 깜짝 공개했다.",
+      "thumbnail": "/images/news/project-helix.webp",
+      "category": "비디오",
+      "tags": ["Xbox", "콘솔", "PC"],
+      "writer": {
+        "name": "정우철",
+        "position": "편집장"
+      },
+      "publishedAt": "2026-03-06 16:40:54",
+      "url": "/news/1"
+    },
+    {
+      "id": 2,
+      "title": "SOOP, 프로게이머 무릎배 '철권 스타즈 컵' 대회 개최",
+      "summary": "SOOP(SOOP)은 철권 프로 e스포츠 선수이자 플랫폼 스트리머인 '무릎' 배재민과 손잡고 철권 e스포츠 대회인 '철권 스타즈 컵'을 개최한다. 이번 대회는 무릎이 그동안 개인적으로 진행했던 '무릎배 철권대회'를 바탕으로 기획했다.",
+      "thumbnail": "/images/news/tekken-stars-cup.webp",
+      "category": "e-스포츠",
+      "tags": ["e-스포츠", "프리미어", "대회"],
+      "writer": {
+        "name": "정우철",
+        "position": "편집장"
+      },
+      "publishedAt": "2026-03-06 16:40:54",
+      "url": "/news/2"
+    },
+    {
+      "id": 3,
+      "title": "신규 이용자 편의성 향상, 배틀그라운드 기본 훈련 개편",
+      "summary": "크래프톤은 '플레이어언노운스 배틀그라운드(PUBG: BATTLEGROUNDS)'의 42.2 업데이트를 실시하고 신규 이용자를 위한 기본 훈련 과정을 개편했다. 이번 개편은 게임을 처음 접하는 초보 이용자들이 보다 쉽고 빠르게 게임 시스템에 적응할 수 있도록 돕기 위해 진행됐다.",
+      "thumbnail": "/images/news/pubg-training.webp",
+      "category": "PC",
+      "tags": ["Xbox", "콘솔", "PC"],
+      "writer": {
+        "name": "김동기",
+        "position": "기자"
+      },
+      "publishedAt": "2026-07-16 14:37:00",
+      "url": "/news/3"
+    },
+    {
+      "id": 4,
+      "title": "코그 액션 RPG '그랜드체이스 클래식' 스토브에 출시",
+      "summary": "스마일게이트의 스토브는 코그(KOG)가 개발한 횡스크롤 액션 RPG '그랜드체이스 클래식'을 스토어에 정식 출시한다. 그랜드체이스 클래식은 전 세계 누적 이용자 2,000만 명을 달성한 인기 타이틀이다.",
+      "thumbnail": "/images/news/grandchase-classic.webp",
+      "category": "온라인",
+      "tags": ["온라인"],
+      "writer": {
+        "name": "김형기",
+        "position": "기자"
+      },
+      "publishedAt": "2026-07-16 11:30:00",
+      "url": "/news/4"
+    },
+    {
+      "id": 5,
+      "title": "붉은사막, 영국 개발자 컨퍼런스서 기술 혁신상 수상",
+      "summary": "펄어비스의 '붉은사막(Crimson Desert)'이 영국 게임 개발자 컨퍼런스(The Develop Conference)가 주최하는 '디벨롭 스타 어워드(Develop:Star Awards)'에서 기술 혁신상(Best Technical Innovation)을 수상했다. 이번 시상식은 현지 시간으로 지난 15일 브라이튼에서 진행됐다..",
+      "thumbnail": "/images/news/crimson-desert.webp",
+      "category": "비디오",
+      "tags": ["콘솔", "PC"],
+      "writer": {
+        "name": "정우철",
+        "position": "편집장"
+      },
+      "publishedAt": "2026-03-06 16:40:54",
+      "url": "/news/5"
+    },
+    {
+      "id": 6,
+      "title": "데드 스페이스의 아버지, 글렌 스코필드 은퇴 선언",
+      "summary": "‘데드 스페이스(Dead Space)’, ‘칼리스토 프로토콜(The Callisto Protocol)’ 개발의 주역 글렌 스코필드가 은퇴를 발표했다..",
+      "thumbnail": "/images/news/glen-schofield.webp",
+      "category": "비디오",
+      "tags": ["Xbox"],
+      "writer": {
+        "name": "정우철",
+        "position": "편집장"
+      },
+      "publishedAt": "2026-03-06 16:40:54",
+      "url": "/news/6"
+    }
+  ]
+}

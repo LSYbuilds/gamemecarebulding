@@ -1,0 +1,28 @@
+{
+    "sideSlide": [
+        {
+            "id": "1",
+            "title": "2026년, 오픈월드 신규 트렌드로 떠오른 '몬스터 포획 RPG'",
+            "time": "1",
+            "timeset":"시간",
+            "name": "신유창",
+            "src": "sideslide1"
+        },
+        {
+            "id": "2",
+            "title": "역대 최고치, 스팀 올해 상반기 총 판매액 약 16조 원",
+            "time": "10",
+            "timeset":"시간",
+            "name": "김종혁",
+            "src": "sideslide2"
+        },
+        {
+            "id": "3",
+            "title": "드래곤즈 도그마 2 DLC 타이틀명이 전작과 같은 이유는?",
+            "time": "2",
+            "timeset":"일",
+            "name": "김종혁",
+            "src": "sideslide3"
+        }
+    ]
+}

@@ -6,7 +6,7 @@
             "time": "1",
             "timeset":"시간",
             "name": "신유창",
-            "src": "sideslide1"
+            "src": "/images/sideslide/sideslide1.jpg"
         },
         {
             "id": "2",
@@ -14,7 +14,7 @@
             "time": "10",
             "timeset":"시간",
             "name": "김종혁",
-            "src": "sideslide2"
+            "src": "/images/sideslide/sideslide2.jpg"
         },
         {
             "id": "3",
@@ -22,7 +22,7 @@
             "time": "2",
             "timeset":"일",
             "name": "김종혁",
-            "src": "sideslide3"
+            "src": "/images/sideslide/sideslide3.jpg"
         }
     ]
 }

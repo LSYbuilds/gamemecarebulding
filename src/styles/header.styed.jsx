@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
-const path = process.env.PUBLIC_URL;
 
 export const HeaderWrap = styled.header`
   position: fixed;
+  z-index: 999;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -64,7 +64,7 @@ export const HeaderWrap = styled.header`
             height: 30px;
             border-radius: 100%;
             background-color: #818cf8;
-            background-image: url(/images/search.png);
+            background-image: url(/images/icon/search.png);
             background-repeat: no-repeat;
             background-position: center;
             border: none;
@@ -110,7 +110,7 @@ export const HeaderWrap = styled.header`
         .lnb_call{
           width: 25px;
           height: 25px;
-          background-image: url(/images/hambarger.png);
+          background-image: url(/images/icon/hambarger.png);
           background-position: center;
           background-repeat: no-repeat;
           border: none;

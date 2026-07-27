@@ -11,7 +11,7 @@ const Header = () => {
           <div className="site_head_title">
             <h1 className="logo">
               <Link to="/" className="logo_link">
-                <img src="/images/h_logo.png" alt="Logo" />
+                <img src="/images/icon/h_logo.png" alt="Logo" />
               </Link>
             </h1>
             <form className="search_box">
@@ -22,13 +22,13 @@ const Header = () => {
           <div className="util">
             <div className="login">
               <Link to="#">
-                <img src="/images/lock.png" alt="로그인이미지" />
+                <img src="/images/icon/lock.png" alt="로그인이미지" />
                 <p>로그인</p>
               </Link>
             </div>
             <div className="joinus">
               <Link to="#">
-                <img src="/images/user.png" alt="회원가입" />
+                <img src="/images/icon/user.png" alt="회원가입" />
                 <p>회원가입</p>
               </Link>
             </div>
@@ -69,15 +69,15 @@ const Header = () => {
             <ul className="fam_list">
               <li>
                 <Link>
-                <img src="/images/fam.png" alt="패밀리아이콘" />
+                <img src="/images/icon/fam.png" alt="패밀리아이콘" />
                 팸</Link>
               </li>
               <li>
-                <Link><img src="/images/event.png" alt="패밀리아이콘" />이벤트</Link>
+                <Link><img src="/images/icon/event.png" alt="패밀리아이콘" />이벤트</Link>
               </li>
               <li>
                 <Link>
-                <img src="/images/po.png" alt="패밀리아이콘" />포션마켓</Link>
+                <img src="/images/icon/po.png" alt="패밀리아이콘" />포션마켓</Link>
               </li>
               <li>
                 <Link to="https://trees.gamemeca.com/"><img src="/images/kugmin.png" alt="패밀리아이콘" />국민트리</Link>

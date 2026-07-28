@@ -10,7 +10,6 @@ export const MainContainer = styled.main`
     gap: 80px;
     max-width: 1400px;
     width: 100%;
-    height: 5000px;
     .hero_section {
       width: 100%;
       height: 834px;
@@ -176,11 +175,11 @@ export const MainContainer = styled.main`
         }
       }
     }
-    .board_section{
+    .board_section {
       display: flex;
       gap: 16px;
       /* 공통스타일 */
-      .board_list{
+      .board_list {
         flex: 456;
         display: flex;
         flex-direction: column;
@@ -188,12 +187,12 @@ export const MainContainer = styled.main`
         border: 1px solid var(--primaryMain);
         border-radius: 8px;
         overflow: hidden;
-        .board_title{
+        .board_title {
           padding: 0px 10px;
           width: 100%;
           height: 48px;
           background-color: var(--primaryMain);
-          p{
+          p {
             align-content: center;
             font-size: 1.125em;
             height: 100%;
@@ -201,31 +200,31 @@ export const MainContainer = styled.main`
             color: var(--neutralWhite);
           }
         }
-        .list{
+        .list {
           display: flex;
           flex-direction: column;
           gap: 10px;
           width: 100%;
           height: 335px;
           padding: 10px;
-          li{
+          li {
             border: 1px solid var(--neutralGray);
             height: 100%;
             border-radius: 8px;
-            a{
+            a {
               display: flex;
               gap: 10px;
               width: 100%;
               height: 100%;
               padding: 8px;
             }
-            a:hover{
+            a:hover {
               background-color: var(--neutralWhite);
             }
-            span{
+            span {
               align-content: center;
             }
-            .number{
+            .number {
               width: 25px;
               height: 25px;
               text-align: center;
@@ -239,13 +238,166 @@ export const MainContainer = styled.main`
         }
       }
     }
-    .game_section{
+    .game_section {
       display: flex;
-      .game_small{
-        flex: 810;
+      background-color: var(--neutralBlack);
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+      overflow: hidden;
+      gap: 16px;
+      /* 공통스타일 */
+      .game_list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        overflow: hidden;
+        .section_title {
+          display: flex;
+          justify-content: space-between;
+          padding: 0px 10px;
+          width: 100%;
+          height: 48px;
+          background-color: var(--primaryMain);
+          p {
+            align-content: center;
+            font-size: 1.125em;
+            height: 100%;
+            font-weight: 700;
+            color: var(--neutralWhite);
+          }
+        }
       }
-      .game_large{
+      .game_small {
+        flex: 810;
+        border-left: 1px solid rgb(244, 244, 244, 0.1);
+        .list_box {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          li {
+            height: 165px;
+            border-bottom: 1px solid rgb(244, 244, 244, 0.1);
+            a {
+              display: flex;
+              padding: 8px;
+              width: 100%;
+              height: 100%;
+              gap: 16px;
+              .thumb_img {
+                flex: 260;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: contain;
+                }
+              }
+              .info_box {
+                flex: 534;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .info {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  .name {
+                    font-size: 1.125em;
+                    font-weight: 700;
+                  }
+                  .text {
+                    font-size: 1em;
+                    font-weight: 400;
+                    line-height: 160%;
+                  }
+                }
+                .tags {
+                  display: flex;
+                  gap: 10px;
+                  span {
+                    padding: 4px;
+                    text-align: center;
+                    align-content: center;
+                    border-radius: 2px;
+                    font-size: 0.875em;
+                    color: var(--neutralBlack);
+                    background-color: var(--neutralWhite);
+                  }
+                }
+              }
+            }
+            a:hover {
+              background-color: #272727;
+              transition-duration: 0.3s;
+            }
+          }
+        }
+      }
+      .game_large {
         flex: 574;
+        .list_box {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          li {
+            height: 527px;
+            border-bottom: 1px solid rgb(244, 244, 244, 0.1);
+            a {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              height: 100%;
+              gap: 16px;
+              .thumb_large {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 346px;
+                img {
+                  height: 100%;
+                  object-fit: contain;
+                }
+              }
+              .info_box {
+                height: 165px;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 10px;
+                .info {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  .name {
+                    font-size: 1.125em;
+                    font-weight: 700;
+                  }
+                  .text {
+                    font-size: 1em;
+                    font-weight: 400;
+                    line-height: 160%;
+                  }
+                }
+                .tags {
+                  display: flex;
+                  gap: 10px;
+                  span {
+                    padding: 4px;
+                    text-align: center;
+                    align-content: center;
+                    border-radius: 2px;
+                    font-size: 0.875em;
+                    color: var(--neutralBlack);
+                    background-color: var(--neutralWhite);
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

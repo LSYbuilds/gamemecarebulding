@@ -4,7 +4,8 @@ import sideSlideData from "../data/sideSlideData.json";
 import mainSlideData from "../data/slideData.json";
 import newsListData from "../data/newsData.json";
 import cataListData from "../data/catanewsData.json";
-import dashBoardDate from "../data/dashBoardData.json";
+import dashBoardData from "../data/dashBoardData.json";
+import gameInfoData from "../data/gameInfoData.json";
 import { StyledSwiper, ThumbSwiper } from "../styles/swiper.styled";
 import { Autoplay, Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
@@ -15,10 +16,11 @@ const Main = () => {
   const [sideContents] = useState(sideSlideData.sideSlide);
   const [newsList] = useState(newsListData.newsList);
   const [cateList] = useState(cataListData.cateNews);
-  const [boardList] = useState(dashBoardDate.gameDashboard);
+  const [boardList] = useState(dashBoardData.gameDashboard);
+  const [gameInfo] = useState(gameInfoData.gameinfo);
   const [isNews, setIsNews] = useState(true);
   const [isLeftNews, setIsLeftNews] = useState(true);
-  console.log(boardList);
+  console.log(gameInfo);
   return (
     <MainContainer>
       <div className="inner">
@@ -338,8 +340,61 @@ const Main = () => {
           </div>
         </section>
         <section className="game_section">
-          <div className="game_small"></div>
-          <div className="gmae_large"></div>
+          <div className="game_small game_list">
+            <div className="section_title">
+              <p>게임정보</p>
+              <p>인기순</p>
+            </div>
+            <ul className="list_box">
+              {gameInfo.map((item) => (
+                <li key={item.id}>
+                  <Link to="#">
+                    <div className="thumb_img">
+                      <img src={item.simg} alt="이미지" />
+                    </div>
+                    <div className="info_box">
+                      <div className="info">
+                        <p className="name">{item.title}</p>
+                        <p className="text">{item.text}</p>
+                      </div>
+                      <p className="tags">
+                        {item.tags.map((item) => (
+                          <span key={item}>{item}</span>
+                        ))}
+                      </p>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="game_large game_list">
+            <div className="section_title">
+              <p>게임메카 추천</p>
+            </div>
+            <ul className="list_box">
+              {gameInfo.slice(8, 12).map((item) => (
+                <li key={item.id}>
+                  <Link to="#">
+                    <div className="thumb_large">
+                      <img src={item.bimg} alt="이미지" />
+                    </div>
+                    <div className="info_box">
+                      <div className="info">
+                        <p className="name">{item.title}</p>
+                        <p className="text">{item.text}</p>
+                      </div>
+                      <p className="tags">
+                        {item.tags.map((item) => (
+                          <span key={item}>{item}</span>
+                        ))}
+                      </p>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
       </div>
     </MainContainer>

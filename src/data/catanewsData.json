@@ -6,32 +6,32 @@
       "list": [
         {
           "id": "1",
-          "src": "preimg1",
+          "src": "/images/midslides/preimg1.jpg",
           "title": "매력적 인연 돋보이는 붕토체스, '붕괴: 넥서스 아니마'"
         },
         {
           "id": "2",
-          "src": "preimg2",
+          "src": "/images/midslides/preimg2.jpg",
           "title": "'어센드투제로' 체험기, 시간이 멈추면 도파민이 흐른다"
         },
         {
           "id": "3",
-          "src": "preimg3",
+          "src": "/images/midslides/preimg3.jpg",
           "title": "리모델링한 함선에 남은 낡은 닻, 어크 블랙 플래그 리싱크드"
         },
         {
           "id": "4",
-          "src": "preimg3",
+          "src": "/images/midslides/preimg4.jpg",
           "title": "마블 투혼, 어셈블의 쾌감 살린 4 대 4 대전격투"
         },
         {
           "id": "5",
-          "src": "preimg3",
+          "src": "/images/midslides/preimg5.jpg",
           "title": "정식 출시된 팰월드, 완전히 새로운 게임이 됐다"
         },
         {
           "id": "6",
-          "src": "preimg3",
+          "src": "/images/midslides/preimg6.jpg",
           "title": "방대한 빌드 더한 엘더스크롤풍 RPG, 페이트키퍼"
         }
       ]

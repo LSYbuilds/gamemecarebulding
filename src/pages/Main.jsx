@@ -3,7 +3,9 @@ import { MainContainer } from "../styles/main.styled";
 import sideSlideData from "../data/sideSlideData.json";
 import mainSlideData from "../data/slideData.json";
 import newsListData from "../data/newsData.json";
-import { StyledSwiper } from "../styles/swiper.styled";
+import cataListData from "../data/catanewsData.json";
+import dashBoardDate from "../data/dashBoardData.json";
+import { StyledSwiper, ThumbSwiper } from "../styles/swiper.styled";
 import { Autoplay, Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
@@ -12,9 +14,11 @@ const Main = () => {
   const [mainSlide] = useState(mainSlideData.mainSlide);
   const [sideContents] = useState(sideSlideData.sideSlide);
   const [newsList] = useState(newsListData.newsList);
+  const [cateList] = useState(cataListData.cateNews);
+  const [boardList] = useState(dashBoardDate.gameDashboard);
   const [isNews, setIsNews] = useState(true);
   const [isLeftNews, setIsLeftNews] = useState(true);
-  console.log(newsList);
+  console.log(boardList);
   return (
     <MainContainer>
       <div className="inner">
@@ -190,16 +194,152 @@ const Main = () => {
             </div>
           </div>
         </section>
-        <section className="thumb_area">
-          <div className="preview">
-            <div className="cate_title">프리뷰/리뷰</div>
+        <section className="thumb_seciton">
+          <div className="preview thumb_box">
+            <div className="cate_title">
+              <p>프리뷰 리뷰</p>
+            </div>
+            <div className="cate_list">
+              <ThumbSwiper
+                modules={[Navigation]}
+                navigation
+                speed={1000}
+                loop
+                slidesPerView={3}
+                spaceBetween={16}
+              >
+                {cateList
+                  .find((item) => item.type === "preview")
+                  .list.map((item) => (
+                    <SwiperSlide key={item.id}>
+                      <Link to="#" className="cate_item">
+                        <div className="cate_img">
+                          <img src={item.src} alt="이미지" />
+                        </div>
+                        <div className="cate_text">
+                          <p>{item.title}</p>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+              </ThumbSwiper>
+            </div>
           </div>
-          <div className="special">
-            <div className="cate_title">특집/연재</div>
+          <div className="special thumb_box">
+            <div className="cate_title">
+              <p>특집/연재</p>
+            </div>
+            <div className="cate_list">
+              <ThumbSwiper
+                modules={[Navigation]}
+                navigation
+                speed={1000}
+                loop
+                slidesPerView={3}
+                spaceBetween={16}
+              >
+                {cateList
+                  .find((item) => item.type === "preview")
+                  .list.map((item) => (
+                    <SwiperSlide key={item.id}>
+                      <Link to="#" className="cate_item">
+                        <div className="cate_img">
+                          <img src={item.src} alt="이미지" />
+                        </div>
+                        <div className="cate_text">
+                          <p>{item.title}</p>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+              </ThumbSwiper>
+            </div>
           </div>
-          <div className="mobile">
-            <div className="cate_title">모바일</div>
+          <div className="mobile thumb_box">
+            <div className="cate_title">
+              <p>모바일</p>
+            </div>
+            <div className="cate_list">
+              <ThumbSwiper
+                modules={[Navigation]}
+                navigation
+                speed={1000}
+                loop
+                slidesPerView={3}
+                spaceBetween={16}
+              >
+                {cateList
+                  .find((item) => item.type === "preview")
+                  .list.map((item) => (
+                    <SwiperSlide key={item.id}>
+                      <Link to="#" className="cate_item">
+                        <div className="cate_img">
+                          <img src={item.src} alt="이미지" />
+                        </div>
+                        <div className="cate_text">
+                          <p>{item.title}</p>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  ))}
+              </ThumbSwiper>
+            </div>
           </div>
+        </section>
+        <section className="board_section">
+          <div className="pop board_list">
+            <div className="board_title">
+              <p>인기게임순위</p>
+            </div>
+            <ul className="list">
+              {boardList
+                .find((item) => item.type === "popularGames")
+                .list.map((item) => (
+                  <li key={item.id}>
+                    <Link to="#">
+                      <span className="number">{item.id}</span>
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </div>
+          <div className="rank board_list">
+            <div className="board_title">
+              <p>순위분석</p>
+            </div>
+            <ul className="list">
+              {boardList
+                .find((item) => item.type === "gameAnalysis")
+                .list.map((item) => (
+                  <li key={item.id}>
+                    <Link to="#">
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </div>
+          <div className="game board_list">
+            <div className="board_title">
+              <p>게임공략</p>
+            </div>
+            <ul className="list">
+              {boardList
+                .find((item) => item.type === "strategyGuides")
+                .list.map((item) => (
+                  <li key={item.id}>
+                    <Link to="#">
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        </section>
+        <section className="game_section">
+          <div className="game_small"></div>
+          <div className="gmae_large"></div>
         </section>
       </div>
     </MainContainer>

@@ -1,23 +1,25 @@
 import styled from "@emotion/styled";
 
-
 export const HeaderWrap = styled.header`
   position: fixed;
   z-index: 999;
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 137px;
+  height: ${(props) => (props.scrolled ? "117px" : "137px")};
+  /* height: 137px; */
   display: flex;
   flex-direction: column;
   padding-top: 8px;
-  background-color: #f4f4f4;
+  background-color: ${(props) =>
+    props.scrolled ? "rgb(244, 244, 244,0.9);" : "#f4f4f4"};
+  /* background-color: rgb(244, 244, 244,0.5); */
+  transition-duration: 0.3s;
   .header_top {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 74px;
-
     .top_i {
       display: flex;
       justify-content: space-between;
@@ -97,65 +99,121 @@ export const HeaderWrap = styled.header`
     background-color: #fff;
     border: 1px solid #dedede;
     .bottom_i {
+      position: relative;
       display: flex;
       justify-content: space-between;
       max-width: 1400px;
       width: 100%;
       height: 100%;
-      .gnb_box{
+      .gnb_box {
         height: 100%;
         display: flex;
         gap: 10px;
         align-items: center;
-        .lnb_call{
+        .lnb_call {
           width: 25px;
           height: 25px;
-          background-image: url(/images/icon/hambarger.png);
+          background-image: ${(props) =>
+            props.lnbcall
+              ? "url(/images/icon/x.png)"
+              : "url(/images/icon/hambarger.png)"};
           background-position: center;
           background-repeat: no-repeat;
           border: none;
+          cursor: pointer;
         }
-        .gnb{
+        .gnb {
           display: flex;
           font-size: 1.125em;
           height: 100%;
-          li{
+          li {
             position: relative;
             height: 100%;
             padding: 0px 16px;
-            a{
+            a {
               align-content: center;
               display: block;
               height: 100%;
             }
           }
-          li:hover::after{
-            content: '';
+          li:hover::after {
+            content: "";
             position: absolute;
             bottom: 0px;
-            left:0px;
+            left: 0px;
             width: 100%;
             height: 5px;
             background-color: var(--seconGreen);
           }
         }
       }
-      .fam_site_box{
+      .fam_site_box {
         height: 100%;
-        .fam_list{
+        .fam_list {
           display: flex;
           align-items: center;
           gap: 10px;
           height: 100%;
-          a{
+          a {
             display: flex;
             gap: 4px;
             align-items: center;
             height: 100%;
             font-size: 14px;
-            img{
+            img {
               height: 16px;
             }
+          }
+        }
+      }
+    }
+  }
+  .lnb_box {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.9);
+    border: 1px solid var(--neutralGray);
+    padding: 8px 16px;
+    .lnb_inner {
+      margin: 0 auto;
+      max-width: 1400px;
+      width: 100%;
+    }
+    .lnb_menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 10px;
+      gap: 10px;
+      li {
+        width: 100%;
+      }
+      strong {
+        display: block;
+        width: 100%;
+        height: 27px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .lnb_in {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        li {
+          width: 100%;
+          border-radius: 4px;
+
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 6px 0px;
+          }
+          a:hover{
+            color: var(--primaryBold);
           }
         }
       }

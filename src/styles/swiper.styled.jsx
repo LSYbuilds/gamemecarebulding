@@ -69,3 +69,10 @@ export const StyledSwiper = styled(Swiper)`
     color: #000;
   }
 `;
+
+export const thumbSwiper = styled(Swiper)`
+
+
+
+  
+`

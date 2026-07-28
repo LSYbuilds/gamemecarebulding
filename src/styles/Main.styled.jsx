@@ -67,8 +67,8 @@ export const MainContainer = styled.main`
         display: flex;
         width: 100%;
         height: 318px;
-        background-color: aqua;
         gap: 16px;
+        /* 공통으로 들어가는 버튼/ 뉴스리스트 */
         .news_tab {
           display: flex;
           width: 100%;
@@ -93,23 +93,49 @@ export const MainContainer = styled.main`
             }
           }
         }
+
         .news_box {
           height: 100%;
           display: flex;
           flex-direction: column;
           border-radius: 16px;
           overflow: hidden;
-          li{
-
+        }
+        /* 공통으로 들어가는 버튼/ 뉴스리스트 */
+        .news_list {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          width: 100%;
+          height: 270px;
+          padding: 16px;
+          li {
+            width: 100%;
+            height: 40px;
+            a {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 10px;
+              width: 100%;
+              height: 100%;
+              p:nth-child(3) {
+                margin-left: auto;
+              }
+            }
+            a:hover{
+              background-color: var(--neutralWhite);
+            }
           }
         }
+        /* 따로 */
         .news_l {
           flex: 810;
-          background-color: red;     
+          border: 2px solid var(--neutralWhite);
         }
         .news_r {
           flex: 574;
-          background-color: gold;
+          border: 2px solid var(--neutralWhite);
         }
       }
     }

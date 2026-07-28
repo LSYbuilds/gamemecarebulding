@@ -84,7 +84,47 @@ const Main = () => {
                 <a href="#" className="more_news"></a>
               </div>
               <ul className="news_list">
-                { isNews ? newsList.find(item => item.type === "popnews").list.map(item =>(<div>기본은 참이니까</div>)) : newsList.find(item => item.type === "view").list.map(item =>(<div>참이 아니니까</div>))}
+                {isNews
+                  ? newsList
+                      .find((item) => item.type === "popnews")
+                      .list.map((item) => (
+                        <li>
+                          <Link to="#">
+                            {item.hot === "1" ? (
+                              <div>
+                                <img
+                                  src="/images/icon/hot.jpg"
+                                  alt="핫이미지"
+                                />
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                            <p>{item.title}</p>
+                            <p>{item.name}</p>
+                          </Link>
+                        </li>
+                      ))
+                  : newsList
+                      .find((item) => item.type === "recent")
+                      .list.map((item) => (
+                        <li>
+                          <Link>
+                            {item.hot === "1" ? (
+                              <div>
+                                <img
+                                  src="/images/icon/hot.jpg"
+                                  alt="핫이미지"
+                                />
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                            <p>{item.title}</p>
+                            <p>{item.name}</p>
+                          </Link>
+                        </li>
+                      ))}
               </ul>
             </div>
             <div className="news_r news_box">
@@ -105,9 +145,60 @@ const Main = () => {
                 </div>
               </div>
               <ul className="news_list">
-                { isLeftNews ? newsList.find(item => item.type === "sns").list.map(item =>(<div>기본은 참이니까</div>)) : newsList.find(item => item.type === "view").list.map(item =>(<div>참이 아니니까</div>))}
+                {isLeftNews
+                  ? newsList
+                      .find((item) => item.type === "sns")
+                      .list.map((item) => (
+                        <li>
+                          <Link>
+                            {item.hot === "1" ? (
+                              <div>
+                                <img
+                                  src="/images/icon/hot.jpg"
+                                  alt="핫이미지"
+                                />
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                            <p>{item.title}</p>
+                            <p>{item.name}</p>
+                          </Link>
+                        </li>
+                      ))
+                  : newsList
+                      .find((item) => item.type === "view")
+                      .list.map((item) => (
+                        <li>
+                          <Link>
+                            {item.hot === "1" ? (
+                              <div>
+                                <img
+                                  src="/images/icon/hot.jpg"
+                                  alt="핫이미지"
+                                />
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                            <p>{item.title}</p>
+                            <p>{item.name}</p>
+                          </Link>
+                        </li>
+                      ))}
               </ul>
             </div>
+          </div>
+        </section>
+        <section className="thumb_area">
+          <div className="preview">
+            <div className="cate_title">프리뷰/리뷰</div>
+          </div>
+          <div className="special">
+            <div className="cate_title">특집/연재</div>
+          </div>
+          <div className="mobile">
+            <div className="cate_title">모바일</div>
           </div>
         </section>
       </div>

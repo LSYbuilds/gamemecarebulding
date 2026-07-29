@@ -87,6 +87,7 @@ img {
 html {
   font-size: 16px;
   height: auto;
+  scrollbar-gutter: stable;
 }
 
 body {

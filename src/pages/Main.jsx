@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MiniBoard from "../components/MiniBoard";
 import { MainContainer } from "../styles/main.styled";
 import sideSlideData from "../data/sideSlideData.json";
 import mainSlideData from "../data/slideData.json";
@@ -7,6 +8,7 @@ import cataListData from "../data/catanewsData.json";
 import dashBoardData from "../data/dashBoardData.json";
 import gameInfoData from "../data/gameInfoData.json";
 import { StyledSwiper, ThumbSwiper } from "../styles/swiper.styled";
+import { MiniBoard_wrap } from "../styles/miniboard.styled";
 import { Autoplay, Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
@@ -20,7 +22,6 @@ const Main = () => {
   const [gameInfo] = useState(gameInfoData.gameinfo);
   const [isNews, setIsNews] = useState(true);
   const [isLeftNews, setIsLeftNews] = useState(true);
-  console.log(gameInfo);
   return (
     <MainContainer>
       <div className="inner">
@@ -288,57 +289,9 @@ const Main = () => {
             </div>
           </div>
         </section>
-        <section className="board_section">
-          <div className="pop board_list">
-            <div className="board_title">
-              <p>인기게임순위</p>
-            </div>
-            <ul className="list">
-              {boardList
-                .find((item) => item.type === "popularGames")
-                .list.map((item) => (
-                  <li key={item.id}>
-                    <Link to="#">
-                      <span className="number">{item.id}</span>
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
-                ))}
-            </ul>
-          </div>
-          <div className="rank board_list">
-            <div className="board_title">
-              <p>순위분석</p>
-            </div>
-            <ul className="list">
-              {boardList
-                .find((item) => item.type === "gameAnalysis")
-                .list.map((item) => (
-                  <li key={item.id}>
-                    <Link to="#">
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
-                ))}
-            </ul>
-          </div>
-          <div className="game board_list">
-            <div className="board_title">
-              <p>게임공략</p>
-            </div>
-            <ul className="list">
-              {boardList
-                .find((item) => item.type === "strategyGuides")
-                .list.map((item) => (
-                  <li key={item.id}>
-                    <Link to="#">
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
-                ))}
-            </ul>
-          </div>
-        </section>
+        {/* 미니보드 컴포넌트 */}
+        <MiniBoard />
+        {/* 미니보드 컴포넌트 */}
         <section className="game_section">
           <div className="game_small game_list">
             <div className="section_title">

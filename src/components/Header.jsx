@@ -61,7 +61,7 @@ const Header = () => {
             ></Link>
             <ul className="gnb">
               <li>
-                <Link>뉴스</Link>
+                <Link to="/news">뉴스</Link>
               </li>
               <li>
                 <Link>프리뷰.뉴스</Link>

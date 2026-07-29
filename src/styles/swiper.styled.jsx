@@ -215,24 +215,77 @@ export const TopnewsSwiper = styled(Swiper)`
             height: 30px;
             background-color: var(--primaryMain);
           }
-          .text{
+          .text {
             height: 120px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             padding: 16px;
-            span{
+            span {
               display: block;
             }
-            span:nth-child(1){
+            span:nth-child(1) {
               font-size: 1.25em;
             }
-            span:nth-child(2){
+            span:nth-child(2) {
               text-align: end;
             }
           }
         }
       }
+      .topitem > a:hover{
+         img {
+            width: 101%;
+            height: 101%;
+            object-fit: cover;
+            object-position: center;
+            transition-duration: 0.3s;
+          }
+      }
     }
+  }
+  .swiper-button-prev {
+    position: absolute;
+    top: 40%;
+    left: 3%;
+    transform: translate(-50%, 0%);
+    width: 50px;
+    height: 50px;
+    border-radius: 300px;
+    background-color: rgb(255, 255, 255, 0.6);
+    background-image: url(/images/icon/chevron-left.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    cursor: pointer;
+    svg {
+      display: none;
+    }
+  }
+  .swiper-button-prev:hover {
+    background-color: #fff;
+    transition-duration: 0.2s;
+  }
+  .swiper-button-next {
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    transform: translate(-50%, 0%);
+    width: 50px;
+    height: 50px;
+    border-radius: 300px;
+    background-color: rgb(255, 255, 255, 0.6);
+    background-image: url(/images/icon/chevron-right.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    cursor: pointer;
+    svg {
+      display: none;
+    }
+  }
+  .swiper-button-next:hover {
+    background-color: #fff;
+    transition-duration: 0.2s;
   }
 `;

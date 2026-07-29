@@ -113,40 +113,44 @@ const Header = ({ path }) => {
             </div>
           </div>
         </div>
-        <div className="bottom_i lnb">
-          <ul className="lnb_menu">
-            <li>
-              <Link to="#">전체</Link>
-            </li>
-            <li>
-              <Link to="#">산업</Link>
-            </li>
-            <li>
-              <Link to="#">온라인</Link>
-            </li>
-            <li>
-              <Link to="#">PC</Link>
-            </li>
-            <li>
-              <Link to="#">비디오</Link>
-            </li>
-            <li>
-              <Link to="#">웹게임</Link>
-            </li>
-            <li>
-              <Link to="#">모바일</Link>
-            </li>
-            <li>
-              <Link to="#">VR</Link>
-            </li>
-            <li>
-              <Link to="#">하드웨어</Link>
-            </li>
-            <li>
-              <Link to="#">테마</Link>
-            </li>
-          </ul>
-        </div>
+        {path === "/news" ? (
+          <div className="bottom_i lnb">
+            <ul className="lnb_menu">
+              <li>
+                <Link to="#">전체</Link>
+              </li>
+              <li>
+                <Link to="#">산업</Link>
+              </li>
+              <li>
+                <Link to="#">온라인</Link>
+              </li>
+              <li>
+                <Link to="#">PC</Link>
+              </li>
+              <li>
+                <Link to="#">비디오</Link>
+              </li>
+              <li>
+                <Link to="#">웹게임</Link>
+              </li>
+              <li>
+                <Link to="#">모바일</Link>
+              </li>
+              <li>
+                <Link to="#">VR</Link>
+              </li>
+              <li>
+                <Link to="#">하드웨어</Link>
+              </li>
+              <li>
+                <Link to="#">테마</Link>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
       {lnbcall ? (
         <div className="global_box">

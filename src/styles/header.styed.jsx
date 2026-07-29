@@ -1,20 +1,25 @@
 import styled from "@emotion/styled";
 
+// const pathChangeHeader = ({ path }) => (path === "/news" ? "height:187px" : "height:137px");
+// const scrollChangeHeader = (props) =>
+//   props.scrolled ? "background-color:rgb(244, 244, 244,0.9);" : "background-color:#f4f4f4";
+
+// const bothChangeHeader = ({path}) => (path === "/news" ? `height:187px (scrollChangeHeader)`: "height:137px");
+
 export const HeaderWrap = styled.header`
   position: fixed;
   z-index: 999;
   top: 0px;
   left: 0px;
   width: 100%;
-  height: ${(props) => (props.scrolled ? "117px" : "auto")};
-  /* height: 137px; */
+  transition-duration: 0.3s;
+  ${({ path }) => (path === "/news" ? "height:187px" : "height:137px")}
   display: flex;
   flex-direction: column;
   padding-top: 8px;
   background-color: ${(props) =>
     props.scrolled ? "rgb(244, 244, 244,0.9);" : "#f4f4f4"};
   /* background-color: rgb(244, 244, 244,0.5); */
-  transition-duration: 0.3s;
   .header_top {
     display: flex;
     justify-content: center;

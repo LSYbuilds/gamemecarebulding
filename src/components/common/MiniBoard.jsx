@@ -4,11 +4,11 @@ import { MiniBoard_wrap } from "../../styles/miniboard.styled";
 import dashBoardData from "../../data/dashBoardData.json";
 
 
-const MiniBoard = ({Path}) => {
-    const [boardList] = useState(dashBoardData.gameDashboard);
-    console.log(Path);
+const MiniBoard = ({path}) => {
+    const boardList = dashBoardData.gameDashboard;
+    console.log("미니보드",path);
   return (
-    <MiniBoard_wrap $path={Path}>
+    <MiniBoard_wrap path={path}>
       <div className="pop board_list">
         <div className="board_title">
           <p>인기게임순위</p>

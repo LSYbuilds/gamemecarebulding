@@ -2,18 +2,21 @@ import styled from "@emotion/styled";
 
 export const MiniBoard_wrap = styled.section`
   display: flex;
+  flex-direction: ${({path}) => path === "/news" ? "column":""};
   gap: 16px;
   /* 공통스타일 */
   .board_list {
-    flex: 456;
+     ${({path}) => path === "/news" ? "":"flex:456"}
+    /* flex: 456; */
     display: flex;
     flex-direction: column;
-    /* background-color: ${({ $path }) =>
-    $path === "/news" ? "red" : "blue"}; */
+    /* background-color: ${({ path }) =>
+    path === "/news" ?  "red" : "none"}; */
     gap: 10px;
     border: 1px solid var(--primaryMain);
     border-radius: 8px;
     overflow: hidden;
+
     .board_title {
       padding: 0px 10px;
       width: 100%;
@@ -32,7 +35,7 @@ export const MiniBoard_wrap = styled.section`
       flex-direction: column;
       gap: 10px;
       width: 100%;
-      height: 335px;
+      ${({path}) => path === "/news" ? "auto":"335px"};
       padding: 10px;
       li {
         border: 1px solid var(--neutralGray);

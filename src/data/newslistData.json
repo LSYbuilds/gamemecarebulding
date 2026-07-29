@@ -4,85 +4,157 @@
       "id": 1,
       "title": "PC게임도 구동, Xbox 차세대 콘솔 프로젝트 헬릭스 발표",
       "summary": "필 스펜서 퇴임후 사업 방향성에 대한 우려가 이어지던 Xbox가 차세대 콘솔 ‘프로젝트 헬릭스(Project Helix)’를 깜짝 공개했다.",
-      "thumbnail": "/images/news/project-helix.webp",
+      "url": "/images/news/list1.jpg",
       "category": "비디오",
       "tags": ["Xbox", "콘솔", "PC"],
       "writer": {
         "name": "정우철",
         "position": "편집장"
       },
-      "publishedAt": "2026-03-06 16:40:54",
-      "url": "/news/1"
+      "publishedAt": "2026-03-06 16:40:54"
     },
     {
       "id": 2,
       "title": "SOOP, 프로게이머 무릎배 '철권 스타즈 컵' 대회 개최",
       "summary": "SOOP(SOOP)은 철권 프로 e스포츠 선수이자 플랫폼 스트리머인 '무릎' 배재민과 손잡고 철권 e스포츠 대회인 '철권 스타즈 컵'을 개최한다. 이번 대회는 무릎이 그동안 개인적으로 진행했던 '무릎배 철권대회'를 바탕으로 기획했다.",
-      "thumbnail": "/images/news/tekken-stars-cup.webp",
+      "url": "/images/news/list2.jpg",
       "category": "e-스포츠",
       "tags": ["e-스포츠", "프리미어", "대회"],
       "writer": {
         "name": "정우철",
         "position": "편집장"
       },
-      "publishedAt": "2026-03-06 16:40:54",
-      "url": "/news/2"
+      "publishedAt": "2026-03-06 16:40:54"
     },
     {
       "id": 3,
       "title": "신규 이용자 편의성 향상, 배틀그라운드 기본 훈련 개편",
       "summary": "크래프톤은 '플레이어언노운스 배틀그라운드(PUBG: BATTLEGROUNDS)'의 42.2 업데이트를 실시하고 신규 이용자를 위한 기본 훈련 과정을 개편했다. 이번 개편은 게임을 처음 접하는 초보 이용자들이 보다 쉽고 빠르게 게임 시스템에 적응할 수 있도록 돕기 위해 진행됐다.",
-      "thumbnail": "/images/news/pubg-training.webp",
+      "url": "/images/news/list3.jpg",
       "category": "PC",
       "tags": ["Xbox", "콘솔", "PC"],
       "writer": {
         "name": "김동기",
         "position": "기자"
       },
-      "publishedAt": "2026-07-16 14:37:00",
-      "url": "/news/3"
+      "publishedAt": "2026-07-16 14:37:00"
     },
     {
       "id": 4,
       "title": "코그 액션 RPG '그랜드체이스 클래식' 스토브에 출시",
       "summary": "스마일게이트의 스토브는 코그(KOG)가 개발한 횡스크롤 액션 RPG '그랜드체이스 클래식'을 스토어에 정식 출시한다. 그랜드체이스 클래식은 전 세계 누적 이용자 2,000만 명을 달성한 인기 타이틀이다.",
-      "thumbnail": "/images/news/grandchase-classic.webp",
+      "url": "/images/news/list4.jpg",
       "category": "온라인",
       "tags": ["온라인"],
       "writer": {
         "name": "김형기",
         "position": "기자"
       },
-      "publishedAt": "2026-07-16 11:30:00",
-      "url": "/news/4"
+      "publishedAt": "2026-07-16 11:30:00"
     },
     {
       "id": 5,
       "title": "붉은사막, 영국 개발자 컨퍼런스서 기술 혁신상 수상",
       "summary": "펄어비스의 '붉은사막(Crimson Desert)'이 영국 게임 개발자 컨퍼런스(The Develop Conference)가 주최하는 '디벨롭 스타 어워드(Develop:Star Awards)'에서 기술 혁신상(Best Technical Innovation)을 수상했다. 이번 시상식은 현지 시간으로 지난 15일 브라이튼에서 진행됐다..",
-      "thumbnail": "/images/news/crimson-desert.webp",
+      "url": "/images/news/list5.jpg",
       "category": "비디오",
       "tags": ["콘솔", "PC"],
       "writer": {
         "name": "정우철",
         "position": "편집장"
       },
-      "publishedAt": "2026-03-06 16:40:54",
-      "url": "/news/5"
+      "publishedAt": "2026-03-06 16:40:54"
     },
     {
       "id": 6,
       "title": "데드 스페이스의 아버지, 글렌 스코필드 은퇴 선언",
       "summary": "‘데드 스페이스(Dead Space)’, ‘칼리스토 프로토콜(The Callisto Protocol)’ 개발의 주역 글렌 스코필드가 은퇴를 발표했다..",
-      "thumbnail": "/images/news/glen-schofield.webp",
+      "url": "/images/news/list6.jpg",
       "category": "비디오",
       "tags": ["Xbox"],
       "writer": {
         "name": "정우철",
         "position": "편집장"
       },
-      "publishedAt": "2026-03-06 16:40:54",
-      "url": "/news/6"
+      "publishedAt": "2026-03-06 16:40:54"
+    },
+    {
+      "id": 7,
+      "title": "호요버스 코리아, 새 갤럭시 Z 시리즈 '원신·붕괴' 테마 공개",
+      "summary": "호요버스 코리아는 23일, 삼성전자와의 협업을 통해 RPG 원신과 붕괴: 스타레일의 갤럭시 Z 시리즈 출시 기념 스페셜 테마 2종을 공개했다.",
+      "url": "/images/news/list7.jpg",
+      "category": "모바일",
+      "tags": ["PC", "모바일"],
+      "writer": {
+        "name": "이인협",
+        "position": "기자"
+      },
+      "publishedAt": "2026-03-06 16:40:54"
+    },
+    {
+      "id": 8,
+      "title": "베데스다 “인원 감축, 엘더스크롤 6에 영향 없다",
+      "summary": "대규모 구조조정을 진행 중인 베데스다가 엘더스크롤 6 개발에 대해 입을 열었다.",
+      "url": "/images/news/list8.jpg",
+      "category": "비디오",
+      "tags": ["PC", "비디오"],
+      "writer": {
+        "name": "이우민",
+        "position": "기자"
+      },
+      "publishedAt": "2026-07-29 14:40:22"
+    },
+    {
+      "id": 9,
+      "title": "GXG와 연계, AI 게임 사운드 제작 공모전 참가자 모집",
+      "summary": "게임 사운드 전문기업 창조공작소는 ‘제1회 AI 게임사운드디자인 챌린지 with GXG 2026(AI GSDC)’을 개최한다고 28일 밝혔다.",
+      "url": "/images/news/list9.jpg",
+      "category": "산업",
+      "tags": ["산업"],
+      "writer": {
+        "name": "김미희",
+        "position": "기자"
+      },
+      "publishedAt": "2026-07-28 18:47:22"
+    },
+    {
+      "id": 10,
+      "title": "개발자 대상, 전남진흥원 '생성형 AI' 교육 참가자 모집",
+      "summary": "전남정보문화산업진흥원(이하 진흥원)은 오는 8월 5일부터 전남ICT이노베이션스퀘어에서 생성형 AI 개발자 전환 부트캠프 교육을 운영한다.",
+      "url": "/images/news/list10.jpg",
+      "category": "산업",
+      "tags": ["산업"],
+      "writer": {
+        "name": "김미희",
+        "position": "기자"
+      },
+      "publishedAt": "2026-07-28 18:47:22"
+    },
+    {
+      "id": 11,
+      "title": "사일런트 힐에 영감, 국산 생존 신작 '노웨어 던' 공개",
+      "summary": "적과의 전투보다는 고독을 이겨내며 끝까지 살아남는 생존에 초점을 맞춘 국산 인디 신작이 공개됐다.",
+      "url": "/images/news/list11.jpg",
+      "category": "PC",
+      "tags": ["PC", "비디오"],
+      "writer": {
+        "name": "김미희",
+        "position": "기자"
+      },
+      "publishedAt": "2026-07-28 12:47:22"
+    },
+    {
+      "id": 12,
+      "title": "카제나 개발사 강기현·코형석 대표, 회사 떠난다",
+      "summary": "에픽세븐, 카오스 제로 나이트메어 개발사인 슈퍼크리에이티브의 강기현, 김형석 대표가 최근 회사 측에 퇴사 의사를 표명했다. 김형석 대표의 경우 오는 10월 카오스 제로 나이트메어 출시 1주년을 마무리한 후 자리에서 물러날 계획이다..",
+      "url": "/images/news/list12.jpg",
+      "category": "산업",
+      "tags": ["산업", "모바일"],
+      "writer": {
+        "name": "김미희",
+        "position": "기자"
+      },
+      "publishedAt": "2026-07-28 12:47:22"
     }
   ]
 }

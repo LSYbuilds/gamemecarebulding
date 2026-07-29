@@ -224,6 +224,9 @@ export const TopnewsSwiper = styled(Swiper)`
             span{
               display: block;
             }
+            span:nth-child(1){
+              font-size: 1.25em;
+            }
             span:nth-child(2){
               text-align: end;
             }

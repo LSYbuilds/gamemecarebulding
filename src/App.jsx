@@ -11,6 +11,7 @@ function App() {
   useEffect(()=> {
     setPath(location.pathname);
   },[location.pathname]);
+  console.log("root에서 불러옴",path)
 
   return (
     <Wrap>

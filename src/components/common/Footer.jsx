@@ -1,5 +1,5 @@
 import React from "react";
-import { FooterWrap } from "../styles/footer.styled";
+import { FooterWrap } from "../../styles/footer.styled";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MiniBoard from "../components/MiniBoard";
+import MiniBoard from "../components/common/MiniBoard";
 import { MainContainer } from "../styles/main.styled";
 import sideSlideData from "../data/sideSlideData.json";
 import mainSlideData from "../data/slideData.json";
@@ -14,12 +14,12 @@ import { SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 
 const Main = () => {
-  const [mainSlide] = useState(mainSlideData.mainSlide);
-  const [sideContents] = useState(sideSlideData.sideSlide);
-  const [newsList] = useState(newsListData.newsList);
-  const [cateList] = useState(cataListData.cateNews);
-  const [boardList] = useState(dashBoardData.gameDashboard);
-  const [gameInfo] = useState(gameInfoData.gameinfo);
+  const mainSlide = mainSlideData.mainSlide;
+  const sideContents = sideSlideData.sideSlide;
+  const newsList = newsListData.newsList;
+  const cateList = cataListData.cateNews;
+  const boardList = dashBoardData.gameDashboard;
+  const gameInfo = gameInfoData.gameinfo;
   const [isNews, setIsNews] = useState(true);
   const [isLeftNews, setIsLeftNews] = useState(true);
   return (
@@ -88,14 +88,14 @@ const Main = () => {
                     최신뉴스
                   </button>
                 </div>
-                <a href="#" className="more_news"></a>
+                <Link to="#" className="more_news"></Link>
               </div>
               <ul className="news_list">
                 {isNews
                   ? newsList
                       .find((item) => item.type === "popnews")
                       .list.map((item) => (
-                        <li>
+                        <li key={item.id}>
                           <Link to="#">
                             {item.hot === "1" ? (
                               <div>
@@ -115,7 +115,7 @@ const Main = () => {
                   : newsList
                       .find((item) => item.type === "recent")
                       .list.map((item) => (
-                        <li>
+                        <li li key={item.id}>
                           <Link>
                             {item.hot === "1" ? (
                               <div>
@@ -156,7 +156,7 @@ const Main = () => {
                   ? newsList
                       .find((item) => item.type === "sns")
                       .list.map((item) => (
-                        <li>
+                        <li key={item.id}>
                           <Link>
                             {item.hot === "1" ? (
                               <div>
@@ -176,7 +176,7 @@ const Main = () => {
                   : newsList
                       .find((item) => item.type === "view")
                       .list.map((item) => (
-                        <li>
+                        <li key={item.id}>
                           <Link>
                             {item.hot === "1" ? (
                               <div>

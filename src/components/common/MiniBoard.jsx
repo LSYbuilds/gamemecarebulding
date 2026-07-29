@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { MiniBoard_wrap } from "../styles/miniboard.styled";
-import dashBoardData from "../data/dashBoardData.json";
+import { MiniBoard_wrap } from "../../styles/miniboard.styled";
+import dashBoardData from "../../data/dashBoardData.json";
 
 
 const MiniBoard = ({Path}) => {

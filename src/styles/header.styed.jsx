@@ -6,7 +6,7 @@ export const HeaderWrap = styled.header`
   top: 0px;
   left: 0px;
   width: 100%;
-  height: ${(props) => (props.scrolled ? "117px" : "137px")};
+  height: ${(props) => (props.scrolled ? "117px" : "auto")};
   /* height: 137px; */
   display: flex;
   flex-direction: column;
@@ -93,82 +93,118 @@ export const HeaderWrap = styled.header`
   }
   .header_bottom {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 55px;
     background-color: #fff;
     border: 1px solid #dedede;
     .bottom_i {
       position: relative;
       display: flex;
       justify-content: space-between;
+      margin: 0 auto;
       max-width: 1400px;
       width: 100%;
-      height: 100%;
+    }
+    .gnb {
       .gnb_box {
-        height: 100%;
         display: flex;
-        gap: 10px;
-        align-items: center;
-        .lnb_call {
-          width: 25px;
-          height: 25px;
-          background-image: ${(props) =>
-            props.lnbcall
-              ? "url(/images/icon/x.png)"
-              : "url(/images/icon/hambarger.png)"};
-          background-position: center;
-          background-repeat: no-repeat;
-          border: none;
-          cursor: pointer;
-        }
-        .gnb {
-          display: flex;
-          font-size: 1.125em;
+        justify-content: space-between;
+        width: 100%;
+        height: 55px;
+        .gnb_list {
           height: 100%;
-          li {
-            position: relative;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          .lnb_call {
+            width: 25px;
+            height: 25px;
+            background-image: ${(props) =>
+              props.lnbcall
+                ? "url(/images/icon/x.png)"
+                : "url(/images/icon/hambarger.png)"};
+            background-position: center;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+          }
+          .gnb_menu {
+            display: flex;
+            font-size: 1.125em;
             height: 100%;
-            padding: 0px 16px;
-            a {
-              align-content: center;
-              display: block;
+            li {
+              position: relative;
               height: 100%;
+              padding: 0px 16px;
+              a {
+                align-content: center;
+                display: block;
+                height: 100%;
+                font-size: 1.125em;
+              }
+            }
+            li:hover::after {
+              content: "";
+              position: absolute;
+              bottom: 0px;
+              left: 0px;
+              width: 100%;
+              height: 5px;
+              background-color: var(--seconGreen);
             }
           }
-          li:hover::after {
-            content: "";
-            position: absolute;
-            bottom: 0px;
-            left: 0px;
-            width: 100%;
-            height: 5px;
-            background-color: var(--seconGreen);
-          }
         }
-      }
-      .fam_site_box {
-        height: 100%;
-        .fam_list {
-          display: flex;
-          align-items: center;
-          gap: 10px;
+        .fam_site_box {
           height: 100%;
-          a {
+          .fam_list {
             display: flex;
-            gap: 4px;
             align-items: center;
+            gap: 10px;
             height: 100%;
-            font-size: 14px;
-            img {
-              height: 16px;
+            a {
+              display: flex;
+              gap: 4px;
+              align-items: center;
+              height: 100%;
+              font-size: 14px;
+              img {
+                height: 16px;
+              }
             }
           }
         }
       }
     }
+    .lnb {
+      height: 48px;
+      .lnb_menu {
+        display: flex;
+        gap: 24px;
+        font-size: 1.125em;
+        height: 100%;
+        li {
+          position: relative;
+          height: 100%;
+          a {
+            align-content: center;
+            display: block;
+            height: 100%;
+          }
+        }
+        li:hover::after {
+          content: "";
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          width: 100%;
+          height: 5px;
+          background-color: var(--seconGreen);
+        }
+      }
+    }
   }
-  .lnb_box {
+  .global_box {
     position: absolute;
     top: 100%;
     left: 0px;
@@ -176,12 +212,12 @@ export const HeaderWrap = styled.header`
     background-color: rgb(255, 255, 255, 0.9);
     border: 1px solid var(--neutralGray);
     padding: 8px 16px;
-    .lnb_inner {
+    .global_inner {
       margin: 0 auto;
       max-width: 1400px;
       width: 100%;
     }
-    .lnb_menu {
+    .global_menu {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -197,7 +233,7 @@ export const HeaderWrap = styled.header`
         text-align: center;
         margin-bottom: 10px;
       }
-      .lnb_in {
+      .global_in {
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -212,7 +248,7 @@ export const HeaderWrap = styled.header`
             text-align: center;
             padding: 6px 0px;
           }
-          a:hover{
+          a:hover {
             color: var(--primaryBold);
           }
         }

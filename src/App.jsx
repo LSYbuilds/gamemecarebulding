@@ -1,16 +1,23 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
 import { Wrap } from "./styles/layout.styled";
-import { Route, Router , Routes } from "react-router-dom";
+import { Route, Router , Routes, useLocation } from "react-router-dom";
 import Main from "./pages/Main";
 import News from "./pages/News";
+import { useEffect, useState } from "react";
 function App() {
+  const location = useLocation();
+  const [path,setPath] = useState("");
+  useEffect(()=> {
+    setPath(location.pathname);
+  },[location.pathname]);
+
   return (
     <Wrap>
-      <Header />
+      <Header path={path} />
       <Routes>
         <Route path="/" element={<Main/>}></Route>
-        <Route path="/news" element={<News/>}></Route>
+        <Route path="/news" element={<News path={path}/>}></Route>
       </Routes>
       <Footer />
     </Wrap>

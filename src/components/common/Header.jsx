@@ -114,7 +114,7 @@ const Header = ({ path }) => {
           </div>
         </div>
         {path === "/news" ? (
-          <div className="bottom_i lnb">
+          <div className="lnb_i lnb">
             <ul className="lnb_menu">
               <li>
                 <Link to="#">전체</Link>

@@ -24,7 +24,9 @@ export const HeaderWrap = styled.header`
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 74px;
+          height: ${(props) =>
+    props.scrolled ? "65px" : "74px"};
+    transition-duration: 0.2s;
     .top_i {
       display: flex;
       justify-content: space-between;
@@ -116,7 +118,9 @@ export const HeaderWrap = styled.header`
         display: flex;
         justify-content: space-between;
         width: 100%;
-        height: 55px;
+              height: ${(props) =>
+    props.scrolled ? "35px" : "55px"};
+    transition-duration: 0.2s;
         .gnb_list {
           height: 100%;
           display: flex;
@@ -147,6 +151,7 @@ export const HeaderWrap = styled.header`
                 display: block;
                 height: 100%;
                 font-size: 1.125em;
+                font-weight: 400;
               }
             }
             li:hover::after {
@@ -182,9 +187,15 @@ export const HeaderWrap = styled.header`
       }
     }
     .lnb {
-      height: 48px;
+      width: 100%;
+      height: ${(props) =>
+    props.scrolled ? "32px" : "48px"};
+      background-color: var(--neutralWhite);
+      transition-duration: 0.2s;
       .lnb_menu {
         display: flex;
+        margin: 0 auto;
+        max-width: 1400px;
         gap: 24px;
         font-size: 1.125em;
         height: 100%;

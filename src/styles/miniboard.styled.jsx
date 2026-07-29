@@ -6,8 +6,8 @@ export const MiniBoard_wrap = styled.section`
   gap: 16px;
   /* 공통스타일 */
   .board_list {
-     ${({path}) => path === "/news" ? "":"flex:456"}
-    /* flex: 456; */
+     /* ${({path}) => path === "/news" ? "":"flex : 456"} */
+     width: 100%;
     display: flex;
     flex-direction: column;
     /* background-color: ${({ path }) =>

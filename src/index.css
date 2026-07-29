@@ -1,68 +1,70 @@
 @charset "utf-8";
 
-@font-face {
+/* @font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+} */
+
+@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css");
+
+/* @font-face {
   font-family: "Wanted Sans";
   src: url("./assets/fonts/WantedSans-Regular.otf") format("opentype");
   font-weight: 400;
-  font-style: normal;
 }
 
 @font-face {
   font-family: "Wanted Sans";
   src: url("./assets/fonts/WantedSans-Medium.otf") format("opentype");
   font-weight: 500;
-  font-style: normal;
 }
 
 @font-face {
   font-family: "Wanted Sans";
   src: url("./assets/fonts/WantedSans-SemiBold.otf") format("opentype");
   font-weight: 600;
-  font-style: normal;
 }
 
 @font-face {
   font-family: "Wanted Sans";
   src: url("./assets/fonts/WantedSans-Bold.otf") format("opentype");
   font-weight: 700;
-  font-style: normal;
 }
 
 @font-face {
   font-family: "Wanted Sans";
   src: url("./assets/fonts/WantedSans-Black.otf") format("opentype");
   font-weight: 800;
-  font-style: normal;
 }
 
 @font-face {
   font-family: "Wanted Sans";
   src: url("./assets/fonts/WantedSans-ExtraBold.otf") format("opentype");
   font-weight: 900;
-  font-style: normal;
 }
 
 @font-face {
   font-family: "Wanted Sans";
   src: url("./assets/fonts/WantedSans-ExtraBlack.otf") format("opentype");
   font-weight: 950;
-  font-style: normal;
-}
+} */
 
-:root{
-  --primaryMain:#3130A3;
-  --primaryBold:#4F46E5;
-  --primaryReG:#818CF8;
-  --seconPup:#B297FF;
-  --seconPupSami:#B2A3D9;
-  --seconGreen:#68BAA6;
-  --accentReg:#D53635;
-  --accontBold:#C10014;
-  --accentYellow:#FFDF77;
-  --neutralBlack:#191919;
-  --neutralGray:#DEDEDE;
-  --neutralDeepGray:#979797;
-  --neutralWhite:#f4f4f4;
+:root {
+  --primaryMain: #3130a3;
+  --primaryBold: #4f46e5;
+  --primaryReG: #818cf8;
+  --seconPup: #b297ff;
+  --seconPupSami: #b2a3d9;
+  --seconGreen: #68baa6;
+  --accentReg: #d53635;
+  --accontBold: #c10014;
+  --accentYellow: #ffdf77;
+  --neutralBlack: #191919;
+  --neutralGray: #dedede;
+  --neutralDeepGray: #979797;
+  --neutralWhite: #f4f4f4;
 }
 
 * {
@@ -92,5 +94,5 @@ html {
 
 body {
   font-size: 16px;
-   font-family: "Wanted Sans", sans-serif;
+  font-family: "Wanted Sans", sans-serif;
 }

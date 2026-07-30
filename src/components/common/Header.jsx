@@ -157,7 +157,7 @@ const Header = ({ path }) => {
           <div className="global_inner">
             <ul className="global_menu">
               <li>
-                <strong>뉴스</strong>
+                <p>뉴스</p>
                 <ul className="global_in">
                   <li>
                     <Link to="#">전체</Link>
@@ -193,7 +193,7 @@ const Header = ({ path }) => {
               </li>
 
               <li>
-                <strong>프리뷰·리뷰</strong>
+                <p>프리뷰·리뷰</p>
                 <ul className="global_in">
                   <li>
                     <Link to="#">전체</Link>
@@ -208,7 +208,7 @@ const Header = ({ path }) => {
               </li>
 
               <li>
-                <strong>특집</strong>
+                <p>특집</p>
                 <ul className="global_in">
                   <li>
                     <Link to="#">전체</Link>
@@ -217,7 +217,7 @@ const Header = ({ path }) => {
               </li>
 
               <li>
-                <strong>게임정보</strong>
+                <p>게임정보</p>
                 <ul className="global_in">
                   <li>
                     <Link to="#">게임DB</Link>
@@ -247,7 +247,7 @@ const Header = ({ path }) => {
               </li>
 
               <li>
-                <strong>하드웨어</strong>
+                <p>하드웨어</p>
                 <ul className="global_in">
                   <li>
                     <Link to="#">뉴스</Link>
@@ -259,7 +259,7 @@ const Header = ({ path }) => {
               </li>
 
               <li>
-                <strong>모바일</strong>
+                <p>모바일</p>
                 <ul className="global_in">
                   <li>
                     <Link to="#">전체</Link>
@@ -274,7 +274,7 @@ const Header = ({ path }) => {
               </li>
 
               <li>
-                <strong>웹게임</strong>
+                <p>웹게임</p>
                 <ul className="global_in">
                   <li>
                     <Link to="#">웹게임 홈</Link>
@@ -292,7 +292,7 @@ const Header = ({ path }) => {
               </li>
 
               <li>
-                <strong>게임공략</strong>
+                <p>게임공략</p>
                 <ul className="global_in">
                   <li>
                     <Link to="#">하프라이프</Link>
@@ -322,7 +322,7 @@ const Header = ({ path }) => {
               </li>
 
               <li>
-                <strong>팸</strong>
+                <p>팸</p>
                 <ul className="global_in">
                   <li>
                     <Link to="#">이벤트</Link>

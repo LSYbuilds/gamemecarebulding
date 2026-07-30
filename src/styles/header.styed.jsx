@@ -17,6 +17,7 @@ export const HeaderWrap = styled.header`
   display: flex;
   flex-direction: column;
   padding-top: 8px;
+  font-family: "sans-serif";
   background-color: ${(props) =>
     props.scrolled ? "rgb(244, 244, 244,0.9);" : "#f4f4f4"};
   /* background-color: rgb(244, 244, 244,0.5); */
@@ -150,7 +151,7 @@ export const HeaderWrap = styled.header`
                 align-content: center;
                 display: block;
                 height: 100%;
-                font-size: 1.125em;
+                font-size: 1em;
                 font-weight: 400;
               }
             }
@@ -197,7 +198,7 @@ export const HeaderWrap = styled.header`
         margin: 0 auto;
         max-width: 1400px;
         gap: 24px;
-        font-size: 1.125em;
+        font-size: 1em;
         height: 100%;
         li {
           position: relative;
@@ -206,6 +207,7 @@ export const HeaderWrap = styled.header`
             align-content: center;
             display: block;
             height: 100%;
+            font-weight: 300;
           }
         }
         li:hover::after {
@@ -242,12 +244,13 @@ export const HeaderWrap = styled.header`
       li {
         width: 100%;
       }
-      strong {
+      p {
         display: block;
         width: 100%;
         height: 27px;
         text-align: center;
         margin-bottom: 10px;
+        font-weight: 600;
       }
       .global_in {
         display: flex;
@@ -256,7 +259,6 @@ export const HeaderWrap = styled.header`
         li {
           width: 100%;
           border-radius: 4px;
-
           a {
             display: block;
             width: 100%;

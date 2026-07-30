@@ -5,6 +5,7 @@ export const FooterWrap = styled.footer`
   width: 100%;
   height: 100%;
   padding: 26px 0px;
+  font-family: "sans-serif";
   background-color: var(--neutralWhite);
   .f_inner {
     display: flex;
@@ -56,6 +57,7 @@ export const FooterWrap = styled.footer`
         gap: 16px;
         li > a {
           font-weight: 400;
+          font-size: 1em;
         }
         li:nth-child(4) > a {
           color: blue;
@@ -70,7 +72,7 @@ export const FooterWrap = styled.footer`
       }
       .note {
         line-height: 160%;
-        font-size: 0.875em;
+        font-size: 0.775em;
       }
     }
     .bis_site {

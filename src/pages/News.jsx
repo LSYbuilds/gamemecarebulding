@@ -11,7 +11,6 @@ const News = ({path}) => {
         <Routes>
             <Route path="/" element={<NewsAll path={path}/>}></Route>
         </Routes>
-
       </div>
     </NewsWrap>
   );

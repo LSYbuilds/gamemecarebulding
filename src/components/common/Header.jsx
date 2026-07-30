@@ -71,7 +71,7 @@ const Header = ({ path }) => {
                   <Link>특집기사</Link>
                 </li>
                 <li>
-                  <Link>게임정보</Link>
+                  <Link to="/gameinfo">게임정보</Link>
                 </li>
                 <li>
                   <Link>하드웨어</Link>
@@ -145,6 +145,38 @@ const Header = ({ path }) => {
               </li>
               <li>
                 <Link to="#">테마</Link>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          ""
+        )}
+        {path === "/gameinfo" ? (
+          <div className="lnb_i lnb">
+            <ul className="lnb_menu">
+              <li>
+                <Link to="#">게임DB</Link>
+              </li>
+              <li>
+                <Link to="#">업체정보</Link>
+              </li>
+              <li>
+                <Link to="#">공략</Link>
+              </li>
+              <li>
+                <Link to="#">게임일정</Link>
+              </li>
+              <li>
+                <Link to="#">스크린샤</Link>
+              </li>
+              <li>
+                <Link to="#">동영상</Link>
+              </li>
+              <li>
+                <Link to="#">게임쇼</Link>
+              </li>
+              <li>
+                <Link to="#">게임순위</Link>
               </li>
             </ul>
           </div>

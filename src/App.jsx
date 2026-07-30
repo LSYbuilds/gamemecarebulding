@@ -5,6 +5,7 @@ import { Route, Router , Routes, useLocation } from "react-router-dom";
 import Main from "./pages/Main";
 import News from "./pages/News";
 import { useEffect, useState } from "react";
+import GameInfo from "./pages/GameInfo";
 function App() {
   const location = useLocation();
   const [path,setPath] = useState("");
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main/>}></Route>
         <Route path="/news" element={<News path={path}/>}></Route>
+        <Route path="/gameinfo" element={<GameInfo path={path}/>}></Route>
       </Routes>
       <Footer />
     </Wrap>

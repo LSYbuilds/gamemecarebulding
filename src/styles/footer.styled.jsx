@@ -97,4 +97,18 @@ export const FooterWrap = styled.footer`
         }
     }
   }
+  @media (max-width: 1024px){
+    .f_inner{
+      max-width: 736px;
+      .site_map{
+        .site_map_list{
+          flex-wrap: wrap;
+          gap: 16px;
+        }
+        .site_info{
+         grid-template-columns : repeat(2, 1fr)
+        }
+      }
+    }
+  }
 `;

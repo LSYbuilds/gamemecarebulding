@@ -67,4 +67,13 @@ export const MiniBoard_wrap = styled.section`
       }
     }
   }
+  @media (max-width: 1024px){
+    flex-direction: column;
+    .board_list{
+      height: 375px;
+      .list{
+        height: 100%;
+      }
+    }
+  }
 `;

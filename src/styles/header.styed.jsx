@@ -25,8 +25,7 @@ export const HeaderWrap = styled.header`
     display: flex;
     justify-content: center;
     width: 100%;
-          height: ${(props) =>
-    props.scrolled ? "65px" : "74px"};
+    height: ${(props) => (props.scrolled ? "65px" : "74px")};
     transition-duration: 0.2s;
     .top_i {
       display: flex;
@@ -34,6 +33,9 @@ export const HeaderWrap = styled.header`
       max-width: 1400px;
       width: 100%;
       height: 100%;
+      .mobile_call_btn {
+        display: none;
+      }
       .site_head_title {
         display: flex;
         align-items: center;
@@ -97,6 +99,23 @@ export const HeaderWrap = styled.header`
           gap: 4px;
         }
       }
+      .respon_util {
+        display: none;
+        align-content: center;
+        height: 100%;
+        .util_icon {
+          text-align: center;
+          align-content: center;
+          width: 48px;
+          height: 48px;
+          background-color: var(--primaryReG);
+          border-radius: 100%;
+          a > svg {
+            width: 50%;
+            height: 50%;
+          }
+        }
+      }
     }
   }
   .header_bottom {
@@ -119,9 +138,8 @@ export const HeaderWrap = styled.header`
         display: flex;
         justify-content: space-between;
         width: 100%;
-              height: ${(props) =>
-    props.scrolled ? "35px" : "55px"};
-    transition-duration: 0.2s;
+        height: ${(props) => (props.scrolled ? "35px" : "55px")};
+        transition-duration: 0.2s;
         .gnb_list {
           height: 100%;
           display: flex;
@@ -189,8 +207,7 @@ export const HeaderWrap = styled.header`
     }
     .lnb {
       width: 100%;
-      height: ${(props) =>
-    props.scrolled ? "32px" : "48px"};
+      height: ${(props) => (props.scrolled ? "32px" : "48px")};
       background-color: var(--neutralWhite);
       transition-duration: 0.2s;
       .lnb_menu {
@@ -230,6 +247,11 @@ export const HeaderWrap = styled.header`
     background-color: rgb(255, 255, 255, 0.9);
     border: 1px solid var(--neutralGray);
     padding: 8px 16px;
+    .global_close_btn {
+      display: none;
+      border: none;
+      background: none;
+    }
     .global_inner {
       margin: 0 auto;
       max-width: 1400px;
@@ -271,6 +293,154 @@ export const HeaderWrap = styled.header`
           }
         }
       }
+    }
+  }
+  .mobile_nav {
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: auto;
+  }
+  @media (max-width: 1024px) {
+    /* height: ${({ path }) => (path === "/news" ? "187px" : "137px")}; */
+    .header_top .top_i {
+      max-width: 736px;
+      .site_head_title {
+        width: 100%;
+      }
+      .site_head_title > .search_box {
+        width: 60%;
+      }
+      .util {
+        display: none;
+      }
+      .respon_util {
+        display: block;
+      }
+    }
+    .header_bottom {
+      height: 96px;
+    }
+    .header_bottom .bottom_i {
+      max-width: 736px;
+    }
+    .header_bottom .gnb_box {
+      height: ${(props) => (props.scrolled ? "35px" : "55px")};
+      flex-direction: column;
+      gap: 16px;
+      .gnb_menu {
+        justify-content: space-between;
+        width: 100%;
+      }
+      .fam_site_box {
+        .fam_list {
+          justify-content: flex-end;
+        }
+      }
+    }
+    .global_box {
+      top: 82px;
+      left: 0px;
+      width: 100%;
+      height: 80vh;
+      padding-top: 16px;
+      overflow-y: scroll;
+      background-color: var(--neutralWhite);
+      .global_close_btn {
+        display: block;
+        border: none;
+        background: none;
+      }
+      .global_inner {
+        max-width: 736px;
+        width: 100%;
+        .global_menu {
+          flex-direction: column;
+          li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            p {
+              display: block;
+              width: 100%;
+              height: 100%;
+              text-align: left;
+            }
+            .global_in {
+              width: 100%;
+              height: 100%;
+              flex-wrap: wrap;
+              flex-direction: row;
+              gap: 16px;
+              li {
+                flex: 0 0 auto;
+                width: auto;
+                height: 100%;
+                a {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 736px) {
+    height: 156px;
+    .header_top {
+      height: 124px;
+      .top_i {
+        position: relative;
+        max-width: 328px;
+        height: 100%;
+        .mobile_call_btn {
+          position: absolute;
+          display: block;
+          right: 0px;
+          top: 15%;
+          width: 25px;
+          height: 25px;
+          border: none;
+          background: none;
+          align-items: center;
+          align-content: center;
+        }
+      }
+      .top_i > .site_head_title {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        .logo {
+          .logo_link {
+            padding: 0px;
+            img {
+              height: 25px;
+            }
+          }
+        }
+        .search_box {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .top_i > .respon_util {
+        display: none;
+      }
+    }
+    .header_bottom {
+      display: none;
+    }
+    .mobile_nav {
+      display: block;
+      position: absolute;
+      overflow-y: scroll;
+      right: 0px;
+      top: 0px;
+      width: 80%;
+      height: 100vh;
+      background-color: #fff;
     }
   }
 `;

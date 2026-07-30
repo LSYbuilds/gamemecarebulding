@@ -401,4 +401,40 @@ export const MainContainer = styled.main`
       }
     }
   }
+    @media (max-width: 1024px) {
+      .inner{
+        max-width: 736px;
+        .hero_section{
+          height: auto;
+          .slide_area{
+            flex-direction: column;
+            height: auto;
+            .main_slide{
+              width: 100%;
+              height: 500px;
+              flex:none;
+            }
+          }
+          .news_area{
+            flex-direction: column;
+            height: auto;
+          }
+        }
+        .game_section{
+          flex-direction: column;
+          .game_small{
+            flex: none;
+            width: 100%;
+          }
+          .game_large{
+            flex: none;
+            width: 100%;
+          }
+        }
+      }
+    }
+    @media (max-width : 736px){
+      
+    }
+
 `;

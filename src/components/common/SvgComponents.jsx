@@ -19,6 +19,9 @@ import { ReactComponent as Windows } from "../../assets/svg/windows.svg";
 import { ReactComponent as Mobile } from "../../assets/svg/mobile.svg";
 import { ReactComponent as Status } from "../../assets/svg/status.svg";
 import { ReactComponent as Search } from "../../assets/svg/search.svg";
+import { ReactComponent as Man } from "../../assets/svg/man.svg";
+import { ReactComponent as Deactive } from "../../assets/svg/deactive.svg";
+import { ReactComponent as Hamberger } from "../../assets/svg/hamberger.svg";
 
 const Icon = {
   action: Action,
@@ -42,6 +45,9 @@ const Icon = {
   mobile : Mobile,
   status : Status,
   search : Search,
+  man : Man,
+  deactive: Deactive,
+  hamberger: Hamberger
 };
 
 export default Icon;

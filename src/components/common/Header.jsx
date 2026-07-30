@@ -1,10 +1,12 @@
 import React, { use, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HeaderWrap } from "../../styles/header.styed";
+import Icon from "../../components/common/SvgComponents";
 
 const Header = ({ path }) => {
   const [scrolled, setScrolled] = useState(false);
   const [lnbcall, setLabCall] = useState(false);
+  const [mobildnav, setMobilenav] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,11 +20,98 @@ const Header = ({ path }) => {
     };
   }, []);
 
+  const mobilenav = [
+    {
+      id: 1,
+      title: "뉴스",
+      list: [
+        "전체",
+        "산업",
+        "온라인",
+        "PC",
+        "비디오",
+        "웹게임",
+        "모바일",
+        "VR",
+        "하드웨어",
+        "테마",
+      ],
+    },
+    {
+      id: 2,
+      title: "프리뷰·리뷰",
+      list: ["전체", "리뷰", "프리뷰"],
+    },
+    {
+      id: 3,
+      title: "특집",
+      list: ["전체"],
+    },
+    {
+      id: 4,
+      title: "게임정보",
+      list: [
+        "게임DB",
+        "업체정보",
+        "공략",
+        "게임일정",
+        "스크린샷",
+        "동영상",
+        "게임소개",
+        "게임순위",
+      ],
+    },
+    {
+      id: 5,
+      title: "하드웨어",
+      list: ["뉴스", "기획기사"],
+    },
+    {
+      id: 6,
+      title: "모바일",
+      list: ["전체", "뉴스", "커뮤니티"],
+    },
+    {
+      id: 7,
+      title: "웹게임",
+      list: ["웹게임 홈", "뉴스", "프리뷰", "웹게임정보"],
+    },
+    {
+      id: 8,
+      title: "게임문화",
+      list: [
+        "하드라이프",
+        "레드 데드 리뎀션",
+        "머머스클럽",
+        "리그 오브 레전드",
+        "몬스터헌터",
+        "이터널리턴",
+        "오버워치",
+        "리니지",
+      ],
+    },
+    {
+      id: 9,
+      title: "팸",
+      list: [
+        "이벤트",
+        "포토게시판",
+        "회사소개",
+        "제휴문의",
+        "광고안내",
+        "고객센터",
+      ],
+    },
+  ];
+
   return (
     <HeaderWrap scrolled={scrolled} lnbcall={lnbcall}>
       {/* 헤더 탑 */}
       <div className="header_top">
         <div className="top_i">
+          <button className="mobile_call_btn" onClick={() => setMobilenav((prev) => !prev)}>
+            <Icon.hamberger />
+          </button>
           <div className="site_head_title">
             <h1 className="logo">
               <Link to="/" className="logo_link">
@@ -45,6 +134,13 @@ const Header = ({ path }) => {
               <Link to="#">
                 <img src="/images/icon/user.png" alt="회원가입" />
                 <p>회원가입</p>
+              </Link>
+            </div>
+          </div>
+          <div className="respon_util">
+            <div className="util_icon">
+              <Link to="#">
+                <Icon.man />
               </Link>
             </div>
           </div>
@@ -187,6 +283,12 @@ const Header = ({ path }) => {
       {lnbcall ? (
         <div className="global_box">
           <div className="global_inner">
+            <button
+              className="global_close_btn"
+              onClick={() => setLabCall((prev) => !prev)}
+            >
+              <Icon.deactive />
+            </button>
             <ul className="global_menu">
               <li>
                 <p>뉴스</p>
@@ -377,6 +479,33 @@ const Header = ({ path }) => {
                 </ul>
               </li>
             </ul>
+          </div>
+        </div>
+      ) : null}
+      {mobildnav ? (
+        <div className="mobile_nav">
+          <button className="close_nav"></button>
+          <div className="mobile_util">
+            <ul className="util_list">
+              <li>
+                <Link>로그인</Link>
+              </li>
+              <li>
+                <Link>회원가입</Link>
+              </li>
+            </ul>
+            <div className="mobile_nav_list">
+              {mobilenav.map((itme)=>(
+                <ul key={itme.id}>
+                  <li>
+                    <p>{itme.title}</p>
+                    <ul>
+                      {itme.list.map((item)=>(<li key={itme}>{item}</li>))}
+                    </ul>
+                  </li>
+                </ul>
+              ))}
+            </div>
           </div>
         </div>
       ) : null}

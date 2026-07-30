@@ -88,6 +88,25 @@ export const GameinfoWrap = styled.div`
         color: var(--neutralDeepGray);
       }
     }
+    .pop_games{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .pop_title{
+        display: flex;
+        gap: 16px;
+        height: 45px;
+        span{
+          height: 100%;
+          align-content: center;
+          font-size: 1.5em;
+          font-weight: 600;
+        }
+      }
+      .pop_slide{
+        height: 175px;
+      }
+    }
     .gamelist_section {
       display: flex;
       gap: 16px;
@@ -96,7 +115,7 @@ export const GameinfoWrap = styled.div`
         flex: 220;
         display: flex;
         flex-direction: column;
-        box-shadow: inset 0 0 0 1px var(--primaryMain);
+        
 
         .cate_title {
           height: 48px;
@@ -110,13 +129,14 @@ export const GameinfoWrap = styled.div`
         .side_cate_list {
           display: flex;
           flex-direction: column;
+          box-shadow: inset 0 0 0 1px var(--primaryMain);
           li {
             display: flex;
             height: 42px;
             padding: 0px 16px;
             gap: 8px;
             align-items: center;
-            svg{
+            svg {
               background-color: var(--seconGreen);
               border-radius: 4px;
             }
@@ -138,6 +158,106 @@ export const GameinfoWrap = styled.div`
       }
       .gamelist_warp {
         flex: 1164;
+        .gamelist {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          .game_item {
+            display: flex;
+            gap: 16px;
+            height: 433px;
+            .card_img {
+              flex: 338;
+              height: 100%;
+              border-radius: 16px;
+              overflow: hidden;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+              }
+            }
+            .text {
+              flex: 456;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              .head {
+                .title {
+                  padding: 8px 10px;
+                  margin-bottom: 8px;
+                  a {
+                    font-size: 1.5em;
+                    font-weight: 600;
+                  }
+                }
+                .script {
+                  padding: 0px 10px;
+                  line-height: 160%;
+                }
+              }
+              .info {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                padding: 8px;
+                border-top: 1px solid var(--neutralGray);
+                .tags {
+                  display: flex;
+                  gap: 10px;
+                  height: 19px;
+                  span {
+                    display: block;
+                    height: 100%;
+                    background-color: var(--neutralGray);
+                    padding: 0px 4px;
+                    font-size: 0.825em;
+                  }
+                }
+                p > span {
+                  height: 100%;
+                  margin-left: 4px;
+                }
+              }
+            }
+            .list_thumbnail {
+              flex: 328;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              .b_thumb {
+                width: 100%;
+                height: 320px;
+                border-radius: 16px;
+                overflow: hidden;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  object-position: center;
+                }
+              }
+              .s_thumb {
+                display: flex;
+                justify-content: space-between;
+                gap: 8px;
+                height: 113px;
+                .img_item {
+                  flex: 0 0 48%;
+                  border-radius: 16px;
+                  overflow: hidden;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

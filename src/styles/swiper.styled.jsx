@@ -233,18 +233,119 @@ export const TopnewsSwiper = styled(Swiper)`
           }
         }
       }
-      .topitem > a:hover{
-         img {
-            width: 101%;
-            height: 101%;
-            object-fit: cover;
-            object-position: center;
-            transition-duration: 0.3s;
-          }
+      .topitem > a:hover {
+        img {
+          width: 101%;
+          height: 101%;
+          object-fit: cover;
+          object-position: center;
+          transition-duration: 0.3s;
+        }
       }
     }
   }
   .swiper-button-prev {
+    position: absolute;
+    top: 40%;
+    left: 3%;
+    transform: translate(-50%, 0%);
+    width: 50px;
+    height: 50px;
+    border-radius: 300px;
+    background-color: rgb(255, 255, 255, 0.6);
+    background-image: url(/images/icon/chevron-left.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    cursor: pointer;
+    svg {
+      display: none;
+    }
+  }
+  .swiper-button-prev:hover {
+    background-color: #fff;
+    transition-duration: 0.2s;
+  }
+  .swiper-button-next {
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    transform: translate(-50%, 0%);
+    width: 50px;
+    height: 50px;
+    border-radius: 300px;
+    background-color: rgb(255, 255, 255, 0.6);
+    background-image: url(/images/icon/chevron-right.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    cursor: pointer;
+    svg {
+      display: none;
+    }
+  }
+  .swiper-button-next:hover {
+    background-color: #fff;
+    transition-duration: 0.2s;
+  }
+`;
+
+export const TopGameSwiper = styled(Swiper)`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .swiper-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    color: #fff;
+    height: 100%;
+    div {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      .top_item_box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .imgbox {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        .slide_title {
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          justify-content: space-between;
+          width: 100%;
+          height: auto;
+          background-color: rgb(25, 25, 25, 0.5);
+          padding: 8px 16px;
+          color: var(--neutralWhite);
+          p:nth-child(2) {
+            display: flex;
+            gap: 8px;
+            font-size: 0.825em;
+            text-align: end;
+          }
+        }
+      }
+    }
+  }
+   .swiper-button-prev {
     position: absolute;
     top: 40%;
     left: 3%;

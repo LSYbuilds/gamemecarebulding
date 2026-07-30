@@ -141,7 +141,7 @@ export const HeaderWrap = styled.header`
           }
           .gnb_menu {
             display: flex;
-            font-size: 1.125em;
+            font-size: 1em;
             height: 100%;
             li {
               position: relative;

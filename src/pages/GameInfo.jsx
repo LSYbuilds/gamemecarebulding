@@ -2,6 +2,10 @@ import React from "react";
 import gameinfo from "../data/gameInfoData.json";
 import { GameinfoWrap } from "../styles/gameinfo.styled";
 import Icon from "../components/common/SvgComponents";
+import { SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import { StyledSwiper, ThumbSwiper,TopGameSwiper } from "../styles/swiper.styled";
+import { Link } from "react-router-dom";
 
 const GameInfo = () => {
   const gameInfoData = gameinfo.gameinfo;
@@ -105,6 +109,38 @@ const GameInfo = () => {
             </form>
           </div>
         </section>
+        <section className="pop_games">
+          <div className="pop_title">
+            <Icon.gamemeca />
+            <span>인기게임</span>
+          </div>
+          <div className="pop_slide">
+            <TopGameSwiper
+              modules={[Navigation]}
+              navigation
+              speed={1000}
+              loop
+              slidesPerView={5}
+              spaceBetween={10}
+            >
+              {gameInfoData.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <Link to="#" className="top_item_box">
+                    <div className="imgbox">
+                      <img src={item.simg} alt="슬라이드이미지" />
+                    </div>
+                    <div className="slide_title">
+                      <p>{item.title}</p>
+                      <p> {item.tags.slice(1,3).map((item) => (
+                          <span key={item}>{item}</span>
+                        ))}</p>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </TopGameSwiper>
+          </div>
+        </section>
         <div className="count_bar">
           <p>총 {gameInfoCount}개의 기사가 있습니다.</p>
         </div>
@@ -133,18 +169,53 @@ const GameInfo = () => {
           <div className="gamelist_warp">
             <ul className="gamelist">
               {gameInfoData.map((item) => (
-                <li key={item.id}>
-                    <div className="list_info">
-                        <div className="card_img">
-                        </div>
-                        <div className="text">
-                            <div className="head">
-                                <p className="title"></p>
-                                <p className="text"></p>
-                            </div>
-                        </div>
+                <li key={item.id} className="game_item">
+                  <div className="card_img">
+                    <img src={item.bimg} alt="큰이미지" />
+                  </div>
+                  <div className="text">
+                    <div className="head">
+                      <p className="title">
+                        <Link to="#">{item.title}</Link>
+                      </p>
+                      <p className="script">{item.text}</p>
                     </div>
-                    <div className="list_thumbnail"></div>
+                    <div className="info">
+                      <p className="tags">
+                        {item.tags.map((item) => (
+                          <span key={item}>{item}</span>
+                        ))}
+                      </p>
+                      <p className="relese">
+                        <span>출시일</span>
+                        <span>{item.open}</span>
+                      </p>
+                      <p>
+                        <span>개발사</span>
+                        <span>{item.debelop}</span>
+                      </p>
+                      <p>
+                        <span>유통사</span>
+                        <span>{item.pub}</span>
+                      </p>
+                      <p className="flat">
+                        <Icon.windows />
+                      </p>
+                    </div>
+                  </div>
+                  <div className="list_thumbnail">
+                    <div className="b_thumb">
+                      <img src={item.simgB} alt="큰이미지" />
+                    </div>
+                    <div className="s_thumb">
+                      <div className="img_item">
+                        <img src={item.simg1} alt="작은이미지" />
+                      </div>
+                      <div className="img_item">
+                        <img src={item.simg2} alt="작은이미지" />
+                      </div>
+                    </div>
+                  </div>
                 </li>
               ))}
             </ul>

@@ -19,7 +19,7 @@ function App() {
       <Header path={path} />
       <Routes>
         <Route path="/" element={<Main/>}></Route>
-        <Route path="/news" element={<News path={path}/>}></Route>
+        <Route path="/news/*" element={<News path={path}/>}></Route>
         <Route path="/gameinfo" element={<GameInfo path={path}/>}></Route>
       </Routes>
       <Footer />

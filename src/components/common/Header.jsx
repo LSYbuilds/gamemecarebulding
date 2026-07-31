@@ -7,7 +7,7 @@ const Header = ({ path }) => {
   const [scrolled, setScrolled] = useState(false);
   const [lnbcall, setLabCall] = useState(false);
   const [mobilenavState, setMobilenav] = useState(false);
-  const [mobileDropDown, setMobileDrapDown] = useState(false);
+  const [mobileDropDown, setMobileDrapDown] = useState(null);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 300);
@@ -120,7 +120,7 @@ const Header = ({ path }) => {
         },
         {
           id: "3",
-          icon: "/images/icon/fam.png",
+          icon: "/images/icon/po.png",
           title: "포션마켓",
         },
         {
@@ -320,7 +320,7 @@ const Header = ({ path }) => {
           <div className="global_inner">
             <button
               className="global_close_btn"
-              onClick={() => setLabCall((prev) => !prev)}
+              onClick={() => setMobileDrapDown((prev) => !prev)}
             >
               <Icon.deactive />
             </button>
@@ -519,7 +519,10 @@ const Header = ({ path }) => {
       ) : null}
       {mobilenavState ? (
         <div className="mobile_nav">
-          <button className="close_nav_btn">
+          <button
+            className="close_nav_btn"
+            onClick={() => setMobilenav((prev) => !prev)}
+          >
             <Icon.deactive />
           </button>
           <ul className="mobile_util">
@@ -537,38 +540,57 @@ const Header = ({ path }) => {
             </li>
           </ul>
           <div className="mobile_nav_box">
-            {mobilenav.slice(1, 9).map((item) => {
+            {mobilenav.slice(1, 9).map((item, index) => {
               const SvgIcon = item.svg;
               return (
-                <ul key={item.id} className="mobile_nav_list">
-                  <li>
+                <div key={item.id} className="mobile_nav_list">
+                  <div
+                    className="list_head"
+                    onClick={() => {
+                      setMobileDrapDown(
+                        mobileDropDown === index ? null : index,
+                      );
+                    }}
+                  >
                     {item.svg ? (
                       <p>
                         <span>{item.title}</span>
                         {SvgIcon && <SvgIcon />}
                       </p>
                     ) : null}
-                    <ul className="mobile_nav_list_in">
-                      {item.list.map((item) => (
+                  </div>
+                  <ul
+                    className={`mobile_nav_list_in ${
+                      mobileDropDown === index ? "active" : ""
+                    }`}
+                  >
+                    {item.list.map((item) => (
+                      <Link to="#">
                         <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </li>
-                </ul>
+                      </Link>
+                    ))}
+                  </ul>
+                </div>
               );
             })}
-            {mobilenav[9].list.map((item) => (
-              <ul className="fam_list" key={item.id}>
-                <li>
+            <ul className="mobile_fam_list">
+              {mobilenav[9].list.map((item) => (
+                <li key={item.id}>
                   <Link to="#">
                     <img src={item.icon} alt="아이콘" />
-                    {item.title}
+                    <p>{item.title}</p>
                   </Link>
                 </li>
-              </ul>
-            ))}
+              ))}
+            </ul>
           </div>
         </div>
+      ) : null}
+      {mobilenavState ? (
+        <div
+          className="screen_black"
+          onClick={() => setMobilenav((prev) => !prev)}
+        ></div>
       ) : null}
     </HeaderWrap>
   );

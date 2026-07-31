@@ -434,6 +434,8 @@ export const HeaderWrap = styled.header`
     }
     .mobile_nav {
       display: block;
+      display: flex;
+      flex-direction: column;
       position: absolute;
       overflow-y: scroll;
       right: 0px;
@@ -441,6 +443,52 @@ export const HeaderWrap = styled.header`
       width: 80%;
       height: 100vh;
       background-color: #fff;
+      padding: 16px;
+      .close_nav_btn {
+        width: fit-content;
+        border: none;
+        background: none;
+        margin-left: auto;
+      }
+      .mobile_util {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 16px;
+        li {
+          height: 35px;
+          a {
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            span {
+              display: block;
+              align-content: center;
+              height: 100%;
+            }
+            img {
+              height: 25px;
+            }
+          }
+        }
+      }
+      .mobile_nav_box{
+        display: flex;
+        flex-direction: column;
+        .mobile_nav_list{
+          display: flex;
+          flex-direction: column;
+          li > p{
+            display: flex;
+            justify-content: flex-end;
+            height: 29px;
+            text-align: right;
+          }
+        }
+      }
     }
   }
 `;

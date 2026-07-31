@@ -22,6 +22,8 @@ import { ReactComponent as Search } from "../../assets/svg/search.svg";
 import { ReactComponent as Man } from "../../assets/svg/man.svg";
 import { ReactComponent as Deactive } from "../../assets/svg/deactive.svg";
 import { ReactComponent as Hamberger } from "../../assets/svg/hamberger.svg";
+import { ReactComponent as Lock } from "../../assets/svg/lock.svg";
+import { ReactComponent as Down } from "../../assets/svg/chevron-down.svg";
 
 const Icon = {
   action: Action,
@@ -47,7 +49,9 @@ const Icon = {
   search : Search,
   man : Man,
   deactive: Deactive,
-  hamberger: Hamberger
+  hamberger: Hamberger,
+  lock : Lock,
+  down : Down
 };
 
 export default Icon;

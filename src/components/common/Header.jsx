@@ -6,8 +6,8 @@ import Icon from "../../components/common/SvgComponents";
 const Header = ({ path }) => {
   const [scrolled, setScrolled] = useState(false);
   const [lnbcall, setLabCall] = useState(false);
-  const [mobildnav, setMobilenav] = useState(false);
-
+  const [mobilenavState, setMobilenav] = useState(false);
+  const [mobileDropDown, setMobileDrapDown] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 300);
@@ -24,6 +24,7 @@ const Header = ({ path }) => {
     {
       id: 1,
       title: "뉴스",
+      svg: Icon.down,
       list: [
         "전체",
         "산업",
@@ -40,16 +41,19 @@ const Header = ({ path }) => {
     {
       id: 2,
       title: "프리뷰·리뷰",
+      svg: Icon.down,
       list: ["전체", "리뷰", "프리뷰"],
     },
     {
       id: 3,
       title: "특집",
+      svg: Icon.down,
       list: ["전체"],
     },
     {
       id: 4,
       title: "게임정보",
+      svg: Icon.down,
       list: [
         "게임DB",
         "업체정보",
@@ -64,21 +68,25 @@ const Header = ({ path }) => {
     {
       id: 5,
       title: "하드웨어",
+      svg: Icon.down,
       list: ["뉴스", "기획기사"],
     },
     {
       id: 6,
       title: "모바일",
+      svg: Icon.down,
       list: ["전체", "뉴스", "커뮤니티"],
     },
     {
       id: 7,
       title: "웹게임",
+      svg: Icon.down,
       list: ["웹게임 홈", "뉴스", "프리뷰", "웹게임정보"],
     },
     {
       id: 8,
       title: "게임문화",
+      svg: Icon.down,
       list: [
         "하드라이프",
         "레드 데드 리뎀션",
@@ -92,24 +100,51 @@ const Header = ({ path }) => {
     },
     {
       id: 9,
+      title: "안내사항",
+      svg: Icon.down,
+      list: ["회사소개", "제휴문의", "광고안내", "고객센터"],
+    },
+    {
+      id: 10,
       title: "팸",
       list: [
-        "이벤트",
-        "포토게시판",
-        "회사소개",
-        "제휴문의",
-        "광고안내",
-        "고객센터",
+        {
+          id: "1",
+          icon: "/images/icon/fam.png",
+          title: "팸",
+        },
+        {
+          id: "2",
+          icon: "/images/icon/event.png",
+          title: "이벤트",
+        },
+        {
+          id: "3",
+          icon: "/images/icon/fam.png",
+          title: "포션마켓",
+        },
+        {
+          id: "4",
+          icon: "/images/icon/kugmin.png",
+          title: "국민트리",
+        },
       ],
     },
   ];
 
   return (
-    <HeaderWrap scrolled={scrolled} lnbcall={lnbcall}>
+    <HeaderWrap
+      scrolled={scrolled}
+      lnbcall={lnbcall}
+      mobileDropDown={mobileDropDown}
+    >
       {/* 헤더 탑 */}
       <div className="header_top">
         <div className="top_i">
-          <button className="mobile_call_btn" onClick={() => setMobilenav((prev) => !prev)}>
+          <button
+            className="mobile_call_btn"
+            onClick={() => setMobilenav((prev) => !prev)}
+          >
             <Icon.hamberger />
           </button>
           <div className="site_head_title">
@@ -482,30 +517,56 @@ const Header = ({ path }) => {
           </div>
         </div>
       ) : null}
-      {mobildnav ? (
+      {mobilenavState ? (
         <div className="mobile_nav">
-          <button className="close_nav"></button>
-          <div className="mobile_util">
-            <ul className="util_list">
-              <li>
-                <Link>로그인</Link>
-              </li>
-              <li>
-                <Link>회원가입</Link>
-              </li>
-            </ul>
-            <div className="mobile_nav_list">
-              {mobilenav.map((itme)=>(
-                <ul key={itme.id}>
+          <button className="close_nav_btn">
+            <Icon.deactive />
+          </button>
+          <ul className="mobile_util">
+            <li>
+              <Link>
+                <span>로그인</span>
+                <img src="/images/icon/lock.png" alt="아이콘" />
+              </Link>
+            </li>
+            <li>
+              <Link>
+                <span>회원가입</span>
+                <img src="/images/icon/user.png" alt="아이콘" />
+              </Link>
+            </li>
+          </ul>
+          <div className="mobile_nav_box">
+            {mobilenav.slice(1, 9).map((item) => {
+              const SvgIcon = item.svg;
+              return (
+                <ul key={item.id} className="mobile_nav_list">
                   <li>
-                    <p>{itme.title}</p>
-                    <ul>
-                      {itme.list.map((item)=>(<li key={itme}>{item}</li>))}
+                    {item.svg ? (
+                      <p>
+                        <span>{item.title}</span>
+                        {SvgIcon && <SvgIcon />}
+                      </p>
+                    ) : null}
+                    <ul className="mobile_nav_list_in">
+                      {item.list.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
                     </ul>
                   </li>
                 </ul>
-              ))}
-            </div>
+              );
+            })}
+            {mobilenav[9].list.map((item) => (
+              <ul className="fam_list" key={item.id}>
+                <li>
+                  <Link to="#">
+                    <img src={item.icon} alt="아이콘" />
+                    {item.title}
+                  </Link>
+                </li>
+              </ul>
+            ))}
           </div>
         </div>
       ) : null}

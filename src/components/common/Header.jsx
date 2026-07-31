@@ -19,90 +19,112 @@ const Header = ({ path }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   const mobilenav = [
     {
       id: 1,
       title: "뉴스",
       svg: Icon.down,
       list: [
-        "전체",
-        "산업",
-        "온라인",
-        "PC",
-        "비디오",
-        "웹게임",
-        "모바일",
-        "VR",
-        "하드웨어",
-        "테마",
+        ["전체", "/news"],
+        ["산업", "/news/industry"],
+        ["온라인", "/news/online"],
+        ["PC", "/news/pc"],
+        ["비디오", "/news/video"],
+        ["웹게임", "/news/webgame"],
+        ["모바일", "/news/mobile"],
+        ["VR", "/news/vr"],
+        ["하드웨어", "/news/hardware"],
+        ["테마", "/news/theme"],
       ],
     },
     {
       id: 2,
       title: "프리뷰·리뷰",
       svg: Icon.down,
-      list: ["전체", "리뷰", "프리뷰"],
+      list: [
+        ["전체", "/review"],
+        ["리뷰", "/review"],
+        ["프리뷰", "/preview"],
+      ],
     },
     {
       id: 3,
       title: "특집",
       svg: Icon.down,
-      list: ["전체"],
+      link: "/special",
+      list: [["전체", "/special"]],
     },
     {
       id: 4,
       title: "게임정보",
       svg: Icon.down,
       list: [
-        "게임DB",
-        "업체정보",
-        "공략",
-        "게임일정",
-        "스크린샷",
-        "동영상",
-        "게임소개",
-        "게임순위",
+        ["전체","/gameinfo"],
+        ["게임DB", "/game/db"],
+        ["업체정보", "/game/company"],
+        ["공략", "/game/tip"],
+        ["게임일정", "/game/schedule"],
+        ["스크린샷", "/game/screenshot"],
+        ["동영상", "/game/video"],
+        ["게임소개", "/game/info"],
+        ["게임순위", "/game/rank"],
       ],
     },
     {
       id: 5,
       title: "하드웨어",
       svg: Icon.down,
-      list: ["뉴스", "기획기사"],
+      list: [
+        ["뉴스", "/hardware/news"],
+        ["기획기사", "/hardware/plan"],
+      ],
     },
     {
       id: 6,
       title: "모바일",
       svg: Icon.down,
-      list: ["전체", "뉴스", "커뮤니티"],
+      list: [
+        ["전체", "/mobile"],
+        ["뉴스", "/mobile/news"],
+        ["커뮤니티", "/mobile/community"],
+      ],
     },
     {
       id: 7,
       title: "웹게임",
       svg: Icon.down,
-      list: ["웹게임 홈", "뉴스", "프리뷰", "웹게임정보"],
+      list: [
+        ["웹게임 홈", "/webgame"],
+        ["뉴스", "/webgame/news"],
+        ["프리뷰", "/webgame/preview"],
+        ["웹게임정보", "/webgame/info"],
+      ],
     },
     {
       id: 8,
-      title: "게임문화",
+      title: "게임공략",
       svg: Icon.down,
       list: [
-        "하드라이프",
-        "레드 데드 리뎀션",
-        "머머스클럽",
-        "리그 오브 레전드",
-        "몬스터헌터",
-        "이터널리턴",
-        "오버워치",
-        "리니지",
+        ["하드라이프", "/tip/hardlife"],
+        ["레드 데드 리뎀션", "/tip/rdr"],
+        ["머머스클럽", "/tip/momosclub"],
+        ["리그 오브 레전드", "/tip/lol"],
+        ["몬스터헌터", "/tip/mh"],
+        ["이터널리턴", "/tip/er"],
+        ["오버워치", "/tip/overwatch"],
+        ["리니지", "/tip/lineage"],
       ],
     },
     {
       id: 9,
       title: "안내사항",
       svg: Icon.down,
-      list: ["회사소개", "제휴문의", "광고안내", "고객센터"],
+      list: [
+        ["회사소개", "/company"],
+        ["제휴문의", "/contact"],
+        ["광고안내", "/advertise"],
+        ["고객센터", "/customer"],
+      ],
     },
     {
       id: 10,
@@ -112,21 +134,25 @@ const Header = ({ path }) => {
           id: "1",
           icon: "/images/icon/fam.png",
           title: "팸",
+          link: "/fam",
         },
         {
           id: "2",
           icon: "/images/icon/event.png",
           title: "이벤트",
+          link: "/event",
         },
         {
           id: "3",
           icon: "/images/icon/po.png",
           title: "포션마켓",
+          link: "/potion",
         },
         {
           id: "4",
           icon: "/images/icon/kugmin.png",
           title: "국민트리",
+          link: "/kugmin",
         },
       ],
     },
@@ -540,7 +566,7 @@ const Header = ({ path }) => {
             </li>
           </ul>
           <div className="mobile_nav_box">
-            {mobilenav.slice(1, 9).map((item, index) => {
+            {mobilenav.slice(0, 9).map((item, index) => {
               const SvgIcon = item.svg;
               return (
                 <div key={item.id} className="mobile_nav_list">
@@ -552,21 +578,19 @@ const Header = ({ path }) => {
                       );
                     }}
                   >
-                    {item.svg ? (
-                      <p>
-                        <span>{item.title}</span>
-                        {SvgIcon && <SvgIcon />}
-                      </p>
-                    ) : null}
+                    <p>
+                      <span>{item.title}</span>
+                      {SvgIcon && <SvgIcon />}
+                    </p>
                   </div>
                   <ul
                     className={`mobile_nav_list_in ${
                       mobileDropDown === index ? "active" : ""
                     }`}
                   >
-                    {item.list.map((item) => (
-                      <Link to="#">
-                        <li key={item}>{item}</li>
+                    {item.list.map(([name, link]) => (
+                      <Link to={link}>
+                        <li key={link}>{name}</li>
                       </Link>
                     ))}
                   </ul>

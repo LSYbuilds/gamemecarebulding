@@ -401,40 +401,154 @@ export const MainContainer = styled.main`
       }
     }
   }
-    @media (max-width: 1024px) {
-      .inner{
-        max-width: 736px;
-        .hero_section{
+  @media (max-width: 1024px) {
+    .inner {
+      max-width: 736px;
+      .hero_section {
+        height: auto;
+        .slide_area {
+          flex-direction: column;
           height: auto;
-          .slide_area{
-            flex-direction: column;
-            height: auto;
-            .main_slide{
-              width: 100%;
-              height: 500px;
-              flex:none;
+          .main_slide {
+            width: 100%;
+            height: 500px;
+            flex: none;
+          }
+        }
+        .news_area {
+          flex-direction: column;
+          height: auto;
+        }
+      }
+      .game_section {
+        flex-direction: column;
+        .game_small {
+          flex: none;
+          width: 100%;
+        }
+        .game_large {
+          flex: none;
+          width: 100%;
+        }
+      }
+    }
+  }
+  @media (max-width: 736px) {
+    .inner {
+      max-width: 328px;
+      .hero_section {
+        height: auto;
+        .slide_area {
+          flex-direction: column;
+          height: auto;
+          .main_slide {
+            flex: none;
+            width: 100%;
+            height: 400px;
+          }
+          .top_contents {
+            flex: none;
+            .contents_item {
+              flex-direction: column;
+              gap: 16px;
+              height: 268px;
+              .contents_title {
+                flex: none;
+                height: 100px;
+                order: 2;
+              }
+              .contents_img {
+                flex: none;
+                order: 1;
+                height: 152px;
+              }
             }
           }
-          .news_area{
-            flex-direction: column;
+        }
+        .news_area {
+          flex-direction: column;
+          height: auto;
+          .news_tab {
+            .tab_btns {
+              width: 100%;
+              display: flex;
+              button {
+                width: 100%;
+              }
+            }
+          }
+          .news_list {
+            height: auto;
+            li {
+              height: 113px;
+              a {
+                flex-direction: column;
+                div {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .news_l {
+            flex: none;
+            height: 677px;
+          }
+          .news_r {
+            flex: none;
             height: auto;
           }
         }
-        .game_section{
-          flex-direction: column;
-          .game_small{
-            flex: none;
-            width: 100%;
+      }
+      .game_section {
+        flex-direction: column;
+        .game_small {
+          flex: none;
+          width: 100%;
+          .list_box {
+            li {
+              height: 265px;
+              a {
+                flex-direction: column;
+                .thumb_img {
+                  flex: none;
+                  height: 165px;
+                }
+                .info_box {
+                  height: 84px;
+                  padding: 10px;
+                  flex: none;
+                  .info {
+                    .text {
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
           }
-          .game_large{
-            flex: none;
-            width: 100%;
+        }
+        .game_large {
+          flex: none;
+          width: 100%;
+          li {
+            a {
+              .info_box {
+                .info {
+                  .text {
+                    display: -webkit-box;
+                    height: 80px;
+                    overflow: hidden;
+                    white-space: wrap;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 3; /* 표시할 줄 수 */
+                    -webkit-box-orient: vertical;
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
-    @media (max-width : 736px){
-      
-    }
-
+  }
 `;

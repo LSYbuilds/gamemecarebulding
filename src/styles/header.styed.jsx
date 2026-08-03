@@ -303,6 +303,15 @@ export const HeaderWrap = styled.header`
     width: 100%;
     height: auto;
   }
+  @media (max-width: 1400px) {
+    .header_top .top_i {
+      padding: 0px 16px;
+    }
+    .header_bottom .bottom_i {
+      padding: 0px 16px;
+    }
+  }
+
   @media (max-width: 1024px) {
     .header_top .top_i {
       max-width: 736px;
@@ -338,7 +347,7 @@ export const HeaderWrap = styled.header`
         }
       }
     }
-    .header_bottom .lnb .lnb_menu{
+    .header_bottom .lnb .lnb_menu {
       max-width: 736px;
     }
     .global_box {

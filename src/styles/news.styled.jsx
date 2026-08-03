@@ -155,7 +155,60 @@ export const NewsAllWarp = styled.section`
     }
   }
   @media (max-width: 1024px) {
+    .news_list_section {
+      flex-direction: column;
+      .new_slice {
+        flex: none;
+      }
+      .aside_box {
+        flex: none;
+      }
+      .news_list li a .news_thumb_info .text_box .text {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    }
   }
   @media (max-width: 736px) {
+    .topnews {
+      .topnews_slide {
+        height: 400px;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+    }
+    .news_list_section {
+      flex-direction: column;
+      .new_slice {
+        flex: none;
+      }
+      .aside_box {
+        flex: none;
+      }
+      .news_list li {
+        height: 392px;
+      }
+      .news_list li a {
+        flex-direction: column;
+        .thumb_img {
+          flex: none;
+          height: 188px;
+        }
+        .news_thumb_info {
+          flex: none;
+          height: 188px;
+        }
+      }
+      .news_list li a .news_thumb_info .text_box .text {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
   }
 `;

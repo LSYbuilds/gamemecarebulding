@@ -345,7 +345,7 @@ export const TopGameSwiper = styled(Swiper)`
       }
     }
   }
-   .swiper-button-prev {
+  .swiper-button-prev {
     position: absolute;
     top: 40%;
     left: 3%;

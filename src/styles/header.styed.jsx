@@ -552,6 +552,7 @@ export const HeaderWrap = styled.header`
             padding: 16px 8px;
             box-shadow: 0px 1px 0px var(--neutralGray);
             cursor: pointer;
+
             p {
               width: 100%;
               height: 100%;
@@ -568,7 +569,7 @@ export const HeaderWrap = styled.header`
             display: none;
             flex-direction: column;
             gap: 8px;
-            background-color: var(--neutralGray);
+            /* background-color: var(--neutralGray); */
             &.active {
               display: flex;
             }

@@ -401,6 +401,11 @@ export const MainContainer = styled.main`
       }
     }
   }
+  @media (max-width: 1400px) {
+    .inner{
+      padding: 0px 16px;
+    }
+  }
   @media (max-width: 1024px) {
     .inner {
       max-width: 736px;

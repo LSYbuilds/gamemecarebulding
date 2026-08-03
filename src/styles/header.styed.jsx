@@ -12,8 +12,8 @@ export const HeaderWrap = styled.header`
   top: 0px;
   left: 0px;
   width: 100%;
+  height: auto;
   transition-duration: 0.3s;
-  ${({ path }) => (path === "/news" ? "height:187px" : "height:137px")}
   display: flex;
   flex-direction: column;
   padding-top: 8px;
@@ -138,7 +138,7 @@ export const HeaderWrap = styled.header`
         display: flex;
         justify-content: space-between;
         width: 100%;
-        height: ${(props) => (props.scrolled ? "35px" : "55px")};
+        height: auto;
         transition-duration: 0.2s;
         .gnb_list {
           height: 100%;
@@ -149,9 +149,9 @@ export const HeaderWrap = styled.header`
             width: 25px;
             height: 25px;
             background-image: ${(props) =>
-              props.lnbcall
-                ? "url(/images/icon/x.png)"
-                : "url(/images/icon/hambarger.png)"};
+    props.lnbcall
+      ? "url(/images/icon/x.png)"
+      : "url(/images/icon/hambarger.png)"};
             background-position: center;
             background-repeat: no-repeat;
             border: none;
@@ -164,7 +164,7 @@ export const HeaderWrap = styled.header`
             li {
               position: relative;
               height: 100%;
-              padding: 0px 16px;
+              padding: 16px;
               a {
                 align-content: center;
                 display: block;
@@ -197,6 +197,7 @@ export const HeaderWrap = styled.header`
               align-items: center;
               height: 100%;
               font-size: 14px;
+              padding: 8px 0px;
               img {
                 height: 16px;
               }
@@ -207,7 +208,7 @@ export const HeaderWrap = styled.header`
     }
     .lnb {
       width: 100%;
-      height: ${(props) => (props.scrolled ? "32px" : "48px")};
+      height: 48px;
       background-color: var(--neutralWhite);
       transition-duration: 0.2s;
       .lnb_menu {
@@ -263,16 +264,23 @@ export const HeaderWrap = styled.header`
       justify-content: space-between;
       padding-top: 10px;
       gap: 10px;
-      li {
+      .global_nav_list {
+        display: flex;
+        flex-direction: column;
         width: 100%;
       }
-      p {
-        display: block;
-        width: 100%;
+      .list_head{
+        display: flex;
         height: 27px;
-        text-align: center;
         margin-bottom: 10px;
-        font-weight: 600;
+        p{
+          width: 100%;
+          text-align: center;
+          font-weight: 600;
+          svg{
+            display: none;
+          }
+        }
       }
       .global_in {
         display: flex;
@@ -280,7 +288,6 @@ export const HeaderWrap = styled.header`
         gap: 8px;
         li {
           width: 100%;
-          border-radius: 4px;
           a {
             display: block;
             width: 100%;
@@ -310,6 +317,22 @@ export const HeaderWrap = styled.header`
     .header_bottom .bottom_i {
       padding: 0px 16px;
     }
+    .header_bottom > .lnb .lnb_menu {
+      padding: 0px 16px;
+    }
+    .global_box {
+      .global_close_btn {
+        display: none;
+        border: none;
+        background: none;
+      }
+      .global_inner {
+        margin: 0 auto;
+        max-width: 1400px;
+        padding: 0px 16px;
+        width: 100%;
+      }
+    }
   }
 
   @media (max-width: 1024px) {
@@ -336,7 +359,6 @@ export const HeaderWrap = styled.header`
     }
     .header_bottom .gnb_box {
       flex-direction: column;
-      gap: 16px;
       .gnb_menu {
         justify-content: space-between;
         width: 100%;
@@ -354,36 +376,46 @@ export const HeaderWrap = styled.header`
       top: 82px;
       left: 0px;
       width: 100%;
-      height: 80vh;
+      height: auto;
       padding-top: 16px;
       overflow-y: scroll;
-      background-color: var(--neutralWhite);
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      background-color: rgb(255, 255, 255, 0.9);
       .global_close_btn {
         display: block;
         border: none;
         background: none;
+        cursor: pointer;
       }
       .global_inner {
         max-width: 736px;
         width: 100%;
         .global_menu {
           flex-direction: column;
-          li {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            p {
-              display: block;
+          .global_nav_list{
+            .list_head{
               width: 100%;
-              height: 100%;
-              text-align: left;
+              cursor: pointer;
+                      &:hover{
+                color:red;
+              }
+              p{
+                display: flex;
+                gap: 8px;
+                svg{
+                  display: inline-block;
+                }
+              }              
             }
-            .global_in {
-              width: 100%;
-              height: 100%;
-              flex-wrap: wrap;
+            .global_in{
+              display: none;
+              
+              &.active{
+                display: flex;
+                flex-wrap: wrap;
               flex-direction: row;
-              gap: 16px;
+              }
               li {
                 flex: 0 0 auto;
                 width: auto;
@@ -519,6 +551,13 @@ export const HeaderWrap = styled.header`
             }
           }
           .mobile_nav_list_in {
+
+
+
+
+
+
+            
             display: none;
             flex-direction: column;
             gap: 8px;

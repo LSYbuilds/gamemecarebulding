@@ -97,6 +97,11 @@ export const FooterWrap = styled.footer`
       }
     }
   }
+  @media (max-width: 1400px) {
+    .f_inner{
+      padding: 0px 16px;
+    }
+  }
   @media (max-width: 1024px) {
     .f_inner {
       max-width: 736px;
@@ -169,7 +174,7 @@ export const FooterWrap = styled.footer`
         display: flex;
         justify-content: center;
       }
-      .f_logo{
+      .f_logo {
         text-align: center;
       }
     }

@@ -6,6 +6,7 @@ import Icon from "../../components/common/SvgComponents";
 const Header = ({ path }) => {
   const [scrolled, setScrolled] = useState(false);
   const [lnbcall, setLabCall] = useState(false);
+  const [gnbDropDown, setGnbDropDown] = useState(null);
   const [mobilenavState, setMobilenav] = useState(false);
   const [mobileDropDown, setMobileDrapDown] = useState(null);
   useEffect(() => {
@@ -59,7 +60,7 @@ const Header = ({ path }) => {
       title: "게임정보",
       svg: Icon.down,
       list: [
-        ["전체","/gameinfo"],
+        ["전체", "/gameinfo"],
         ["게임DB", "/game/db"],
         ["업체정보", "/game/company"],
         ["공략", "/game/tip"],
@@ -346,199 +347,41 @@ const Header = ({ path }) => {
           <div className="global_inner">
             <button
               className="global_close_btn"
-              onClick={() => setMobileDrapDown((prev) => !prev)}
+              onClick={() => setLabCall((prev) => !prev)}
             >
               <Icon.deactive />
             </button>
             <ul className="global_menu">
-              <li>
-                <p>뉴스</p>
-                <ul className="global_in">
-                  <li>
-                    <Link to="#">전체</Link>
+              {mobilenav.slice(0, 9).map((item, index) => {
+                const SvgIcon = item.svg;
+                return (
+                  <li key={item.id} className="global_nav_list">
+                    <div
+                      className="list_head"
+                      onClick={() => {
+                        setGnbDropDown(
+                          gnbDropDown === index ? null : index,
+                        );
+                      }}
+                    >
+                      <p>
+                        <span>{item.title}</span>
+                        {SvgIcon && <SvgIcon />}
+                      </p>
+                    </div>
+                    <ul
+                      className={`global_in ${gnbDropDown === index ? "active" : ""
+                        }`}
+                    >
+                      {item.list.map(([name, link]) => (
+                        <li key={link}>
+                          <Link to={link}>{name}</Link>
+                        </li>
+                      ))}
+                    </ul>
                   </li>
-                  <li>
-                    <Link to="#">산업</Link>
-                  </li>
-                  <li>
-                    <Link to="#">온라인</Link>
-                  </li>
-                  <li>
-                    <Link to="#">PC</Link>
-                  </li>
-                  <li>
-                    <Link to="#">비디오</Link>
-                  </li>
-                  <li>
-                    <Link to="#">웹게임</Link>
-                  </li>
-                  <li>
-                    <Link to="#">모바일</Link>
-                  </li>
-                  <li>
-                    <Link to="#">VR</Link>
-                  </li>
-                  <li>
-                    <Link to="#">하드웨어</Link>
-                  </li>
-                  <li>
-                    <Link to="#">테마</Link>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <p>프리뷰·리뷰</p>
-                <ul className="global_in">
-                  <li>
-                    <Link to="#">전체</Link>
-                  </li>
-                  <li>
-                    <Link to="#">리뷰</Link>
-                  </li>
-                  <li>
-                    <Link to="#">프리뷰</Link>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <p>특집</p>
-                <ul className="global_in">
-                  <li>
-                    <Link to="#">전체</Link>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <p>게임정보</p>
-                <ul className="global_in">
-                  <li>
-                    <Link to="#">게임DB</Link>
-                  </li>
-                  <li>
-                    <Link to="#">업체정보</Link>
-                  </li>
-                  <li>
-                    <Link to="#">공략</Link>
-                  </li>
-                  <li>
-                    <Link to="#">게임일정</Link>
-                  </li>
-                  <li>
-                    <Link to="#">스크린샷</Link>
-                  </li>
-                  <li>
-                    <Link to="#">동영상</Link>
-                  </li>
-                  <li>
-                    <Link to="#">게임소</Link>
-                  </li>
-                  <li>
-                    <Link to="#">게임순위</Link>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <p>하드웨어</p>
-                <ul className="global_in">
-                  <li>
-                    <Link to="#">뉴스</Link>
-                  </li>
-                  <li>
-                    <Link to="#">기획기사</Link>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <p>모바일</p>
-                <ul className="global_in">
-                  <li>
-                    <Link to="#">전체</Link>
-                  </li>
-                  <li>
-                    <Link to="#">뉴스</Link>
-                  </li>
-                  <li>
-                    <Link to="#">커뮤니티</Link>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <p>웹게임</p>
-                <ul className="global_in">
-                  <li>
-                    <Link to="#">웹게임 홈</Link>
-                  </li>
-                  <li>
-                    <Link to="#">뉴스</Link>
-                  </li>
-                  <li>
-                    <Link to="#">프리뷰</Link>
-                  </li>
-                  <li>
-                    <Link to="#">웹게임정보</Link>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <p>게임공략</p>
-                <ul className="global_in">
-                  <li>
-                    <Link to="#">하프라이프</Link>
-                  </li>
-                  <li>
-                    <Link to="#">레드 데드 리뎀션</Link>
-                  </li>
-                  <li>
-                    <Link to="#">메이플스토리</Link>
-                  </li>
-                  <li>
-                    <Link to="#">리그 오브 레전드</Link>
-                  </li>
-                  <li>
-                    <Link to="#">붉은사막</Link>
-                  </li>
-                  <li>
-                    <Link to="#">이터널리턴</Link>
-                  </li>
-                  <li>
-                    <Link to="#">오버워치</Link>
-                  </li>
-                  <li>
-                    <Link to="#">리니지</Link>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <p>팸</p>
-                <ul className="global_in">
-                  <li>
-                    <Link to="#">이벤트</Link>
-                  </li>
-                  <li>
-                    <Link to="#">포인트넷</Link>
-                  </li>
-                  <li>
-                    <Link to="#">회사소개</Link>
-                  </li>
-                  <li>
-                    <Link to="#">제휴문의</Link>
-                  </li>
-                  <li>
-                    <Link to="#">광고안내</Link>
-                  </li>
-                  <li>
-                    <Link to="#">고객센터</Link>
-                  </li>
-                </ul>
-              </li>
+                );
+              })}
             </ul>
           </div>
         </div>
@@ -584,9 +427,8 @@ const Header = ({ path }) => {
                     </p>
                   </div>
                   <ul
-                    className={`mobile_nav_list_in ${
-                      mobileDropDown === index ? "active" : ""
-                    }`}
+                    className={`mobile_nav_list_in ${mobileDropDown === index ? "active" : ""
+                      }`}
                   >
                     {item.list.map(([name, link]) => (
                       <Link to={link}>

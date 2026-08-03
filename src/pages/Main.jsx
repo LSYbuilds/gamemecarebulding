@@ -13,7 +13,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 
-const Main = () => {
+const Main = ({ changeWidth }) => {
   const mainSlide = mainSlideData.mainSlide;
   const sideContents = sideSlideData.sideSlide;
   const newsList = newsListData.newsList;
@@ -21,19 +21,19 @@ const Main = () => {
   const boardList = dashBoardData.gameDashboard;
   const gameInfo = gameInfoData.gameinfo;
   const [isNews, setIsNews] = useState(true);
-  const [changeWidth, setChangeWidth] = useState(window.innerWidth);
+  // const [changeWidth, setChangeWidth] = useState(window.innerWidth);
   const [isLeftNews, setIsLeftNews] = useState(true);
 
-  useEffect(() => {
-    const handlewidth = () => {
-      setChangeWidth(window.innerWidth);
-    }
-    window.addEventListener("resize",handlewidth);
-    return() =>{
-      window.removeEventListener("resize",handlewidth);
-    }
-  },[]);
-  console.log("현재 사이즈",changeWidth);
+  // useEffect(() => {
+  //   const handlewidth = () => {
+  //     setChangeWidth(window.innerWidth);
+  //   };
+  //   window.addEventListener("resize", handlewidth);
+  //   return () => {
+  //     window.removeEventListener("resize", handlewidth);
+  //   };
+  // }, []);
+  console.log("현재 사이즈", changeWidth);
   return (
     <MainContainer>
       <div className="inner">
@@ -220,8 +220,7 @@ const Main = () => {
                 navigation
                 speed={1000}
                 loop
-                
-                slidesPerView={ changeWidth <= 768 ? 1:3 }
+                slidesPerView={changeWidth <= 768 ? 1 : 3}
                 spaceBetween={16}
               >
                 {cateList
@@ -251,7 +250,7 @@ const Main = () => {
                 navigation
                 speed={1000}
                 loop
-                slidesPerView={ changeWidth <= 768 ? 1:3}
+                slidesPerView={changeWidth <= 768 ? 1 : 3}
                 spaceBetween={16}
               >
                 {cateList
@@ -281,7 +280,7 @@ const Main = () => {
                 navigation
                 speed={1000}
                 loop
-                slidesPerView={ changeWidth <= 768 ? 1:3}
+                slidesPerView={changeWidth <= 768 ? 1 : 3}
                 spaceBetween={16}
               >
                 {cateList

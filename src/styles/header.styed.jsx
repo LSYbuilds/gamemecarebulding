@@ -149,9 +149,9 @@ export const HeaderWrap = styled.header`
             width: 25px;
             height: 25px;
             background-image: ${(props) =>
-    props.lnbcall
-      ? "url(/images/icon/x.png)"
-      : "url(/images/icon/hambarger.png)"};
+              props.lnbcall
+                ? "url(/images/icon/x.png)"
+                : "url(/images/icon/hambarger.png)"};
             background-position: center;
             background-repeat: no-repeat;
             border: none;
@@ -207,35 +207,45 @@ export const HeaderWrap = styled.header`
       }
     }
     .lnb {
+      display: flex;
+      flex-direction: column;
       width: 100%;
-      height: 48px;
       background-color: var(--neutralWhite);
       transition-duration: 0.2s;
-      .lnb_menu {
-        display: flex;
+      .site_lnb {
         margin: 0 auto;
         max-width: 1400px;
-        gap: 24px;
-        font-size: 1em;
-        height: 100%;
-        li {
-          position: relative;
-          height: 100%;
-          a {
-            align-content: center;
-            display: block;
+        width: 100%;
+        .lnb_menu {
+          display: flex;
+          gap: 24px;
+          height: 48px;
+          font-size: 1em;
+          li {
+            position: relative;
             height: 100%;
-            font-weight: 300;
+            a {
+              align-content: center;
+              display: block;
+              height: 100%;
+              font-weight: 300;
+            }
+          }
+          li:hover::after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 5px;
+            background-color: var(--seconGreen);
           }
         }
-        li:hover::after {
-          content: "";
-          position: absolute;
-          bottom: 0px;
-          left: 0px;
-          width: 100%;
-          height: 5px;
-          background-color: var(--seconGreen);
+      }
+      .fam_box {
+        width: 100%;
+        .fam_i {
+          margin: 0 auto;
         }
       }
     }
@@ -269,15 +279,15 @@ export const HeaderWrap = styled.header`
         flex-direction: column;
         width: 100%;
       }
-      .list_head{
+      .list_head {
         display: flex;
         height: 27px;
         margin-bottom: 10px;
-        p{
+        p {
           width: 100%;
           text-align: center;
           font-weight: 600;
-          svg{
+          svg {
             display: none;
           }
         }
@@ -369,8 +379,12 @@ export const HeaderWrap = styled.header`
         }
       }
     }
-    .header_bottom .lnb .lnb_menu {
+    .header_bottom .lnb .site_lnb {
+      margin: 0 auto;
       max-width: 736px;
+    }
+    .header_bottom .lnb .fam_box {
+      height: 38px;
     }
     .global_box {
       top: 82px;
@@ -393,28 +407,28 @@ export const HeaderWrap = styled.header`
         width: 100%;
         .global_menu {
           flex-direction: column;
-          .global_nav_list{
-            .list_head{
+          .global_nav_list {
+            .list_head {
               width: 100%;
               cursor: pointer;
-                      &:hover{
-                color:red;
+              &:hover {
+                color: var(--primaryBold);
               }
-              p{
+              p {
                 display: flex;
                 gap: 8px;
-                svg{
+                svg {
                   display: inline-block;
                 }
-              }              
+              }
             }
-            .global_in{
+            .global_in {
               display: none;
-              
-              &.active{
+
+              &.active {
                 display: flex;
                 flex-wrap: wrap;
-              flex-direction: row;
+                flex-direction: row;
               }
               li {
                 flex: 0 0 auto;
@@ -551,13 +565,6 @@ export const HeaderWrap = styled.header`
             }
           }
           .mobile_nav_list_in {
-
-
-
-
-
-
-            
             display: none;
             flex-direction: column;
             gap: 8px;
@@ -612,6 +619,27 @@ export const HeaderWrap = styled.header`
       width: 100vh;
       height: 100vh;
       background-color: rgb(0, 0, 0, 0.5);
+    }
+  }
+`;
+
+export const FamMobulsStyle = styled.div`
+  .fam_list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    a {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      height: 100%;
+      font-size: 14px;
+      padding: 8px 0px;
+      img {
+        height: 16px;
+      }
     }
   }
 `;

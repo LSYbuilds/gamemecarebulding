@@ -1,9 +1,41 @@
 import React, { use, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { HeaderWrap } from "../../styles/header.styed";
+import { HeaderWrap, FamMobulsStyle } from "../../styles/header.styed";
 import Icon from "../../components/common/SvgComponents";
 
-const Header = ({ path }) => {
+export const FamMobule = () => {
+  return (
+    <FamMobulsStyle>
+      <ul className="fam_list">
+        <li>
+          <Link>
+            <img src="/images/icon/fam.png" alt="패밀리아이콘" />팸
+          </Link>
+        </li>
+        <li>
+          <Link>
+            <img src="/images/icon/event.png" alt="패밀리아이콘" />
+            이벤트
+          </Link>
+        </li>
+        <li>
+          <Link>
+            <img src="/images/icon/fam.png" alt="패밀리아이콘" />
+            포션마켓
+          </Link>
+        </li>
+        <li>
+          <Link to="https://trees.gamemeca.com/">
+            <img src="/images/icon/kugmin.png" alt="패밀리아이콘" />
+            국민트리
+          </Link>
+        </li>
+      </ul>
+    </FamMobulsStyle>
+  );
+};
+
+const Header = ({ path, changeWidth }) => {
   const [scrolled, setScrolled] = useState(false);
   const [lnbcall, setLabCall] = useState(false);
   const [gnbDropDown, setGnbDropDown] = useState(null);
@@ -158,7 +190,6 @@ const Header = ({ path }) => {
       ],
     },
   ];
-
   return (
     <HeaderWrap
       scrolled={scrolled}
@@ -242,101 +273,53 @@ const Header = ({ path }) => {
                 </li>
               </ul>
             </div>
-            <div className="fam_site_box">
-              <ul className="fam_list">
-                <li>
-                  <Link>
-                    <img src="/images/icon/fam.png" alt="패밀리아이콘" />팸
-                  </Link>
-                </li>
-                <li>
-                  <Link>
-                    <img src="/images/icon/event.png" alt="패밀리아이콘" />
-                    이벤트
-                  </Link>
-                </li>
-                <li>
-                  <Link>
-                    <img src="/images/icon/fam.png" alt="패밀리아이콘" />
-                    포션마켓
-                  </Link>
-                </li>
-                <li>
-                  <Link to="https://trees.gamemeca.com/">
-                    <img src="/images/icon/kugmin.png" alt="패밀리아이콘" />
-                    국민트리
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            {changeWidth >= 1024 ? <FamMobule /> : ""}
           </div>
         </div>
         {path === "/news" ? (
           <div className="lnb_i lnb">
-            <ul className="lnb_menu">
-              <li>
-                <Link to="#">전체</Link>
-              </li>
-              <li>
-                <Link to="#">산업</Link>
-              </li>
-              <li>
-                <Link to="#">온라인</Link>
-              </li>
-              <li>
-                <Link to="#">PC</Link>
-              </li>
-              <li>
-                <Link to="#">비디오</Link>
-              </li>
-              <li>
-                <Link to="#">웹게임</Link>
-              </li>
-              <li>
-                <Link to="#">모바일</Link>
-              </li>
-              <li>
-                <Link to="#">VR</Link>
-              </li>
-              <li>
-                <Link to="#">하드웨어</Link>
-              </li>
-              <li>
-                <Link to="#">테마</Link>
-              </li>
-            </ul>
+            <div className="site_lnb">
+              <ul className="lnb_menu">
+                {mobilenav[0].list.map(([name, link]) => (
+                  <li key={name}>
+                    <Link to={link}>{name}</Link>
+                  </li>
+                ))}
+              </ul>
+              {changeWidth <= 1024 ? (
+                <div className="fam_box">
+                  <div className="fam_i">
+                    <FamMobule />
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
           </div>
         ) : (
           ""
         )}
         {path === "/gameinfo" ? (
           <div className="lnb_i lnb">
-            <ul className="lnb_menu">
-              <li>
-                <Link to="#">게임DB</Link>
-              </li>
-              <li>
-                <Link to="#">업체정보</Link>
-              </li>
-              <li>
-                <Link to="#">공략</Link>
-              </li>
-              <li>
-                <Link to="#">게임일정</Link>
-              </li>
-              <li>
-                <Link to="#">스크린샤</Link>
-              </li>
-              <li>
-                <Link to="#">동영상</Link>
-              </li>
-              <li>
-                <Link to="#">게임쇼</Link>
-              </li>
-              <li>
-                <Link to="#">게임순위</Link>
-              </li>
-            </ul>
+            <div className="site_lnb">
+              <ul className="lnb_menu">
+                {mobilenav[3].list.map(([name, link]) => (
+                  <li key={name}>
+                    <Link to={link}>{name}</Link>
+                  </li>
+                ))}
+              </ul>
+              {changeWidth <= 1024 ? (
+                <div className="fam_box">
+                  <div className="fam_i">
+                    <FamMobule />
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
           </div>
         ) : (
           ""
@@ -359,9 +342,7 @@ const Header = ({ path }) => {
                     <div
                       className="list_head"
                       onClick={() => {
-                        setGnbDropDown(
-                          gnbDropDown === index ? null : index,
-                        );
+                        setGnbDropDown(gnbDropDown === index ? null : index);
                       }}
                     >
                       <p>
@@ -370,8 +351,9 @@ const Header = ({ path }) => {
                       </p>
                     </div>
                     <ul
-                      className={`global_in ${gnbDropDown === index ? "active" : ""
-                        }`}
+                      className={`global_in ${
+                        gnbDropDown === index ? "active" : ""
+                      }`}
                     >
                       {item.list.map(([name, link]) => (
                         <li key={link}>
@@ -427,8 +409,9 @@ const Header = ({ path }) => {
                     </p>
                   </div>
                   <ul
-                    className={`mobile_nav_list_in ${mobileDropDown === index ? "active" : ""
-                      }`}
+                    className={`mobile_nav_list_in ${
+                      mobileDropDown === index ? "active" : ""
+                    }`}
                   >
                     {item.list.map(([name, link]) => (
                       <Link to={link}>
@@ -463,3 +446,38 @@ const Header = ({ path }) => {
 };
 
 export default Header;
+
+// <div className="lnb_i lnb">
+//   <ul className="lnb_menu">
+//     <li>
+//       <Link to="#">전체</Link>
+//     </li>
+//     <li>
+//       <Link to="#">산업</Link>
+//     </li>
+//     <li>
+//       <Link to="#">온라인</Link>
+//     </li>
+//     <li>
+//       <Link to="#">PC</Link>
+//     </li>
+//     <li>
+//       <Link to="#">비디오</Link>
+//     </li>
+//     <li>
+//       <Link to="#">웹게임</Link>
+//     </li>
+//     <li>
+//       <Link to="#">모바일</Link>
+//     </li>
+//     <li>
+//       <Link to="#">VR</Link>
+//     </li>
+//     <li>
+//       <Link to="#">하드웨어</Link>
+//     </li>
+//     <li>
+//       <Link to="#">테마</Link>
+//     </li>
+//   </ul>
+// </div>

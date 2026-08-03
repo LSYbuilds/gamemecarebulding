@@ -6,6 +6,22 @@ export const NewsWrap = styled.div`
     max-width: 1400px;
     width: 100%;
   }
+
+  @media (max-width: 1400px) {
+    .inner {
+      padding: 0px 16px;
+    }
+  }
+  @media (max-width: 1024px) {
+    .inner {
+      max-width: 736px;
+    }
+  }
+  @media (max-width: 736px) {
+    .inner {
+      max-width: 328px;
+    }
+  }
 `;
 
 export const NewsAllWarp = styled.section`
@@ -137,5 +153,9 @@ export const NewsAllWarp = styled.section`
         }
       }
     }
+  }
+  @media (max-width: 1024px) {
+  }
+  @media (max-width: 736px) {
   }
 `;

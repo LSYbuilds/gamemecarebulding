@@ -88,22 +88,22 @@ export const GameinfoWrap = styled.div`
         color: var(--neutralDeepGray);
       }
     }
-    .pop_games{
+    .pop_games {
       display: flex;
       flex-direction: column;
       gap: 16px;
-      .pop_title{
+      .pop_title {
         display: flex;
         gap: 16px;
         height: 45px;
-        span{
+        span {
           height: 100%;
           align-content: center;
           font-size: 1.5em;
           font-weight: 600;
         }
       }
-      .pop_slide{
+      .pop_slide {
         height: 175px;
       }
     }
@@ -115,7 +115,6 @@ export const GameinfoWrap = styled.div`
         flex: 220;
         display: flex;
         flex-direction: column;
-        
 
         .cate_title {
           height: 48px;

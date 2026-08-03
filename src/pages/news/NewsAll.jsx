@@ -9,7 +9,7 @@ import { SwiperSlide } from "swiper/react";
 import MiniBoard from "../../components/common/MiniBoard";
 import AdComponents from "../../components/common/AdComponents";
 
-const NewsAll = ({ path }) => {
+const NewsAll = ({ path, changeWidth }) => {
   const monthNews = monthNewsData.monthNews;
   const newDataList = newsData.newsList;
   const newDatalistCount = newDataList.length;
@@ -29,7 +29,7 @@ const NewsAll = ({ path }) => {
             navigation
             speed={1000}
             loop
-            slidesPerView={3}
+            slidesPerView={changeWidth <= 1024 ? 1 : 3}
             spaceBetween={16}
           >
             {monthNews.map((item) => (

@@ -402,7 +402,7 @@ export const MainContainer = styled.main`
     }
   }
   @media (max-width: 1400px) {
-    .inner{
+    .inner {
       padding: 0px 16px;
     }
   }
@@ -525,6 +525,13 @@ export const MainContainer = styled.main`
                   .info {
                     .text {
                       display: none;
+                    }
+                  }
+                  .tags {
+                    display: flex;
+                    gap: 10px;
+                    span {
+                      font-size: 80%;
                     }
                   }
                 }

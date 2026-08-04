@@ -119,10 +119,9 @@ export const ThumbSwiper = styled(Swiper)`
   .swiper-button-prev {
     position: absolute;
     top: 40%;
-    left: 3%;
-    transform: translate(-50%, 0%);
-    width: 50px;
-    height: 50px;
+    left: 1%;
+    width: 35px;
+    height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
     background-image: url(/images/icon/chevron-left.png);
@@ -141,10 +140,9 @@ export const ThumbSwiper = styled(Swiper)`
   .swiper-button-next {
     position: absolute;
     top: 40%;
-    right: 0%;
-    transform: translate(-50%, 0%);
-    width: 50px;
-    height: 50px;
+    right: 1%;
+    width: 35px;
+    height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
     background-image: url(/images/icon/chevron-right.png);
@@ -247,10 +245,10 @@ export const TopnewsSwiper = styled(Swiper)`
   .swiper-button-prev {
     position: absolute;
     top: 40%;
-    left: 3%;
-    transform: translate(-50%, 0%);
-    width: 50px;
-    height: 50px;
+    left: 1%;
+    /* transform: translate(-50%, 0%); */
+    width: 35px;
+    height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
     background-image: url(/images/icon/chevron-left.png);
@@ -269,10 +267,10 @@ export const TopnewsSwiper = styled(Swiper)`
   .swiper-button-next {
     position: absolute;
     top: 40%;
-    right: 0%;
-    transform: translate(-50%, 0%);
-    width: 50px;
-    height: 50px;
+    right: 1%;
+    /* transform: translate(-50%, 0%); */
+    width: 35px;
+    height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
     background-image: url(/images/icon/chevron-right.png);

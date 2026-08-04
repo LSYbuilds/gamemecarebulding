@@ -3,8 +3,8 @@ import gameinfo from "../data/gameInfoData.json";
 import { GameinfoWrap } from "../styles/gameinfo.styled";
 import Icon from "../components/common/SvgComponents";
 import { SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
-import { StyledSwiper, ThumbSwiper,TopGameSwiper } from "../styles/swiper.styled";
+import { Navigation } from "swiper/modules";
+import { TopGameSwiper } from "../styles/swiper.styled";
 import { Link } from "react-router-dom";
 
 const GameInfo = () => {
@@ -131,9 +131,12 @@ const GameInfo = () => {
                     </div>
                     <div className="slide_title">
                       <p>{item.title}</p>
-                      <p> {item.tags.slice(1,3).map((item) => (
+                      <p>
+                        {" "}
+                        {item.tags.slice(1, 3).map((item) => (
                           <span key={item}>{item}</span>
-                        ))}</p>
+                        ))}
+                      </p>
                     </div>
                   </Link>
                 </SwiperSlide>

@@ -254,7 +254,7 @@ const Main = ({ changeWidth }) => {
                 spaceBetween={16}
               >
                 {cateList
-                  .find((item) => item.type === "preview")
+                  .find((item) => item.type === "special")
                   .list.map((item) => (
                     <SwiperSlide key={item.id}>
                       <Link to="#" className="cate_item">
@@ -284,7 +284,7 @@ const Main = ({ changeWidth }) => {
                 spaceBetween={16}
               >
                 {cateList
-                  .find((item) => item.type === "preview")
+                  .find((item) => item.type === "mobile")
                   .list.map((item) => (
                     <SwiperSlide key={item.id}>
                       <Link to="#" className="cate_item">

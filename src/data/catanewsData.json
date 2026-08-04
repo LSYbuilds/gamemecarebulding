@@ -42,18 +42,33 @@
       "list": [
         {
           "id": "1",
-          "src": "special1",
-          "title": "[보드게임] 번역이 옥의 티, 엘더스크롤: 두 번째 시대의 배반자"
+          "src": "/images/midslides/special1.jpg",
+          "title": "베데스다 “인원 감축, 엘더스크롤 6에 영향 없다”"
         },
         {
           "id": "2",
-          "src": "special2",
+          "src": "/images/midslides/special2.jpg",
           "title": "대형 게임사 매각 이어진, 2026년 상반기 10대 뉴스"
         },
         {
           "id": "3",
-          "src": "special3",
+          "src": "/images/midslides/special3.jpg",
           "title": "[판례.zip] 게임머니 사려다 공범 된다, 불법 돈세탁 주의보"
+        },
+        {
+          "id": "4",
+          "src": "/images/midslides/special4.jpg",
+          "title": "[숨신소] 도파민 샘솟는다, 저금통 부수는 ‘압긍’ 신작"
+        },
+        {
+          "id": "5",
+          "src": "/images/midslides/special5.jpg",
+          "title": "[오늘의 스팀] 확 넓어진 맵, 좀보이드 역대 최대 동접"
+        },
+        {
+          "id": "6",
+          "src": "https://cdn.gamemeca.com/data_center/338/696/20260803111853.jpg",
+          "title": "넥슨 서비스 앞둔 오버워치, 벡스코에서 대규모 행사 개최"
         }
       ]
     },
@@ -63,18 +78,33 @@
       "list": [
         {
           "id": "1",
-          "src": "mobile1",
-          "title": "뽑기와 패키지 없다, 아스달 연대기 '뉴 월드' 서버 오픈"
+          "src": "https://cdn.gamemeca.com/data_center/287/667/20240709174129.jpg",
+          "title": "하루 한 시간만, 베트남 청소년 게임 이용 규제 강화한다"
         },
         {
           "id": "2",
-          "src": "mobile2",
-          "title": "신규 캐릭터 포함, 아우터플레인 여름 맞이 대규모 업데이트"
+          "src": "https://cdn.gamemeca.com/data_center/338/744/20260803164843.jpg",
+          "title": "완전히 새 판 짠다, 섬란 카구라 신작 日 사전예약 시작"
         },
         {
           "id": "3",
-          "src": "mobile3",
-          "title": "이번엔 악령 처치다, 토치라이트: 인피니트 신규 시즌 공개"
+          "src": "https://cdn.gamemeca.com/data_center/338/720/20260803153241.jpg",
+          "title": "전 서버를 한 곳에, 아이모 '헌팅 그라운드' 프리 시즌 오픈"
+        },
+        {
+          "id": "4",
+          "src": "https://cdn.gamemeca.com/data_center/338/634/20260801001712.jpg",
+          "title": "[Chinajoy 26] 레고 21만 조각으로 만든 던파 '븜사람'"
+        },
+        {
+          "id": "5",
+          "src": "https://cdn.gamemeca.com/data_center/324/874/20260208150821.jpg",
+          "title": "RAM도 비싼데, 엔비디아·AMD GPU 인상 보도"
+        },
+        {
+          "id": "6",
+          "src": "https://cdn.gamemeca.com/data_center/338/694/20260803110649.jpg",
+          "title": "라인게임즈 공포 신작 콰이어트, 스팀 테스트 시작"
         }
       ]
     }

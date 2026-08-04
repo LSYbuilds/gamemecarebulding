@@ -292,7 +292,8 @@ export const TopnewsSwiper = styled(Swiper)`
 
 export const TopGameSwiper = styled(Swiper)`
   position: relative;
-  width: 100%;
+  /* width: 100%; */
+  width: ${(props) => (props.changeWidth <= 1024 ? "1400px" : "100%")};
   height: 100%;
   overflow: hidden;
   .swiper-wrapper {
@@ -304,6 +305,7 @@ export const TopGameSwiper = styled(Swiper)`
     height: 100%;
     div {
       width: 100%;
+      transition-duration: 0.2s;
       height: 100%;
       border-radius: 16px;
       overflow: hidden;

@@ -24,6 +24,7 @@ import { ReactComponent as Deactive } from "../../assets/svg/deactive.svg";
 import { ReactComponent as Hamberger } from "../../assets/svg/hamberger.svg";
 import { ReactComponent as Lock } from "../../assets/svg/lock.svg";
 import { ReactComponent as Down } from "../../assets/svg/chevron-down.svg";
+import { ReactComponent as Filter } from "../../assets/svg/filter.svg";
 
 const Icon = {
   action: Action,
@@ -44,14 +45,15 @@ const Icon = {
   vr: Vr,
   web: Web,
   windows: Windows,
-  mobile : Mobile,
-  status : Status,
-  search : Search,
-  man : Man,
+  mobile: Mobile,
+  status: Status,
+  search: Search,
+  man: Man,
   deactive: Deactive,
   hamberger: Hamberger,
-  lock : Lock,
-  down : Down
+  lock: Lock,
+  down: Down,
+  filter: Filter,
 };
 
 export default Icon;

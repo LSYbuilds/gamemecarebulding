@@ -105,17 +105,39 @@ export const GameinfoWrap = styled.div`
       }
       .pop_slide {
         height: 175px;
+        overflow: hidden;
       }
     }
     .gamelist_section {
       display: flex;
       gap: 16px;
       justify-content: space-between;
+      .side_call_btn_box {
+        display: none;
+        width: 100%;
+        height: 50px;
+        padding: 8px 0px;
+        align-content: center;
+        .side_call_btn {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          align-items: center;
+          width: 121px;
+          height: 34px;
+          border: none;
+          background: var(--seconGreen);
+          border-radius: 5px;
+          font-size: 1.125em;
+          color: var(--neutralWhite);
+          cursor: pointer;
+        }
+      }
       .side_cate {
         flex: 220;
         display: flex;
         flex-direction: column;
-
+        box-shadow: inset 0 0 0 1px var(--primaryMain);
         .cate_title {
           height: 48px;
           padding: 0px 10px;
@@ -128,30 +150,56 @@ export const GameinfoWrap = styled.div`
         .side_cate_list {
           display: flex;
           flex-direction: column;
-          box-shadow: inset 0 0 0 1px var(--primaryMain);
+
           li {
             display: flex;
-            height: 42px;
-            padding: 0px 16px;
-            gap: 8px;
-            align-items: center;
-            svg {
-              background-color: var(--seconGreen);
-              border-radius: 4px;
+            flex-direction: column;
+            .tags_name {
+              display: flex;
+              justify-content: space-between;
+              height: 42px;
+              padding: 0px 8px;
+              cursor: pointer;
+              p {
+                display: flex;
+                gap: 4px;
+                height: auto;
+                align-content: center;
+                align-items: center;
+                span {
+                  height: 100%;
+                  align-content: center;
+                }
+                svg {
+                  background-color: var(--primaryMain);
+                  border-radius: 4px;
+                }
+                svg path {
+                  fill: var(--neutralWhite);
+                }
+              }
+              .drop {
+                border: none;
+                background: none;
+              }
             }
-            svg path {
-              fill: var(--neutralWhite);
+            .detail_tags {
+              display: flex;
+              flex-direction: column;
+              li {
+                height: 42px;
+                padding: 0px 8px;
+                cursor: pointer;
+                span {
+                  height: 100%;
+                  align-content: center;
+                }
+              }
+              li:hover {
+                background-color: var(--seconGreen);
+                color: var(--neutralWhite);
+              }
             }
-            cursor: pointer;
-            button {
-              border: none;
-              background: none;
-              margin-left: auto;
-            }
-          }
-          li:hover {
-            background-color: var(--seconGreen);
-            color: var(--neutralWhite);
           }
         }
       }
@@ -251,6 +299,226 @@ export const GameinfoWrap = styled.div`
                     height: 100%;
                     object-fit: cover;
                     object-position: center;
+                  }
+                }
+              }
+              .mobile_thumb {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1400px) {
+    .inner {
+      padding: 0px 16px;
+    }
+  }
+  @media (max-width: 1024px) {
+    .inner {
+      max-width: 736px;
+      .category_section {
+        .cate_title {
+          flex: none;
+        }
+        .cate_list {
+          flex: none;
+          height: 42px;
+        }
+        .category {
+          flex-direction: column;
+          height: auto;
+        }
+        .search_box {
+          .search_form {
+            width: 100%;
+            .search_box {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .gamelist_section {
+        flex-direction: column;
+        .side_call_btn_box {
+          display: block;
+          width: 100%;
+          height: 50px;
+          padding: 8px 0px;
+          align-content: center;
+          .side_call_btn {
+            width: 121px;
+            height: 34px;
+          }
+        }
+        .side_cate {
+          flex: none;
+          width: 100%;
+          border-radius: 8px;
+          overflow: hidden;
+          .side_cate_list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            li {
+              .detail_tags {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .gamelist_warp {
+          flex: none;
+          width: 100%;
+          .gamelist {
+            gap: 100px;
+            .game_item {
+              display: grid;
+              gap: 16px;
+              height: 553px;
+              grid-template-columns: repeat(2, 2fr);
+              grid-template-rows: 1fr auto;
+              .card_img {
+                height: 443px;
+              }
+              .text {
+                height: 443px;
+              }
+              .list_thumbnail {
+                grid-column: 1 / 3;
+                flex-direction: row;
+                height: 125px;
+                .b_thumb {
+                  display: none;
+                }
+                .s_thumb {
+                  display: none;
+                }
+                .mobile_thumb {
+                  display: flex;
+                  grid-template-columns: repeat(3, 1fr);
+                  width: 100%;
+                  height: 100%;
+                  gap: 16px;
+                  li {
+                    width: 100%;
+                    height: 100%;
+                    background-color: black;
+                    overflow: hidden;
+                    border-radius: 16px;
+                    img {
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      object-position: center;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 736px) {
+    .inner {
+      max-width: 328px;
+      .category_section {
+        .cate_title {
+          flex: none;
+        }
+        .cate_list {
+          flex: none;
+          height: 42px;
+        }
+        .category {
+          flex-direction: column;
+          height: auto;
+        }
+        .search_box {
+          .search_form {
+            width: 100%;
+            .search_box {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .gamelist_section {
+        flex-direction: column;
+        .side_call_btn_box {
+          display: block;
+          width: 100%;
+          height: 50px;
+          padding: 8px 0px;
+          align-content: center;
+          .side_call_btn {
+            width: 121px;
+            height: 34px;
+          }
+        }
+        .side_cate {
+          flex: none;
+          width: 100%;
+          border-radius: 8px;
+          overflow: hidden;
+          .side_cate_list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            li {
+              .detail_tags {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .gamelist_warp {
+          flex: none;
+          width: 100%;
+          .gamelist {
+            gap: 100px;
+            .game_item {
+              display: grid;
+              gap: 16px;
+              height: 553px;
+              grid-template-columns: repeat(2, 2fr);
+              grid-template-rows: 1fr auto;
+              .card_img {
+                height: 443px;
+              }
+              .text {
+                height: 443px;
+              }
+              .list_thumbnail {
+                grid-column: 1 / 3;
+                flex-direction: row;
+                height: 125px;
+                .b_thumb {
+                  display: none;
+                }
+                .s_thumb {
+                  display: none;
+                }
+                .mobile_thumb {
+                  display: flex;
+                  grid-template-columns: repeat(3, 1fr);
+                  width: 100%;
+                  height: 100%;
+                  gap: 16px;
+                  li {
+                    width: 100%;
+                    height: 100%;
+                    background-color: black;
+                    overflow: hidden;
+                    border-radius: 16px;
+                    img {
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      object-position: center;
+                    }
                   }
                 }
               }

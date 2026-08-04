@@ -34,7 +34,10 @@ function App() {
           path="/news/*"
           element={<News path={path} changeWidth={changeWidth} />}
         ></Route>
-        <Route path="/gameinfo" element={<GameInfo path={path} />}></Route>
+        <Route
+          path="/gameinfo"
+          element={<GameInfo path={path} changeWidth={changeWidth} />}
+        ></Route>
       </Routes>
       <Footer />
     </Wrap>

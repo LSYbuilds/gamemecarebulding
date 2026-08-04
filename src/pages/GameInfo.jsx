@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import gameinfo from "../data/gameInfoData.json";
 import { GameinfoWrap } from "../styles/gameinfo.styled";
 import Icon from "../components/common/SvgComponents";
 import { SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import SideCate from "../components/common/SIieCateComponents";
 import { TopGameSwiper } from "../styles/swiper.styled";
 import { Link } from "react-router-dom";
 
-const GameInfo = () => {
+const GameInfo = ({ changeWidth }) => {
   const gameInfoData = gameinfo.gameinfo;
   const gameInfoCount = gameInfoData.length;
+  const [cateActive, setcateActive] = useState(false);
   console.log(gameInfoData);
   const buttonMenu = [
     { id: "all", name: "전체" },
@@ -120,8 +122,9 @@ const GameInfo = () => {
               navigation
               speed={1000}
               loop
-              slidesPerView={5}
+              slidesPerView={changeWidth <= 736 ? 3 : 5}
               spaceBetween={10}
+              changeWidth={changeWidth}
             >
               {gameInfoData.map((item) => (
                 <SwiperSlide key={item.id}>
@@ -132,7 +135,6 @@ const GameInfo = () => {
                     <div className="slide_title">
                       <p>{item.title}</p>
                       <p>
-                        {" "}
                         {item.tags.slice(1, 3).map((item) => (
                           <span key={item}>{item}</span>
                         ))}
@@ -145,30 +147,26 @@ const GameInfo = () => {
           </div>
         </section>
         <div className="count_bar">
-          <p>총 {gameInfoCount}개의 기사가 있습니다.</p>
+          <p>총 {gameInfoCount}개의 게임이 있습니다.</p>
         </div>
         <section className="gamelist_section">
-          <div className="side_cate">
-            <div className="cate_title">모든 카테고리</div>
-            <ul className="side_cate_list">
-              {sideCateMenu.map((itme) => {
-                const SvgIcon = itme.svg;
-                return (
-                  <li key={itme.id}>
-                    {SvgIcon && <SvgIcon />}
-                    <p>{itme.id}</p>
-                    {itme.btn ? (
-                      <button>
-                        <img src={itme.btn} alt="버튼이미지" />
-                      </button>
-                    ) : (
-                      ""
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
+          {/* {cateActive && changeWidth <= 1024 ? <SideCate /> : null} */}
+          <div className="side_call_btn_box">
+            <button
+              className="side_call_btn"
+              onClick={() => {
+                setcateActive((prev) => !prev);
+              }}
+            >
+              <Icon.filter />
+              카테고리
+            </button>
           </div>
+          {changeWidth >= 1024 ? (
+            <SideCate />
+          ) : (
+            <>{cateActive && changeWidth <= 1024 ? <SideCate /> : null}</>
+          )}
           <div className="gamelist_warp">
             <ul className="gamelist">
               {gameInfoData.map((item) => (
@@ -218,6 +216,17 @@ const GameInfo = () => {
                         <img src={item.simg2} alt="작은이미지" />
                       </div>
                     </div>
+                    <ul className="mobile_thumb">
+                      <li>
+                        <img src={item.simg1} alt="작은이미지" />
+                      </li>
+                      <li>
+                        <img src={item.simg2} alt="작은이미지" />
+                      </li>
+                      <li>
+                        <img src={item.simgB} alt="큰이미지" />
+                      </li>
+                    </ul>
                   </div>
                 </li>
               ))}

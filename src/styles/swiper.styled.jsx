@@ -292,8 +292,7 @@ export const TopnewsSwiper = styled(Swiper)`
 
 export const TopGameSwiper = styled(Swiper)`
   position: relative;
-  /* width: 100%; */
-  width: ${(props) => (props.changeWidth <= 1024 ? "1400px" : "100%")};
+  width: 100%;
   height: 100%;
   overflow: hidden;
   .swiper-wrapper {
@@ -303,12 +302,13 @@ export const TopGameSwiper = styled(Swiper)`
     display: flex;
     color: #fff;
     height: 100%;
-    div {
+    .swiper-slide {
       width: 100%;
       transition-duration: 0.2s;
       height: 100%;
-      border-radius: 16px;
       overflow: hidden;
+      border-radius: 16px;
+      background-color: #000;
       .top_item_box {
         position: relative;
         display: flex;
@@ -316,7 +316,7 @@ export const TopGameSwiper = styled(Swiper)`
         height: 100%;
         .imgbox {
           width: 100%;
-          height: 100%;
+          height: fit-content;
           img {
             width: 100%;
             height: 100%;
@@ -334,9 +334,9 @@ export const TopGameSwiper = styled(Swiper)`
           justify-content: space-between;
           width: 100%;
           height: auto;
-          background-color: rgb(25, 25, 25, 0.5);
           padding: 8px 16px;
           color: var(--neutralWhite);
+          background-color: black;
           p:nth-child(2) {
             display: flex;
             gap: 8px;
@@ -350,10 +350,10 @@ export const TopGameSwiper = styled(Swiper)`
   .swiper-button-prev {
     position: absolute;
     top: 40%;
-    left: 3%;
-    transform: translate(-50%, 0%);
-    width: 50px;
-    height: 50px;
+    left: 1%;
+    /* transform: translate(0%, 0%); */
+    width: 35px;
+    height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
     background-image: url(/images/icon/chevron-left.png);
@@ -372,10 +372,10 @@ export const TopGameSwiper = styled(Swiper)`
   .swiper-button-next {
     position: absolute;
     top: 40%;
-    right: 0%;
-    transform: translate(-50%, 0%);
-    width: 50px;
-    height: 50px;
+    right: 1%;
+    /* transform: translate(-50%, 0%); */
+    width: 35px;
+    height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
     background-image: url(/images/icon/chevron-right.png);

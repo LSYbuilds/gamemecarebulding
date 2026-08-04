@@ -137,7 +137,6 @@ export const GameinfoWrap = styled.div`
         flex: 220;
         display: flex;
         flex-direction: column;
-        box-shadow: inset 0 0 0 1px var(--primaryMain);
         .cate_title {
           height: 48px;
           padding: 0px 10px;
@@ -150,7 +149,7 @@ export const GameinfoWrap = styled.div`
         .side_cate_list {
           display: flex;
           flex-direction: column;
-
+          box-shadow: inset 0 0 0 1px var(--primaryMain);
           li {
             display: flex;
             flex-direction: column;
@@ -214,7 +213,8 @@ export const GameinfoWrap = styled.div`
             gap: 16px;
             height: 433px;
             .card_img {
-              flex: 338;
+              width: 338px;
+              /* flex: 338;  */
               height: 100%;
               border-radius: 16px;
               overflow: hidden;
@@ -358,9 +358,11 @@ export const GameinfoWrap = styled.div`
           width: 100%;
           border-radius: 8px;
           overflow: hidden;
+          box-shadow: inset 0 0 0 1px var(--primaryMain);
           .side_cate_list {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+            box-shadow: none;
             li {
               .detail_tags {
                 width: 100%;
@@ -372,11 +374,13 @@ export const GameinfoWrap = styled.div`
           flex: none;
           width: 100%;
           .gamelist {
-            gap: 100px;
+            gap: 32px;
             .game_item {
               display: grid;
               gap: 16px;
-              height: 553px;
+              height: auto;
+              border-bottom: 1px solid var(--neutralGray);
+              padding-bottom: 16px;
               grid-template-columns: repeat(2, 2fr);
               grid-template-rows: 1fr auto;
               .card_img {
@@ -426,20 +430,34 @@ export const GameinfoWrap = styled.div`
     .inner {
       max-width: 328px;
       .category_section {
+        gap: 16px;
         .cate_title {
           flex: none;
         }
         .cate_list {
           flex: none;
-          height: 42px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          height: auto;
+          li {
+            height: 42px;
+            gap: 0px;
+            svg {
+              height: 16px;
+            }
+          }
         }
         .category {
           flex-direction: column;
           height: auto;
         }
         .search_box {
+          .cate_title {
+            display: none;
+          }
           .search_form {
             width: 100%;
+            height: 48px;
             .search_box {
               width: 100%;
             }
@@ -478,49 +496,48 @@ export const GameinfoWrap = styled.div`
           flex: none;
           width: 100%;
           .gamelist {
-            gap: 100px;
+            gap: 16px;
             .game_item {
-              display: grid;
+              display: flex;
+              flex-direction: column;
               gap: 16px;
-              height: 553px;
-              grid-template-columns: repeat(2, 2fr);
-              grid-template-rows: 1fr auto;
+              height: auto;
               .card_img {
-                height: 443px;
+                width: 100%;
+                flex: none;
+                height: fit-content;
+                img {
+                  width: 100%;
+                  object-fit: cover;
+                }
               }
               .text {
-                height: 443px;
-              }
-              .list_thumbnail {
-                grid-column: 1 / 3;
-                flex-direction: row;
-                height: 125px;
-                .b_thumb {
-                  display: none;
+                flex: none;
+                height: auto;
+                /* height: 206px; */
+                .head {
+                  height: auto;
+                  .title {
+                    margin-bottom: 0px;
+                    a {
+                      font-size: 1.25em;
+                    }
+                  }
+                  .script {
+                    display: none;
+                  }
                 }
-                .s_thumb {
-                  display: none;
-                }
-                .mobile_thumb {
-                  display: flex;
-                  grid-template-columns: repeat(3, 1fr);
-                  width: 100%;
-                  height: 100%;
-                  gap: 16px;
-                  li {
-                    width: 100%;
-                    height: 100%;
-                    background-color: black;
-                    overflow: hidden;
-                    border-radius: 16px;
-                    img {
-                      width: 100%;
-                      height: 100%;
-                      object-fit: cover;
-                      object-position: center;
+                .info {
+                  border: none;
+                  .tags {
+                    span {
+                      font-size: 0.8em;
                     }
                   }
                 }
+              }
+              .list_thumbnail {
+                display: none;
               }
             }
           }

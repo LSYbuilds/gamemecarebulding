@@ -122,7 +122,9 @@ const GameInfo = ({ changeWidth }) => {
               navigation
               speed={1000}
               loop
-              slidesPerView={changeWidth <= 736 ? 3 : 5}
+              slidesPerView={
+                changeWidth >= 1024 ? 5 : changeWidth >= 737 ? 3 : 1
+              }
               spaceBetween={10}
               changeWidth={changeWidth}
             >
@@ -172,7 +174,10 @@ const GameInfo = ({ changeWidth }) => {
               {gameInfoData.map((item) => (
                 <li key={item.id} className="game_item">
                   <div className="card_img">
-                    <img src={item.bimg} alt="큰이미지" />
+                    <img
+                      src={changeWidth >= 737 ? item.bimg : item.simg}
+                      alt="큰이미지"
+                    />
                   </div>
                   <div className="text">
                     <div className="head">

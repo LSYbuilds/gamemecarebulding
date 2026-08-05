@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Icon from "./SvgComponents";
+import { AnimatePresence, motion } from "framer-motion";
 
-const SideCate = () => {
+const SideCate = ({ changeWidth, setcateActive, cateActive }) => {
+  const [thiscate, setThiscate] = useState(false);
   const sideCateMenus = [
     {
       id: "1",
@@ -95,27 +97,53 @@ const SideCate = () => {
   ];
   return (
     <div className="side_cate">
-      <div className="cate_title">모든 카테고리</div>
+      <div className="cate_title" onClick={() => setcateActive(!cateActive)}>
+        <span>모든 카테고리</span>
+        {changeWidth <= 1024 ? <Icon.down /> : <></>}
+      </div>
       <ul className="side_cate_list">
         {sideCateMenus.map((itme) => {
           const SvgIcon = itme.svg;
           const BtnIcon = itme.btn;
           return (
             <li key={itme.id}>
-              <div className="tags_name">
+              <div
+                className="tags_name"
+                onClick={() => {
+                  setThiscate(thiscate === itme.id ? null : itme.id);
+                }}
+              >
                 <p>
                   {SvgIcon && <SvgIcon />}
                   <span>{itme.title}</span>
                 </p>
                 <button className="drop">{BtnIcon && <BtnIcon />}</button>
               </div>
-              <ul className="detail_tags">
+              <AnimatePresence>
+                {thiscate === itme.id && (
+                  <motion.ul
+                    className="detail_tags"
+                    initial={{ height: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    {itme.tags.map((tags) => (
+                      <li key={tags}>
+                        <span>{tags}</span>
+                      </li>
+                    ))}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+              {/* <ul className="detail_tags">
                 {itme.tags.map((tags) => (
                   <li key={tags}>
                     <span>{tags}</span>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </li>
           );
         })}

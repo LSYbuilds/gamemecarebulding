@@ -6,6 +6,7 @@ import { SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import SideCate from "../components/common/SIieCateComponents";
 import { TopGameSwiper } from "../styles/swiper.styled";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const GameInfo = ({ changeWidth }) => {
@@ -164,7 +165,7 @@ const GameInfo = ({ changeWidth }) => {
             <button
               className="side_call_btn"
               onClick={() => {
-                setcateActive((prev) => !prev);
+                setcateActive(!cateActive);
               }}
             >
               <Icon.filter />
@@ -172,9 +173,21 @@ const GameInfo = ({ changeWidth }) => {
             </button>
           </div>
           {changeWidth >= 1024 ? (
-            <SideCate />
+            <SideCate
+              changeWidth={changeWidth}
+              setcateActive={setcateActive}
+              cateActive={cateActive}
+            />
           ) : (
-            <>{cateActive && changeWidth <= 1024 ? <SideCate /> : null}</>
+            <>
+              {cateActive && changeWidth <= 1024 ? (
+                <SideCate
+                  changeWidth={changeWidth}
+                  setcateActive={setcateActive}
+                  cateActive={cateActive}
+                />
+              ) : null}
+            </>
           )}
           <div className="gamelist_warp">
             <ul className="gamelist">

@@ -489,7 +489,7 @@ export const GameinfoWrap = styled.div`
           bottom: 0px;
           left: 0px;
           width: 100%;
-          height: 60vh;
+          height: 385px;
           /* overflow-y: scroll;
           scrollbar-width: none;
           -ms-overflow-style: none; */
@@ -499,18 +499,22 @@ export const GameinfoWrap = styled.div`
           box-shadow: none;
           border-top: 1px solid gray;
           .cate_title {
-            width: 100%;
+            display: flex;
+            justify-content: space-between;
             width: 100%;
             height: 48px;
             padding: 0px 10px;
             align-content: center;
+            align-items: center;
             background-color: var(--primaryMain);
             color: var(--neutralWhite);
             font-weight: 1.125em;
             font-weight: 600;
+            cursor: pointer;
           }
           .side_cate_list {
             width: 100%;
+            height: 100%;
             overflow-y: scroll;
             scrollbar-width: none;
             -ms-overflow-style: none;

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gamemecarebulding/static/css/main.e54ba8dc.css",
-    "main.js": "/gamemecarebulding/static/js/main.676443ee.js",
+    "main.js": "/gamemecarebulding/static/js/main.94863cdd.js",
     "static/media/gamemeca.svg": "/gamemecarebulding/static/media/gamemeca.68f30a8f62c0d049d2b6440cc13e241d.svg",
     "static/media/windows.svg": "/gamemecarebulding/static/media/windows.2a2ac36094a270da5d6087780093c79c.svg",
     "static/media/rpg.svg": "/gamemecarebulding/static/media/rpg.fb39f10bf7b5f0a3ef42dd3de3e4fd9e.svg",
@@ -31,10 +31,10 @@
     "static/media/deactive.svg": "/gamemecarebulding/static/media/deactive.62888522e8ca4f6baf15ed617f885302.svg",
     "static/media/chevron-down.svg": "/gamemecarebulding/static/media/chevron-down.99d74f885d1eca58b6f5c0d0569371fb.svg",
     "main.e54ba8dc.css.map": "/gamemecarebulding/static/css/main.e54ba8dc.css.map",
-    "main.676443ee.js.map": "/gamemecarebulding/static/js/main.676443ee.js.map"
+    "main.94863cdd.js.map": "/gamemecarebulding/static/js/main.94863cdd.js.map"
   },
   "entrypoints": [
     "static/css/main.e54ba8dc.css",
-    "static/js/main.676443ee.js"
+    "static/js/main.94863cdd.js"
   ]
 }

@@ -162,7 +162,7 @@ const Main = ({ changeWidth }) => {
                     className={isLeftNews ? "active_btn" : ""}
                     onClick={() => setIsLeftNews(true)}
                   >
-                    페이지 반영확인
+                    많이 본 뉴스
                   </button>
                   <button
                     className={isLeftNews ? "" : "active_btn"}

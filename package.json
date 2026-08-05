@@ -2,7 +2,7 @@
   "name": "maca",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://LSYbuilds.github.io/gamemecarebulding",
+  "homepage": "https://lsybuilds.github.io/gamemecarebulding/",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",

@@ -29,15 +29,15 @@ function App() {
     <Wrap path={path}>
       <Header path={path} changeWidth={changeWidth} />
       <Routes>
-        <Route path="/" element={<Main changeWidth={changeWidth} />}></Route>
+        <Route path="/" element={<Main changeWidth={changeWidth} />} />
         <Route
           path="/news/*"
           element={<News path={path} changeWidth={changeWidth} />}
-        ></Route>
+        />
         <Route
           path="/gameinfo"
           element={<GameInfo path={path} changeWidth={changeWidth} />}
-        ></Route>
+        />
       </Routes>
       <Footer />
     </Wrap>

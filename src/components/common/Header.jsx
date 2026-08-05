@@ -1,7 +1,8 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HeaderWrap, FamMobulsStyle } from "../../styles/header.styed";
 import Icon from "../../components/common/SvgComponents";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const FamMobule = () => {
   return (
@@ -214,7 +215,7 @@ const Header = ({ path, changeWidth }) => {
         <div className="top_i">
           <button
             className="mobile_call_btn"
-            onClick={() => setMobilenav((prev) => !prev)}
+            onClick={() => setMobilenav(!mobilenavState)}
           >
             <Icon.hamberger />
           </button>
@@ -269,7 +270,7 @@ const Header = ({ path, changeWidth }) => {
               <Link
                 to="#"
                 className="lnb_call"
-                onClick={() => setLabCall((prev) => !prev)}
+                onClick={() => setLabCall(!lnbcall)}
               ></Link>
               <ul className="gnb_menu">
                 <li>
@@ -347,24 +348,125 @@ const Header = ({ path, changeWidth }) => {
           ""
         )}
       </div>
-      {lnbcall ? (
-        <div className="global_box">
-          <div className="global_inner">
+      <AnimatePresence>
+        {lnbcall && (
+          <motion.div
+            className="global_box"
+            initial={{ height: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            style={{ overflow: "hidden" }}
+          >
+            <div className="global_inner">
+              <button
+                className="global_close_btn"
+                onClick={() => setLabCall((prev) => !prev)}
+              >
+                <Icon.deactive />
+              </button>
+              <ul className="global_menu">
+                {mobilenav.slice(0, 9).map((item, index) => {
+                  const SvgIcon = item.svg;
+                  return (
+                    <li key={item.id} className="global_nav_list">
+                      <div
+                        className="list_head"
+                        onClick={() => {
+                          setGnbDropDown(gnbDropDown === index ? null : index);
+                        }}
+                      >
+                        <p>
+                          <span>{item.title}</span>
+                          {SvgIcon && <SvgIcon />}
+                        </p>
+                      </div>
+                      {changeWidth <= 1024 ? (
+                        <AnimatePresence>
+                          {gnbDropDown === index && (
+                            <motion.ul
+                              className="global_in"
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3 }}
+                              style={{ overflow: "hidden" }}
+                            >
+                              {item.list.map(([name, link]) => (
+                                <li key={link}>
+                                  <Link to={link}>{name}</Link>
+                                </li>
+                              ))}
+                            </motion.ul>
+                          )}
+                        </AnimatePresence>
+                      ) : (
+                        <ul
+                          className={`global_in ${
+                            gnbDropDown === index ? "active" : ""
+                          }`}
+                        >
+                          {item.list.map(([name, link]) => (
+                            <li key={link}>
+                              <Link to={link}>{name}</Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {mobilenavState && (
+          <motion.div
+            className="mobile_nav"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.3 }}
+          >
             <button
-              className="global_close_btn"
-              onClick={() => setLabCall((prev) => !prev)}
+              className="close_nav_btn"
+              onClick={() => setMobilenav((prev) => !prev)}
             >
               <Icon.deactive />
             </button>
-            <ul className="global_menu">
+            <ul className="mobile_util">
+              <li>
+                <Link>
+                  <span>로그인</span>
+                  <img
+                    src={process.env.PUBLIC_URL + "/images/icon/lock.png"}
+                    alt="아이콘"
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link>
+                  <span>회원가입</span>
+                  <img
+                    src={process.env.PUBLIC_URL + "/images/icon/user.png"}
+                    alt="아이콘"
+                  />
+                </Link>
+              </li>
+            </ul>
+            <div className="mobile_nav_box">
               {mobilenav.slice(0, 9).map((item, index) => {
                 const SvgIcon = item.svg;
                 return (
-                  <li key={item.id} className="global_nav_list">
+                  <div key={item.id} className="mobile_nav_list">
                     <div
                       className="list_head"
                       onClick={() => {
-                        setGnbDropDown(gnbDropDown === index ? null : index);
+                        setMobileDrapDown(
+                          mobileDropDown === index ? null : index,
+                        );
                       }}
                     >
                       <p>
@@ -372,25 +474,57 @@ const Header = ({ path, changeWidth }) => {
                         {SvgIcon && <SvgIcon />}
                       </p>
                     </div>
-                    <ul
-                      className={`global_in ${
-                        gnbDropDown === index ? "active" : ""
-                      }`}
-                    >
-                      {item.list.map(([name, link]) => (
-                        <li key={link}>
-                          <Link to={link}>{name}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
+                    <AnimatePresence>
+                      {mobileDropDown === index && (
+                        <motion.ul
+                          className="mobile_nav_list_in"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          style={{ overflow: "hidden" }}
+                        >
+                          {item.list.map(([name, link]) => (
+                            <Link to={link}>
+                              <li key={link}>{name}</li>
+                            </Link>
+                          ))}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 );
               })}
-            </ul>
-          </div>
-        </div>
-      ) : null}
-      {mobilenavState ? (
+              <ul className="mobile_fam_list">
+                {mobilenav[9].list.map((item) => (
+                  <li key={item.id}>
+                    <Link to="#">
+                      <img
+                        src={process.env.PUBLIC_URL + item.icon}
+                        alt="아이콘"
+                      />
+                      <p>{item.title}</p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {mobilenavState && (
+          <motion.div
+            className="screen_black"
+            onClick={() => setMobilenav(!mobilenavState)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          ></motion.div>
+        )}
+      </AnimatePresence>
+      {/* {mobilenavState ? (
         <div className="mobile_nav">
           <button
             className="close_nav_btn"
@@ -464,14 +598,14 @@ const Header = ({ path, changeWidth }) => {
               ))}
             </ul>
           </div>
-        </div>
-      ) : null}
-      {mobilenavState ? (
+        </div>s
+      ) : null} */}
+      {/* {mobilenavState ? (
         <div
           className="screen_black"
           onClick={() => setMobilenav((prev) => !prev)}
         ></div>
-      ) : null}
+      ) : null} */}
     </HeaderWrap>
   );
 };

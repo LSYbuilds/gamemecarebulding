@@ -425,13 +425,15 @@ export const HeaderWrap = styled.header`
               }
             }
             .global_in {
-              display: none;
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: row;
 
-              &.active {
+              /* &.active {
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: row;
-              }
+              } */
               li {
                 flex: 0 0 auto;
                 width: auto;
@@ -568,7 +570,6 @@ export const HeaderWrap = styled.header`
             }
           }
           .mobile_nav_list_in {
-            display: none;
             flex-direction: column;
             gap: 8px;
             /* background-color: var(--neutralGray); */

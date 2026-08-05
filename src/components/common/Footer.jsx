@@ -11,32 +11,50 @@ const Footer = () => {
           <ul className="partner_top">
             <li>
               <Link to="#">
-                <img src="/images/icon/naver_logo.png" alt="파트너이미지" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/icon/naver_logo.png"}
+                  alt="파트너이미지"
+                />
               </Link>
             </li>
             <li>
               <Link to="#">
-                <img src="/images/icon/google.png" alt="파트너이미지" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/icon/google.png"}
+                  alt="파트너이미지"
+                />
               </Link>
             </li>
             <li>
               <Link to="#">
-                <img src="/images/icon/daum.png" alt="파트너이미지" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/icon/daum.png"}
+                  alt="파트너이미지"
+                />
               </Link>
             </li>
             <li>
               <Link to="#">
-                <img src="/images/icon/zum.png" alt="파트너이미지" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/icon/zum.png"}
+                  alt="파트너이미지"
+                />
               </Link>
             </li>
             <li>
               <Link to="#">
-                <img src="/images/icon/imbc.png" alt="파트너이미지" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/icon/imbc.png"}
+                  alt="파트너이미지"
+                />
               </Link>
             </li>
             <li>
               <Link to="#">
-                <img src="/images/icon/nate.png" alt="파트너이미지" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/icon/nate.png"}
+                  alt="파트너이미지"
+                />
               </Link>
             </li>
           </ul>
@@ -44,24 +62,36 @@ const Footer = () => {
         <ul className="sns_list">
           <li>
             <Link to="#">
-              <img src="/images/icon/youtube.png" alt="아이콘이미지" />
+              <img
+                src={process.env.PUBLIC_URL + "/images/icon/youtube.png"}
+                alt="아이콘이미지"
+              />
               <span>유튜브</span>
             </Link>
           </li>
           <li>
             <Link to="#">
-              <img src="/images/icon/tx.png" alt="아이콘이미지" />
+              <img
+                src={process.env.PUBLIC_URL + "/images/icon/tx.png"}
+                alt="아이콘이미지"
+              />
             </Link>
           </li>
           <li>
             <Link to="#">
-              <img src="/images/icon/facebook.png" alt="아이콘이미지" />
+              <img
+                src={process.env.PUBLIC_URL + "/images/icon/facebook.png"}
+                alt="아이콘이미지"
+              />
               <span>페이스북</span>
             </Link>
           </li>
           <li>
             <Link to="#">
-              <img src="/images/icon/naver.png" alt="아이콘이미지" />
+              <img
+                src={process.env.PUBLIC_URL + "/images/icon/naver.png"}
+                alt="아이콘이미지"
+              />
               <span>네이버뉴스</span>
             </Link>
           </li>
@@ -123,12 +153,25 @@ const Footer = () => {
         </div>
         <div className="bis_site">
           <Link to="#">
-          <img src="/images/icon/gamescom.png" alt="게임스컴" /></Link>
+            <img
+              src={process.env.PUBLIC_URL + "/images/icon/gamescom.png"}
+              alt="게임스컴"
+            />
+          </Link>
           <Link to="#">
-          <img src="/images/icon/inernet.png" alt="게임스컴" /></Link>
+            <img
+              src={process.env.PUBLIC_URL + "/images/icon/inernet.png"}
+              alt="게임스컴"
+            />
+          </Link>
         </div>
         <h1 className="f_logo">
-          <Link to='#'><img src="/images/icon/f_logo.png" alt="푸터로고" /></Link>
+          <Link to="#">
+            <img
+              src={process.env.PUBLIC_URL + "/images/icon/f_logo.png"}
+              alt="푸터로고"
+            />
+          </Link>
         </h1>
       </div>
     </FooterWrap>

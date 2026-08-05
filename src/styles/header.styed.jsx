@@ -6,6 +6,8 @@ import styled from "@emotion/styled";
 
 // const bothChangeHeader = ({path}) => (path === "/news" ? `height:187px (scrollChangeHeader)`: "height:137px");
 
+const PUBLIC_URL = process.env.PUBLIC_URL;
+
 export const HeaderWrap = styled.header`
   position: fixed;
   z-index: 999;
@@ -76,7 +78,7 @@ export const HeaderWrap = styled.header`
             height: 30px;
             border-radius: 100%;
             background-color: #818cf8;
-            background-image: url(/images/icon/search.png);
+            background-image: url(${PUBLIC_URL}/images/icon/search.png);
             background-repeat: no-repeat;
             background-position: center;
             border: none;
@@ -150,8 +152,8 @@ export const HeaderWrap = styled.header`
             height: 25px;
             background-image: ${(props) =>
               props.lnbcall
-                ? "url(/images/icon/x.png)"
-                : "url(/images/icon/hambarger.png)"};
+                ? `url(${process.env.PUBLIC_URL}/images/icon/x.png)`
+                : `url(${process.env.PUBLIC_URL}/images/icon/hambarger.png)`};
             background-position: center;
             background-repeat: no-repeat;
             border: none;

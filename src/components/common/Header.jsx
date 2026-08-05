@@ -9,24 +9,37 @@ export const FamMobule = () => {
       <ul className="fam_list">
         <li>
           <Link>
-            <img src="/images/icon/fam.png" alt="패밀리아이콘" />팸
+            <img
+              src={process.env.PUBLIC_URL + "/images/icon/fam.png"}
+              alt="패밀리아이콘"
+            />
+            팸
           </Link>
         </li>
         <li>
           <Link>
-            <img src="/images/icon/event.png" alt="패밀리아이콘" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/icon/event.png"}
+              alt="패밀리아이콘"
+            />
             이벤트
           </Link>
         </li>
         <li>
           <Link>
-            <img src="/images/icon/fam.png" alt="패밀리아이콘" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/icon/fam.png"}
+              alt="패밀리아이콘"
+            />
             포션마켓
           </Link>
         </li>
         <li>
           <Link to="https://trees.gamemeca.com/">
-            <img src="/images/icon/kugmin.png" alt="패밀리아이콘" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/icon/kugmin.png"}
+              alt="패밀리아이콘"
+            />
             국민트리
           </Link>
         </li>
@@ -208,7 +221,10 @@ const Header = ({ path, changeWidth }) => {
           <div className="site_head_title">
             <h1 className="logo">
               <Link to="/" className="logo_link">
-                <img src="/images/icon/h_logo.png" alt="Logo" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/icon/h_logo.png"}
+                  alt="Logo"
+                />
               </Link>
             </h1>
             <form className="search_box">
@@ -219,13 +235,19 @@ const Header = ({ path, changeWidth }) => {
           <div className="util">
             <div className="login">
               <Link to="#">
-                <img src="/images/icon/lock.png" alt="로그인이미지" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/icon/lock.png"}
+                  alt="로그인이미지"
+                />
                 <p>로그인</p>
               </Link>
             </div>
             <div className="joinus">
               <Link to="#">
-                <img src="/images/icon/user.png" alt="회원가입" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/icon/user.png"}
+                  alt="회원가입"
+                />
                 <p>회원가입</p>
               </Link>
             </div>
@@ -380,13 +402,19 @@ const Header = ({ path, changeWidth }) => {
             <li>
               <Link>
                 <span>로그인</span>
-                <img src="/images/icon/lock.png" alt="아이콘" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/icon/lock.png"}
+                  alt="아이콘"
+                />
               </Link>
             </li>
             <li>
               <Link>
                 <span>회원가입</span>
-                <img src="/images/icon/user.png" alt="아이콘" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/icon/user.png"}
+                  alt="아이콘"
+                />
               </Link>
             </li>
           </ul>
@@ -426,7 +454,10 @@ const Header = ({ path, changeWidth }) => {
               {mobilenav[9].list.map((item) => (
                 <li key={item.id}>
                   <Link to="#">
-                    <img src={item.icon} alt="아이콘" />
+                    <img
+                      src={process.env.PUBLIC_URL + item.icon}
+                      alt="아이콘"
+                    />
                     <p>{item.title}</p>
                   </Link>
                 </li>

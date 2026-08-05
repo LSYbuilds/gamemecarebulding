@@ -53,7 +53,10 @@ const Main = ({ changeWidth }) => {
                   <SwiperSlide key={item.id}>
                     <Link to="#" className="slide_item_box">
                       <div className="imgbox">
-                        <img src={item.img} alt="슬라이드이미지" />
+                        <img
+                          src={process.env.PUBLIC_URL + item.img}
+                          alt="슬라이드이미지"
+                        />
                       </div>
                       <div className="slide_title">
                         <p>{item.title}</p>
@@ -77,7 +80,7 @@ const Main = ({ changeWidth }) => {
                     </p>
                   </div>
                   <div className="contents_img">
-                    <img src={item.src} alt="이미지" />
+                    <img src={process.env.PUBLIC_URL + item.src} alt="이미지" />
                   </div>
                 </Link>
               ))}
@@ -112,7 +115,10 @@ const Main = ({ changeWidth }) => {
                             {item.hot === "1" ? (
                               <div>
                                 <img
-                                  src="/images/icon/hot.jpg"
+                                  src={
+                                    process.env.PUBLIC_URL +
+                                    "/images/icon/hot.jpg"
+                                  }
                                   alt="핫이미지"
                                 />
                               </div>
@@ -132,7 +138,10 @@ const Main = ({ changeWidth }) => {
                             {item.hot === "1" ? (
                               <div>
                                 <img
-                                  src="/images/icon/hot.jpg"
+                                  src={
+                                    process.env.PUBLIC_URL +
+                                    "/images/icon/hot.jpg"
+                                  }
                                   alt="핫이미지"
                                 />
                               </div>
@@ -173,7 +182,10 @@ const Main = ({ changeWidth }) => {
                             {item.hot === "1" ? (
                               <div>
                                 <img
-                                  src="/images/icon/hot.jpg"
+                                  src={
+                                    process.env.PUBLIC_URL +
+                                    "/images/icon/hot.jpg"
+                                  }
                                   alt="핫이미지"
                                 />
                               </div>
@@ -193,7 +205,10 @@ const Main = ({ changeWidth }) => {
                             {item.hot === "1" ? (
                               <div>
                                 <img
-                                  src="/images/icon/hot.jpg"
+                                  src={
+                                    process.env.PUBLIC_URL +
+                                    "/images/icon/hot.jpg"
+                                  }
                                   alt="핫이미지"
                                 />
                               </div>
@@ -229,7 +244,14 @@ const Main = ({ changeWidth }) => {
                     <SwiperSlide key={item.id}>
                       <Link to="#" className="cate_item">
                         <div className="cate_img">
-                          <img src={item.src} alt="이미지" />
+                          <img
+                            src={
+                              item.src.startsWith("http")
+                                ? item.src
+                                : process.env.PUBLIC_URL + item.src
+                            }
+                            alt="이미지"
+                          />
                         </div>
                         <div className="cate_text">
                           <p>{item.title}</p>
@@ -259,7 +281,14 @@ const Main = ({ changeWidth }) => {
                     <SwiperSlide key={item.id}>
                       <Link to="#" className="cate_item">
                         <div className="cate_img">
-                          <img src={item.src} alt="이미지" />
+                          <img
+                            src={
+                              item.src.startsWith("http")
+                                ? item.src
+                                : process.env.PUBLIC_URL + item.src
+                            }
+                            alt="이미지"
+                          />
                         </div>
                         <div className="cate_text">
                           <p>{item.title}</p>
@@ -289,7 +318,14 @@ const Main = ({ changeWidth }) => {
                     <SwiperSlide key={item.id}>
                       <Link to="#" className="cate_item">
                         <div className="cate_img">
-                          <img src={item.src} alt="이미지" />
+                          <img
+                            src={
+                              item.src.startsWith("http")
+                                ? item.src
+                                : process.env.PUBLIC_URL + item.src
+                            }
+                            alt="이미지"
+                          />
                         </div>
                         <div className="cate_text">
                           <p>{item.title}</p>
@@ -315,7 +351,10 @@ const Main = ({ changeWidth }) => {
                 <li key={item.id}>
                   <Link to="#">
                     <div className="thumb_img">
-                      <img src={item.simg} alt="이미지" />
+                      <img
+                        src={process.env.PUBLIC_URL + item.simg}
+                        alt="이미지"
+                      />
                     </div>
                     <div className="info_box">
                       <div className="info">
@@ -342,7 +381,10 @@ const Main = ({ changeWidth }) => {
                 <li key={item.id}>
                   <Link to="#">
                     <div className="thumb_large">
-                      <img src={item.bimg} alt="이미지" />
+                      <img
+                        src={process.env.PUBLIC_URL + item.bimg}
+                        alt="이미지"
+                      />
                     </div>
                     <div className="info_box">
                       <div className="info">

@@ -428,7 +428,8 @@ export const GameinfoWrap = styled.div`
   }
   @media (max-width: 736px) {
     .inner {
-      max-width: 328px;
+      min-width: 328px;
+      max-width: 736px;
       .category_section {
         gap: 16px;
         .cate_title {
@@ -462,6 +463,12 @@ export const GameinfoWrap = styled.div`
               width: 100%;
             }
           }
+        }
+      }
+      .pop_games {
+        .pop_slide {
+          height: 48vw;
+          /* overflow: hidden; */
         }
       }
       .gamelist_section {

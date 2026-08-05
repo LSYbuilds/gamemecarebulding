@@ -19,7 +19,8 @@ export const NewsWrap = styled.div`
   }
   @media (max-width: 736px) {
     .inner {
-      max-width: 328px;
+      min-width: 328px;
+      max-width: 736px;
     }
   }
 `;

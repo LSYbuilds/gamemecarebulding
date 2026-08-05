@@ -454,6 +454,7 @@ export const HeaderWrap = styled.header`
       .top_i {
         position: relative;
         max-width: 328px;
+        width: 100%;
         height: 100%;
         .mobile_call_btn {
           position: absolute;

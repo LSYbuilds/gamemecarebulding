@@ -440,7 +440,8 @@ export const MainContainer = styled.main`
   }
   @media (max-width: 736px) {
     .inner {
-      max-width: 328px;
+      min-width: 328px;
+      max-width: 736px;
       .hero_section {
         height: auto;
         .slide_area {
@@ -466,6 +467,8 @@ export const MainContainer = styled.main`
                 flex: none;
                 order: 1;
                 height: 152px;
+                img {
+                }
               }
             }
           }
@@ -501,6 +504,16 @@ export const MainContainer = styled.main`
           .news_r {
             flex: none;
             height: auto;
+            .news_list {
+              li {
+                a {
+                  display: block;
+                  height: 100%;
+                  text-align: center;
+                  align-content: center;
+                }
+              }
+            }
           }
         }
       }

@@ -594,6 +594,7 @@ export const HeaderWrap = styled.header`
         .mobile_fam_list {
           display: flex;
           flex-direction: row;
+          flex-wrap: wrap;
           justify-content: flex-end;
           margin-top: 8px;
           gap: 8px;

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Swiper } from "swiper/react";
+const PUBLIC_URL = process.env.PUBLIC_URL;
 export const StyledSwiper = styled(Swiper)`
   position: relative;
   width: 100%;
@@ -124,7 +125,7 @@ export const ThumbSwiper = styled(Swiper)`
     height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
-    background-image: url(/images/icon/chevron-left.png);
+    background-image: url(${PUBLIC_URL}/images/icon/chevron-left.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -145,7 +146,7 @@ export const ThumbSwiper = styled(Swiper)`
     height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
-    background-image: url(/images/icon/chevron-right.png);
+    background-image: url(${PUBLIC_URL}/images/icon/chevron-right.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -251,7 +252,7 @@ export const TopnewsSwiper = styled(Swiper)`
     height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
-    background-image: url(/images/icon/chevron-left.png);
+    background-image: url(${PUBLIC_URL}/images/icon/chevron-left.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -273,7 +274,7 @@ export const TopnewsSwiper = styled(Swiper)`
     height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
-    background-image: url(/images/icon/chevron-right.png);
+    background-image: url(${PUBLIC_URL}/images/icon/chevron-right.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -354,7 +355,7 @@ export const TopGameSwiper = styled(Swiper)`
     height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
-    background-image: url(/images/icon/chevron-left.png);
+    background-image: url(${PUBLIC_URL}/images/icon/chevron-left.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -376,7 +377,7 @@ export const TopGameSwiper = styled(Swiper)`
     height: 35px;
     border-radius: 300px;
     background-color: rgb(255, 255, 255, 0.6);
-    background-image: url(/images/icon/chevron-right.png);
+    background-image: url(${PUBLIC_URL}/images/icon/chevron-right.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;

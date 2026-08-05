@@ -20,7 +20,10 @@ const NewsAll = ({ path, changeWidth }) => {
     <NewsAllWarp>
       <div className="topnews">
         <div className="top_title">
-          <img src="/images/icon/subicon.png" alt="아이콘" />
+          <img
+            src={process.env.PUBLIC_URL + "/images/icon/subicon.png"}
+            alt="아이콘"
+          />
           <span>이달의 이슈</span>
         </div>
         <ul className="topnews_slide">
@@ -37,7 +40,14 @@ const NewsAll = ({ path, changeWidth }) => {
                 <li key={item.id} className="topitem">
                   <Link to="#">
                     <div className="item_img">
-                      <img src={item.src} alt="뉴스이미지" />
+                      <img
+                        src={
+                          item.src.startsWith("http")
+                            ? item.src
+                            : process.env.PUBLIC_URL + item.src
+                        }
+                        alt="뉴스이미지"
+                      />
                     </div>
                     <div className="text_box">
                       <p className="type">{item.theme}</p>
@@ -63,7 +73,14 @@ const NewsAll = ({ path, changeWidth }) => {
               <li key={item.id} className="news_item">
                 <Link to="#">
                   <div className="thumb_img">
-                    <img src={item.url} alt="썸네일이미지" />
+                    <img
+                      src={
+                        item.url.startsWith("http")
+                          ? item.url
+                          : process.env.PUBLIC_URL + item.url
+                      }
+                      alt="썸네일이미지"
+                    />
                     <div className="tag">{item.category}</div>
                   </div>
                   <div className="news_thumb_info">
@@ -102,7 +119,14 @@ const NewsAll = ({ path, changeWidth }) => {
             <li key={item.id} className="news_item">
               <Link to="#">
                 <div className="thumb_img">
-                  <img src={item.url} alt="썸네일이미지" />
+                  <img
+                    src={
+                      item.url.startsWith("http")
+                        ? item.url
+                        : process.env.PUBLIC_URL + item.url
+                    }
+                    alt="썸네일이미지"
+                  />
                   <div className="tag">{item.category}</div>
                 </div>
                 <div className="news_thumb_info">

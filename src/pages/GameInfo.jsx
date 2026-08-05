@@ -132,7 +132,14 @@ const GameInfo = ({ changeWidth }) => {
                 <SwiperSlide key={item.id}>
                   <Link to="#" className="top_item_box">
                     <div className="imgbox">
-                      <img src={item.simg} alt="슬라이드이미지" />
+                      <img
+                        src={
+                          item.simg.startsWith("http")
+                            ? item.simg
+                            : process.env.PUBLIC_URL + item.simg
+                        }
+                        alt="슬라이드이미지"
+                      />
                     </div>
                     <div className="slide_title">
                       <p>{item.title}</p>
@@ -175,7 +182,15 @@ const GameInfo = ({ changeWidth }) => {
                 <li key={item.id} className="game_item">
                   <div className="card_img">
                     <img
-                      src={changeWidth >= 737 ? item.bimg : item.simg}
+                      src={
+                        changeWidth >= 737
+                          ? item.bimg.startsWith("http")
+                            ? item.bimg
+                            : process.env.PUBLIC_URL + item.bimg
+                          : item.simg.startsWith("http")
+                            ? item.simg
+                            : process.env.PUBLIC_URL + item.simg
+                      }
                       alt="큰이미지"
                     />
                   </div>
@@ -211,25 +226,67 @@ const GameInfo = ({ changeWidth }) => {
                   </div>
                   <div className="list_thumbnail">
                     <div className="b_thumb">
-                      <img src={item.simgB} alt="큰이미지" />
+                      <img
+                        src={
+                          item.simgB.startsWith("http")
+                            ? item.simgB
+                            : process.env.PUBLIC_URL + item.simgB
+                        }
+                        alt="큰이미지"
+                      />
                     </div>
                     <div className="s_thumb">
                       <div className="img_item">
-                        <img src={item.simg1} alt="작은이미지" />
+                        <img
+                          src={
+                            item.simg1.startsWith("http")
+                              ? item.simg1
+                              : process.env.PUBLIC_URL + item.simg1
+                          }
+                          alt="작은이미지"
+                        />
                       </div>
                       <div className="img_item">
-                        <img src={item.simg2} alt="작은이미지" />
+                        <img
+                          src={
+                            item.simg2.startsWith("http")
+                              ? item.simg2
+                              : process.env.PUBLIC_URL + item.simg2
+                          }
+                          alt="작은이미지"
+                        />
                       </div>
                     </div>
                     <ul className="mobile_thumb">
                       <li>
-                        <img src={item.simg1} alt="작은이미지" />
+                        <img
+                          src={
+                            item.simg1.startsWith("http")
+                              ? item.simg1
+                              : process.env.PUBLIC_URL + item.simg1
+                          }
+                          alt="작은이미지"
+                        />
                       </li>
                       <li>
-                        <img src={item.simg2} alt="작은이미지" />
+                        <img
+                          src={
+                            item.simg2.startsWith("http")
+                              ? item.simg2
+                              : process.env.PUBLIC_URL + item.simg2
+                          }
+                          alt="작은이미지"
+                        />
                       </li>
                       <li>
-                        <img src={item.simgB} alt="큰이미지" />
+                        <img
+                          src={
+                            item.simgB.startsWith("http")
+                              ? item.simgB
+                              : process.env.PUBLIC_URL + item.simgB
+                          }
+                          alt="큰이미지"
+                        />
                       </li>
                     </ul>
                   </div>

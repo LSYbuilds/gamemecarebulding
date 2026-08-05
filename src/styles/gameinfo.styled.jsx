@@ -482,18 +482,17 @@ export const GameinfoWrap = styled.div`
           bottom: 0px;
           left: 0px;
           width: 100%;
-          height: 50%;
+          height: 60vh;
           /* overflow-y: scroll;
           scrollbar-width: none;
           -ms-overflow-style: none; */
-          background-color: rgba(25, 25, 25, 0.5);
+          background-color: rgba(25, 25, 25, 0.8);
           display: flex;
           flex-direction: column;
           box-shadow: none;
           border-top: 1px solid gray;
           .cate_title {
-            margin: 0 auto;
-            max-width: 320px;
+            width: 100%;
             width: 100%;
             height: 48px;
             padding: 0px 10px;
@@ -504,8 +503,6 @@ export const GameinfoWrap = styled.div`
             font-weight: 600;
           }
           .side_cate_list {
-            margin: 0 auto;
-            max-width: 320px;
             width: 100%;
             overflow-y: scroll;
             scrollbar-width: none;

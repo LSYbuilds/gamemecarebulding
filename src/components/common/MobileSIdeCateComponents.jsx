@@ -77,8 +77,8 @@ const MobileSideCate = ({
       transition={{ duration: 0.3 }}
     >
       <div className="cate_title" onClick={() => setMobileCate(!mobilecate)}>
-        <span>모바일꺼</span>
-        {changeWidth <= 1024 ? <Icon.down /> : null}
+        <span>모든 카테고리</span>
+        <Icon.down />
       </div>
       <ul className="side_cate_list">
         {sideCateMenus.map((itme) => {

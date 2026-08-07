@@ -84,7 +84,7 @@ export const NewsAllWarp = styled.section`
       gap: 16px;
       width: 100%;
       li {
-        height: 188px;
+        height: 200px;
         a {
           display: flex;
           gap: 16px;

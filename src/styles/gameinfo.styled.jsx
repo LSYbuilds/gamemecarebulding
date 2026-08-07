@@ -1,4 +1,166 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
+
+export const MobileSideCateWrap = styled(motion.div)`
+  position: fixed;
+  width: 100%;
+  height: 385px;
+  left: 0px;
+  bottom: 0px;
+  /* overflow-y: scroll;
+          scrollbar-width: none;
+          -ms-overflow-style: none; */
+  background-color: rgba(25, 25, 25, 0.8);
+  display: flex;
+  flex-direction: column;
+  box-shadow: none;
+  border-top: 1px solid gray;
+  .cate_title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 48px;
+    padding: 0px 10px;
+    align-content: center;
+    align-items: center;
+    background-color: var(--primaryMain);
+    color: var(--neutralWhite);
+    font-weight: 1.125em;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .side_cate_list {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--neutralWhite);
+    box-shadow: inset 0 0 0 1px var(--primaryMain);
+    li {
+      display: flex;
+      flex-direction: column;
+      .tags_name {
+        display: flex;
+        justify-content: space-between;
+        height: 42px;
+        padding: 0px 8px;
+        cursor: pointer;
+        p {
+          display: flex;
+          gap: 4px;
+          height: auto;
+          align-content: center;
+          align-items: center;
+          span {
+            height: 100%;
+            align-content: center;
+          }
+          svg {
+            background-color: var(--primaryMain);
+            border-radius: 4px;
+          }
+          svg path {
+            fill: var(--neutralWhite);
+          }
+        }
+        .drop {
+          border: none;
+          background: none;
+        }
+      }
+      .detail_tags {
+        display: flex;
+        flex-direction: column;
+        li {
+          height: 42px;
+          padding: 0px 8px;
+          cursor: pointer;
+          span {
+            height: 100%;
+            align-content: center;
+          }
+        }
+        li:hover {
+          background-color: var(--seconGreen);
+          color: var(--neutralWhite);
+        }
+      }
+    }
+  }
+`;
+
+export const PcSideCateWrap = styled.div`
+  flex: 220;
+  display: flex;
+  flex-direction: column;
+  .cate_title {
+    height: 48px;
+    padding: 0px 10px;
+    align-content: center;
+    background-color: var(--primaryMain);
+    color: var(--neutralWhite);
+    font-weight: 1.125em;
+    font-weight: 600;
+  }
+  .side_cate_list {
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 0 0 1px var(--primaryMain);
+    li {
+      display: flex;
+      flex-direction: column;
+      .tags_name {
+        display: flex;
+        justify-content: space-between;
+        height: 42px;
+        padding: 0px 8px;
+        cursor: pointer;
+        p {
+          display: flex;
+          gap: 4px;
+          height: auto;
+          align-content: center;
+          align-items: center;
+          span {
+            height: 100%;
+            align-content: center;
+          }
+          svg {
+            background-color: var(--primaryMain);
+            border-radius: 4px;
+          }
+          svg path {
+            fill: var(--neutralWhite);
+          }
+        }
+        .drop {
+          border: none;
+          background: none;
+        }
+      }
+      .detail_tags {
+        display: flex;
+        flex-direction: column;
+        li {
+          height: 42px;
+          padding: 0px 8px;
+          cursor: pointer;
+          span {
+            height: 100%;
+            align-content: center;
+          }
+        }
+        li:hover {
+          background-color: var(--seconGreen);
+          color: var(--neutralWhite);
+        }
+      }
+    }
+  }
+`;
 
 export const GameinfoWrap = styled.div`
   .inner {
@@ -131,75 +293,6 @@ export const GameinfoWrap = styled.div`
           font-size: 1.125em;
           color: var(--neutralWhite);
           cursor: pointer;
-        }
-      }
-      .side_cate {
-        flex: 220;
-        display: flex;
-        flex-direction: column;
-        .cate_title {
-          height: 48px;
-          padding: 0px 10px;
-          align-content: center;
-          background-color: var(--primaryMain);
-          color: var(--neutralWhite);
-          font-weight: 1.125em;
-          font-weight: 600;
-        }
-        .side_cate_list {
-          display: flex;
-          flex-direction: column;
-          box-shadow: inset 0 0 0 1px var(--primaryMain);
-          li {
-            display: flex;
-            flex-direction: column;
-            .tags_name {
-              display: flex;
-              justify-content: space-between;
-              height: 42px;
-              padding: 0px 8px;
-              cursor: pointer;
-              p {
-                display: flex;
-                gap: 4px;
-                height: auto;
-                align-content: center;
-                align-items: center;
-                span {
-                  height: 100%;
-                  align-content: center;
-                }
-                svg {
-                  background-color: var(--primaryMain);
-                  border-radius: 4px;
-                }
-                svg path {
-                  fill: var(--neutralWhite);
-                }
-              }
-              .drop {
-                border: none;
-                background: none;
-              }
-            }
-            .detail_tags {
-              display: flex;
-              flex-direction: column;
-              li {
-                height: 42px;
-                padding: 0px 8px;
-                cursor: pointer;
-                span {
-                  height: 100%;
-                  align-content: center;
-                }
-              }
-              li:hover {
-                background-color: var(--seconGreen);
-                color: var(--neutralWhite);
-              }
-            }
-          }
         }
       }
       .gamelist_warp {
@@ -353,96 +446,6 @@ export const GameinfoWrap = styled.div`
             height: 34px;
           }
         }
-        .side_cate {
-          position: fixed;
-          bottom: 0px;
-          left: 0px;
-          width: 100%;
-          height: 385px;
-          /* overflow-y: scroll;
-          scrollbar-width: none;
-          -ms-overflow-style: none; */
-          background-color: rgba(25, 25, 25, 0.8);
-          display: flex;
-          flex-direction: column;
-          box-shadow: none;
-          border-top: 1px solid gray;
-          .cate_title {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: 48px;
-            padding: 0px 10px;
-            align-content: center;
-            align-items: center;
-            background-color: var(--primaryMain);
-            color: var(--neutralWhite);
-            font-weight: 1.125em;
-            font-weight: 600;
-            cursor: pointer;
-          }
-          .side_cate_list {
-            width: 100%;
-            height: 100%;
-            overflow-y: scroll;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            display: flex;
-            flex-direction: column;
-            background-color: var(--neutralWhite);
-            box-shadow: inset 0 0 0 1px var(--primaryMain);
-            li {
-              display: flex;
-              flex-direction: column;
-              .tags_name {
-                display: flex;
-                justify-content: space-between;
-                height: 42px;
-                padding: 0px 8px;
-                cursor: pointer;
-                p {
-                  display: flex;
-                  gap: 4px;
-                  height: auto;
-                  align-content: center;
-                  align-items: center;
-                  span {
-                    height: 100%;
-                    align-content: center;
-                  }
-                  svg {
-                    background-color: var(--primaryMain);
-                    border-radius: 4px;
-                  }
-                  svg path {
-                    fill: var(--neutralWhite);
-                  }
-                }
-                .drop {
-                  border: none;
-                  background: none;
-                }
-              }
-              .detail_tags {
-                display: flex;
-                flex-direction: column;
-                li {
-                  height: 42px;
-                  padding: 0px 8px;
-                  cursor: pointer;
-                  span {
-                    height: 100%;
-                    align-content: center;
-                  }
-                }
-                li:hover {
-                  background-color: var(--seconGreen);
-                  color: var(--neutralWhite);
-                }
-              }
-            }
-          }
-        }
         .gamelist_warp {
           flex: none;
           width: 100%;
@@ -557,22 +560,6 @@ export const GameinfoWrap = styled.div`
             height: 34px;
           }
         }
-
-        /* .side_cate {
-          flex: none;
-          width: 100%;
-          border-radius: 8px;
-          overflow: hidden;
-          .side_cate_list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            li {
-              .detail_tags {
-                width: 100%;
-              }
-            }
-          }
-        } */
         .gamelist_warp {
           flex: none;
           width: 100%;

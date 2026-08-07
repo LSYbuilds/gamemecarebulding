@@ -9,7 +9,7 @@ import GameInfo from "./pages/GameInfo";
 function App() {
   const location = useLocation();
   const [path, setPath] = useState("");
-  const [changeWidth, setChangeWidth] = useState(true);
+  const [changeWidth, setChangeWidth] = useState(false);
   useEffect(() => {
     setPath(location.pathname);
   }, [location.pathname]);

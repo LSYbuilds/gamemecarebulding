@@ -34,15 +34,15 @@ export const MainContainer = styled.main`
             display: flex;
             width: 100%;
             height: 100%;
-            border-top-right-radius: 16px;
-            border-bottom-right-radius: 16px;
+            border-radius: 16px;
             overflow: hidden;
+            background-color: var(--neutralWhite);
             .contents_title {
               flex: 338;
               display: flex;
               flex-direction: column;
               justify-content: space-between;
-              padding: 8px 16px;
+              padding: 16px;
               font-size: 18px;
               gap: 16px;
               .time {
@@ -60,7 +60,7 @@ export const MainContainer = styled.main`
             }
           }
           .contents_item:hover {
-            background-color: var(--neutralWhite);
+            background-color: var(--neutralGray);
             transition-duration: 0.2s;
           }
         }

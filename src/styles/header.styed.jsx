@@ -1,11 +1,5 @@
 import styled from "@emotion/styled";
 
-// const pathChangeHeader = ({ path }) => (path === "/news" ? "height:187px" : "height:137px");
-// const scrollChangeHeader = (props) =>
-//   props.scrolled ? "background-color:rgb(244, 244, 244,0.9);" : "background-color:#f4f4f4";
-
-// const bothChangeHeader = ({path}) => (path === "/news" ? `height:187px (scrollChangeHeader)`: "height:137px");
-
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 export const HeaderWrap = styled.header`

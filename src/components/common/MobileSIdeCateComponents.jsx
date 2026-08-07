@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import Icon from "./SvgComponents";
-import { PcSideCateWrap } from "../../styles/gameinfo.styled";
+import { MobileSideCateWrap } from "../../styles/gameinfo.styled";
 import { AnimatePresence, motion } from "framer-motion";
 
-const SideCate = ({ changeWidth, setcateActive, cateActive }) => {
+const MobileSideCate = ({
+  changeWidth,
+  cateActive,
+  setcateActive,
+  setMobileCate,
+  mobilecate,
+}) => {
   const [thiscate, setThiscate] = useState(false);
   const sideCateMenus = [
     {
@@ -64,9 +70,15 @@ const SideCate = ({ changeWidth, setcateActive, cateActive }) => {
     },
   ];
   return (
-    <PcSideCateWrap>
-      <div className="cate_title">
-        <span>모든 카테고리</span>
+    <MobileSideCateWrap
+      initial={{ y: "100%" }}
+      animate={{ y: "0" }}
+      exit={{ y: "100%" }}
+      transition={{ duration: 0.3 }}
+    >
+      <div className="cate_title" onClick={() => setMobileCate(!mobilecate)}>
+        <span>모바일꺼</span>
+        {changeWidth <= 1024 ? <Icon.down /> : null}
       </div>
       <ul className="side_cate_list">
         {sideCateMenus.map((itme) => {
@@ -74,26 +86,42 @@ const SideCate = ({ changeWidth, setcateActive, cateActive }) => {
           const BtnIcon = itme.btn;
           return (
             <li key={itme.id}>
-              <div className="tags_name">
+              <div
+                className="tags_name"
+                onClick={() => {
+                  setThiscate(thiscate === itme.id ? null : itme.id);
+                }}
+              >
                 <p>
                   {SvgIcon && <SvgIcon />}
                   <span>{itme.title}</span>
                 </p>
                 <button className="drop">{BtnIcon && <BtnIcon />}</button>
               </div>
-              <ul className="detail_tags">
-                {itme.tags.map((tags) => (
-                  <li key={tags}>
-                    <span>{tags}</span>
-                  </li>
-                ))}
-              </ul>
+              <AnimatePresence>
+                {thiscate == itme.id && (
+                  <motion.ul
+                    className="detail_tags"
+                    initial={{ height: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    {itme.tags.map((tags) => (
+                      <li key={tags}>
+                        <span>{tags}</span>
+                      </li>
+                    ))}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
             </li>
           );
         })}
       </ul>
-    </PcSideCateWrap>
+    </MobileSideCateWrap>
   );
 };
 
-export default SideCate;
+export default MobileSideCate;

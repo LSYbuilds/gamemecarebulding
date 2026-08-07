@@ -5,14 +5,17 @@ import Icon from "../components/common/SvgComponents";
 import { SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import SideCate from "../components/common/SIieCateComponents";
+import MobileSideCate from "../components/common/MobileSIdeCateComponents";
 import { TopGameSwiper } from "../styles/swiper.styled";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { form } from "framer-motion/client";
 
 const GameInfo = ({ changeWidth }) => {
   const gameInfoData = gameinfo.gameinfo;
   const gameInfoCount = gameInfoData.length;
   const [cateActive, setcateActive] = useState(false);
+  const [mobilecate, setMobileCate] = useState(false);
   console.log(gameInfoData);
   const buttonMenu = [
     { id: "all", name: "전체" },
@@ -174,37 +177,27 @@ const GameInfo = ({ changeWidth }) => {
             <button
               className="side_call_btn"
               onClick={() => {
-                setcateActive(!cateActive);
+                console.log("작동", mobilecate);
+                setMobileCate(!mobilecate);
               }}
             >
               <Icon.filter />
               카테고리
             </button>
           </div>
-          {changeWidth && cateActive ? (
-            <SideCate
-              changeWidth={changeWidth}
-              setcateActive={setcateActive}
-              cateActive={cateActive}
-            />
-          ) : null}
-          {/* {changeWidth ? (
-            <SideCate
-              changeWidth={changeWidth}
-              setcateActive={setcateActive}
-              cateActive={cateActive}
-            />
-          ) : (
-            <>
-              {cateActive && changeWidth ? null : (
-                <SideCate
-                  changeWidth={changeWidth}
-                  setcateActive={setcateActive}
-                  cateActive={cateActive}
-                />
-              )}
-            </>
-          )} */}
+          {!changeWidth && <SideCate />}
+          <AnimatePresence>
+            {changeWidth && mobilecate && (
+              <MobileSideCate
+                initial={{ y: "100%" }}
+                animate={{ y: "0" }}
+                exit={{ y: "100%" }}
+                transition={{ duration: 0.3 }}
+                setMobileCate={setMobileCate}
+                mobilecate={mobilecate}
+              />
+            )}
+          </AnimatePresence>
           <div className="gamelist_warp">
             <ul className="gamelist">
               {gameInfoData.map((item) => (

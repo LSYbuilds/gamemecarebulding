@@ -123,9 +123,18 @@ const GameInfo = ({ changeWidth }) => {
               navigation
               speed={1000}
               loop
-              slidesPerView={
-                changeWidth >= 1024 ? 5 : changeWidth >= 737 ? 3 : 1
-              }
+              slidesPerView={1}
+              breakpoints={{
+                1024: {
+                  slidesPerView: 5,
+                },
+                736: {
+                  slidesPerView: 3,
+                },
+              }}
+              // slidesPerView={
+              //   changeWidth >= 1024 ? 5 : changeWidth >= 737 ? 3 : 1
+              // }
               spaceBetween={10}
               changeWidth={changeWidth}
             >
@@ -172,7 +181,14 @@ const GameInfo = ({ changeWidth }) => {
               카테고리
             </button>
           </div>
-          {changeWidth >= 1024 ? (
+          {changeWidth && cateActive ? (
+            <SideCate
+              changeWidth={changeWidth}
+              setcateActive={setcateActive}
+              cateActive={cateActive}
+            />
+          ) : null}
+          {/* {changeWidth ? (
             <SideCate
               changeWidth={changeWidth}
               setcateActive={setcateActive}
@@ -180,15 +196,15 @@ const GameInfo = ({ changeWidth }) => {
             />
           ) : (
             <>
-              {cateActive && changeWidth <= 1024 ? (
+              {cateActive && changeWidth ? null : (
                 <SideCate
                   changeWidth={changeWidth}
                   setcateActive={setcateActive}
                   cateActive={cateActive}
                 />
-              ) : null}
+              )}
             </>
-          )}
+          )} */}
           <div className="gamelist_warp">
             <ul className="gamelist">
               {gameInfoData.map((item) => (

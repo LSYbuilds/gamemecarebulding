@@ -33,7 +33,6 @@ const Main = ({ changeWidth }) => {
   //     window.removeEventListener("resize", handlewidth);
   //   };
   // }, []);
-  console.log("현재 사이즈", changeWidth);
   return (
     <MainContainer>
       <div className="inner">
@@ -235,7 +234,12 @@ const Main = ({ changeWidth }) => {
                 navigation
                 speed={1000}
                 loop
-                slidesPerView={changeWidth <= 768 ? 1 : 3}
+                slidesPerView={1}
+                breakpoints={{
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                }}
                 spaceBetween={16}
               >
                 {cateList
@@ -272,7 +276,12 @@ const Main = ({ changeWidth }) => {
                 navigation
                 speed={1000}
                 loop
-                slidesPerView={changeWidth <= 768 ? 1 : 3}
+                slidesPerView={1}
+                breakpoints={{
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                }}
                 spaceBetween={16}
               >
                 {cateList
@@ -309,7 +318,12 @@ const Main = ({ changeWidth }) => {
                 navigation
                 speed={1000}
                 loop
-                slidesPerView={changeWidth <= 768 ? 1 : 3}
+                slidesPerView={1}
+                breakpoints={{
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                }}
                 spaceBetween={16}
               >
                 {cateList

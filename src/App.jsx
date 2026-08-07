@@ -9,21 +9,38 @@ import GameInfo from "./pages/GameInfo";
 function App() {
   const location = useLocation();
   const [path, setPath] = useState("");
-  const [changeWidth, setChangeWidth] = useState(window.innerWidth);
+  const [changeWidth, setChangeWidth] = useState(true);
   useEffect(() => {
     setPath(location.pathname);
   }, [location.pathname]);
   console.log("root에서 불러옴", path);
 
+  // useEffect(() => {
+  //   const handlewidth = () => {
+  //     setChangeWidth(window.innerWidth);
+  //   };
+  //   window.addEventListener("resize", handlewidth);
+  //   return () => {
+  //     window.removeEventListener("resize", handlewidth);
+  //   };
+  // }, []);
   useEffect(() => {
-    const handlewidth = () => {
-      setChangeWidth(window.innerWidth);
+    const media = window.matchMedia("(max-width: 1024px)");
+
+    setChangeWidth(media.matches);
+
+    const handler = (e) => {
+      setChangeWidth(e.matches);
+      console.log("이게뭐고?", e.matches);
     };
-    window.addEventListener("resize", handlewidth);
+
+    media.addEventListener("change", handler);
+
     return () => {
-      window.removeEventListener("resize", handlewidth);
+      media.removeEventListener("change", handler);
     };
   }, []);
+  console.log("이게뭐고?", changeWidth);
 
   return (
     <Wrap path={path}>

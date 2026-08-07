@@ -99,7 +99,7 @@ const SideCate = ({ changeWidth, setcateActive, cateActive }) => {
     <div className="side_cate">
       <div className="cate_title" onClick={() => setcateActive(!cateActive)}>
         <span>모든 카테고리</span>
-        {changeWidth <= 1024 ? <Icon.down /> : <></>}
+        {changeWidth <= 1024 ? <Icon.down /> : null}
       </div>
       <ul className="side_cate_list">
         {sideCateMenus.map((itme) => {

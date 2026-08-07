@@ -251,6 +251,11 @@ export const HeaderWrap = styled.header`
         }
       }
     }
+    .fam_box {
+      margin: 0 auto;
+      max-width: 736px;
+      width: 100%;
+    }
   }
   .global_box {
     position: absolute;

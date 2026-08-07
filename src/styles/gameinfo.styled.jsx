@@ -354,18 +354,91 @@ export const GameinfoWrap = styled.div`
           }
         }
         .side_cate {
-          flex: none;
+          position: fixed;
+          bottom: 0px;
+          left: 0px;
           width: 100%;
-          border-radius: 8px;
-          overflow: hidden;
-          box-shadow: inset 0 0 0 1px var(--primaryMain);
+          height: 385px;
+          /* overflow-y: scroll;
+          scrollbar-width: none;
+          -ms-overflow-style: none; */
+          background-color: rgba(25, 25, 25, 0.8);
+          display: flex;
+          flex-direction: column;
+          box-shadow: none;
+          border-top: 1px solid gray;
+          .cate_title {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 48px;
+            padding: 0px 10px;
+            align-content: center;
+            align-items: center;
+            background-color: var(--primaryMain);
+            color: var(--neutralWhite);
+            font-weight: 1.125em;
+            font-weight: 600;
+            cursor: pointer;
+          }
           .side_cate_list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            box-shadow: none;
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--neutralWhite);
+            box-shadow: inset 0 0 0 1px var(--primaryMain);
             li {
+              display: flex;
+              flex-direction: column;
+              .tags_name {
+                display: flex;
+                justify-content: space-between;
+                height: 42px;
+                padding: 0px 8px;
+                cursor: pointer;
+                p {
+                  display: flex;
+                  gap: 4px;
+                  height: auto;
+                  align-content: center;
+                  align-items: center;
+                  span {
+                    height: 100%;
+                    align-content: center;
+                  }
+                  svg {
+                    background-color: var(--primaryMain);
+                    border-radius: 4px;
+                  }
+                  svg path {
+                    fill: var(--neutralWhite);
+                  }
+                }
+                .drop {
+                  border: none;
+                  background: none;
+                }
+              }
               .detail_tags {
-                width: 100%;
+                display: flex;
+                flex-direction: column;
+                li {
+                  height: 42px;
+                  padding: 0px 8px;
+                  cursor: pointer;
+                  span {
+                    height: 100%;
+                    align-content: center;
+                  }
+                }
+                li:hover {
+                  background-color: var(--seconGreen);
+                  color: var(--neutralWhite);
+                }
               }
             }
           }
@@ -484,96 +557,7 @@ export const GameinfoWrap = styled.div`
             height: 34px;
           }
         }
-        .side_cate {
-          position: fixed;
-          bottom: 0px;
-          left: 0px;
-          width: 100%;
-          height: 385px;
-          /* overflow-y: scroll;
-          scrollbar-width: none;
-          -ms-overflow-style: none; */
-          background-color: rgba(25, 25, 25, 0.8);
-          display: flex;
-          flex-direction: column;
-          box-shadow: none;
-          border-top: 1px solid gray;
-          .cate_title {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: 48px;
-            padding: 0px 10px;
-            align-content: center;
-            align-items: center;
-            background-color: var(--primaryMain);
-            color: var(--neutralWhite);
-            font-weight: 1.125em;
-            font-weight: 600;
-            cursor: pointer;
-          }
-          .side_cate_list {
-            width: 100%;
-            height: 100%;
-            overflow-y: scroll;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            display: flex;
-            flex-direction: column;
-            background-color: var(--neutralWhite);
-            box-shadow: inset 0 0 0 1px var(--primaryMain);
-            li {
-              display: flex;
-              flex-direction: column;
-              .tags_name {
-                display: flex;
-                justify-content: space-between;
-                height: 42px;
-                padding: 0px 8px;
-                cursor: pointer;
-                p {
-                  display: flex;
-                  gap: 4px;
-                  height: auto;
-                  align-content: center;
-                  align-items: center;
-                  span {
-                    height: 100%;
-                    align-content: center;
-                  }
-                  svg {
-                    background-color: var(--primaryMain);
-                    border-radius: 4px;
-                  }
-                  svg path {
-                    fill: var(--neutralWhite);
-                  }
-                }
-                .drop {
-                  border: none;
-                  background: none;
-                }
-              }
-              .detail_tags {
-                display: flex;
-                flex-direction: column;
-                li {
-                  height: 42px;
-                  padding: 0px 8px;
-                  cursor: pointer;
-                  span {
-                    height: 100%;
-                    align-content: center;
-                  }
-                }
-                li:hover {
-                  background-color: var(--seconGreen);
-                  color: var(--neutralWhite);
-                }
-              }
-            }
-          }
-        }
+
         /* .side_cate {
           flex: none;
           width: 100%;

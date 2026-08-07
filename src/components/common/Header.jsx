@@ -52,9 +52,10 @@ export const FamMobule = () => {
 const Header = ({ path, changeWidth }) => {
   const [scrolled, setScrolled] = useState(false);
   const [lnbcall, setLabCall] = useState(false);
-  const [gnbDropDown, setGnbDropDown] = useState(null);
+  const [gnbDropDown, setGnbDropDown] = useState(false);
   const [mobilenavState, setMobilenav] = useState(false);
   const [mobileDropDown, setMobileDrapDown] = useState(null);
+  console.log("현재뭐지?", changeWidth);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 300);
@@ -296,7 +297,7 @@ const Header = ({ path, changeWidth }) => {
                 </li>
               </ul>
             </div>
-            {changeWidth >= 1024 ? <FamMobule /> : ""}
+            {changeWidth ? path === "/news" && null : <FamMobule />}
           </div>
         </div>
         {path === "/news" ? (
@@ -309,21 +310,9 @@ const Header = ({ path, changeWidth }) => {
                   </li>
                 ))}
               </ul>
-              {changeWidth <= 1024 ? (
-                <div className="fam_box">
-                  <div className="fam_i">
-                    <FamMobule />
-                  </div>
-                </div>
-              ) : (
-                ""
-              )}
             </div>
           </div>
-        ) : (
-          ""
-        )}
-        {path === "/gameinfo" ? (
+        ) : path === "/gameinfo" ? (
           <div className="lnb_i lnb">
             <div className="site_lnb">
               <ul className="lnb_menu">
@@ -333,20 +322,16 @@ const Header = ({ path, changeWidth }) => {
                   </li>
                 ))}
               </ul>
-              {changeWidth <= 1024 ? (
-                <div className="fam_box">
-                  <div className="fam_i">
-                    <FamMobule />
-                  </div>
-                </div>
-              ) : (
-                ""
-              )}
             </div>
           </div>
-        ) : (
-          ""
-        )}
+        ) : null}
+        {changeWidth
+          ? path && (
+              <div className="fam_box">
+                <FamMobule />
+              </div>
+            )
+          : null}
       </div>
       <AnimatePresence>
         {lnbcall && (
@@ -373,6 +358,7 @@ const Header = ({ path, changeWidth }) => {
                       <div
                         className="list_head"
                         onClick={() => {
+                          console.log(gnbDropDown === index ? null : index);
                           setGnbDropDown(gnbDropDown === index ? null : index);
                         }}
                       >
@@ -381,9 +367,9 @@ const Header = ({ path, changeWidth }) => {
                           {SvgIcon && <SvgIcon />}
                         </p>
                       </div>
-                      {changeWidth <= 1024 ? (
-                        <AnimatePresence>
-                          {gnbDropDown === index && (
+                      <AnimatePresence>
+                        {changeWidth ? (
+                          gnbDropDown === index && (
                             <motion.ul
                               className="global_in"
                               initial={{ height: 0, opacity: 0 }}
@@ -398,21 +384,17 @@ const Header = ({ path, changeWidth }) => {
                                 </li>
                               ))}
                             </motion.ul>
-                          )}
-                        </AnimatePresence>
-                      ) : (
-                        <ul
-                          className={`global_in ${
-                            gnbDropDown === index ? "active" : ""
-                          }`}
-                        >
-                          {item.list.map(([name, link]) => (
-                            <li key={link}>
-                              <Link to={link}>{name}</Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+                          )
+                        ) : (
+                          <ul className="global_in">
+                            {item.list.map(([name, link]) => (
+                              <li key={link}>
+                                <Link to={link}>{name}</Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </AnimatePresence>
                     </li>
                   );
                 })}
@@ -524,88 +506,6 @@ const Header = ({ path, changeWidth }) => {
           ></motion.div>
         )}
       </AnimatePresence>
-      {/* {mobilenavState ? (
-        <div className="mobile_nav">
-          <button
-            className="close_nav_btn"
-            onClick={() => setMobilenav((prev) => !prev)}
-          >
-            <Icon.deactive />
-          </button>
-          <ul className="mobile_util">
-            <li>
-              <Link>
-                <span>로그인</span>
-                <img
-                  src={process.env.PUBLIC_URL + "/images/icon/lock.png"}
-                  alt="아이콘"
-                />
-              </Link>
-            </li>
-            <li>
-              <Link>
-                <span>회원가입</span>
-                <img
-                  src={process.env.PUBLIC_URL + "/images/icon/user.png"}
-                  alt="아이콘"
-                />
-              </Link>
-            </li>
-          </ul>
-          <div className="mobile_nav_box">
-            {mobilenav.slice(0, 9).map((item, index) => {
-              const SvgIcon = item.svg;
-              return (
-                <div key={item.id} className="mobile_nav_list">
-                  <div
-                    className="list_head"
-                    onClick={() => {
-                      setMobileDrapDown(
-                        mobileDropDown === index ? null : index,
-                      );
-                    }}
-                  >
-                    <p>
-                      <span>{item.title}</span>
-                      {SvgIcon && <SvgIcon />}
-                    </p>
-                  </div>
-                  <ul
-                    className={`mobile_nav_list_in ${
-                      mobileDropDown === index ? "active" : ""
-                    }`}
-                  >
-                    {item.list.map(([name, link]) => (
-                      <Link to={link}>
-                        <li key={link}>{name}</li>
-                      </Link>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-            <ul className="mobile_fam_list">
-              {mobilenav[9].list.map((item) => (
-                <li key={item.id}>
-                  <Link to="#">
-                    <img
-                      src={process.env.PUBLIC_URL + item.icon}
-                      alt="아이콘"
-                    />
-                    <p>{item.title}</p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>s
-      ) : null} */}
-      {/* {mobilenavState ? (
-        <div
-          className="screen_black"
-          onClick={() => setMobilenav((prev) => !prev)}
-        ></div>
-      ) : null} */}
     </HeaderWrap>
   );
 };

@@ -16,6 +16,7 @@ const GameInfo = ({ changeWidth }) => {
   const gameInfoCount = gameInfoData.length;
   const [cateActive, setcateActive] = useState(false);
   const [mobilecate, setMobileCate] = useState(false);
+  const [mobileChange, setMobileChange] = useState(false);
   console.log(gameInfoData);
   const buttonMenu = [
     { id: "all", name: "전체" },
@@ -135,9 +136,6 @@ const GameInfo = ({ changeWidth }) => {
                   slidesPerView: 3,
                 },
               }}
-              // slidesPerView={
-              //   changeWidth >= 1024 ? 5 : changeWidth >= 737 ? 3 : 1
-              // }
               spaceBetween={10}
               changeWidth={changeWidth}
             >
@@ -172,7 +170,6 @@ const GameInfo = ({ changeWidth }) => {
           <p>총 {gameInfoCount}개의 게임이 있습니다.</p>
         </div>
         <section className="gamelist_section">
-          {/* {cateActive && changeWidth <= 1024 ? <SideCate /> : null} */}
           <div className="side_call_btn_box">
             <button
               className="side_call_btn"
@@ -204,15 +201,12 @@ const GameInfo = ({ changeWidth }) => {
                 <li key={item.id} className="game_item">
                   <div className="card_img">
                     <img
-                      src={
-                        changeWidth >= 737
-                          ? item.bimg.startsWith("http")
-                            ? item.bimg
-                            : process.env.PUBLIC_URL + item.bimg
-                          : item.simg.startsWith("http")
-                            ? item.simg
-                            : process.env.PUBLIC_URL + item.simg
-                      }
+                      src={((img) =>
+                        img.startsWith("http")
+                          ? img
+                          : process.env.PUBLIC_URL + img)(
+                        changeWidth >= 737 ? item.simg : item.bimg,
+                      )}
                       alt="큰이미지"
                     />
                   </div>

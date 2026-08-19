@@ -17,6 +17,7 @@ const GameInfo = ({ changeWidth }) => {
   const [cateActive, setcateActive] = useState(false);
   const [mobilecate, setMobileCate] = useState(false);
   const [mobileChange, setMobileChange] = useState(false);
+  console.log("이거안바뀌나?", changeWidth);
   console.log(gameInfoData);
   const buttonMenu = [
     { id: "all", name: "전체" },
@@ -205,7 +206,7 @@ const GameInfo = ({ changeWidth }) => {
                         img.startsWith("http")
                           ? img
                           : process.env.PUBLIC_URL + img)(
-                        changeWidth >= 737 ? item.simg : item.bimg,
+                        changeWidth ? item.simg : item.bimg,
                       )}
                       alt="큰이미지"
                     />

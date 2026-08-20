@@ -180,8 +180,7 @@ export const TopnewsSwiper = styled(Swiper)`
       .topitem {
         width: 100%;
         height: 100%;
-        border-top-right-radius: 16px;
-        border-top-left-radius: 16px;
+        border-radius: 16px;
         overflow: hidden;
       }
       .topitem > a {
@@ -191,7 +190,7 @@ export const TopnewsSwiper = styled(Swiper)`
         height: 100%;
         .item_img {
           width: 100%;
-          height: 300px;
+          height: 320px;
           img {
             width: 100%;
             height: 100%;
@@ -204,7 +203,7 @@ export const TopnewsSwiper = styled(Swiper)`
           bottom: 0px;
           left: 0px;
           width: 100%;
-          height: 150px;
+          height: 130px;
           color: var(--neutralWhite);
           background-color: var(--neutralBlack);
           .type {
@@ -215,7 +214,7 @@ export const TopnewsSwiper = styled(Swiper)`
             background-color: var(--primaryMain);
           }
           .text {
-            height: 120px;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: space-between;

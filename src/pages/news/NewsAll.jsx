@@ -13,9 +13,6 @@ const NewsAll = ({ path }) => {
   const monthNews = monthNewsData.monthNews;
   const newDataList = newsData.newsList;
   const newDatalistCount = newDataList.length;
-  console.log(newDataList);
-  console.log(newDatalistCount);
-  console.log("NewsAll에서 불러옴", path);
   return (
     <NewsAllWarp>
       <div className="topnews">

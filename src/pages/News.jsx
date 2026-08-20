@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import NewsAll from "./news/NewsAll";
 
 const News = ({ path, changeWidth }) => {
-  console.log("News에서 불러옴", path);
   return (
     <NewsWrap path={path}>
       <div className="inner">

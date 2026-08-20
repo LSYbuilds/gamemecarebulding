@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 import { MiniBoard_wrap } from "../../styles/miniboard.styled";
 import dashBoardData from "../../data/dashBoardData.json";
 
-
-const MiniBoard = ({path}) => {
-    const boardList = dashBoardData.gameDashboard;
-    console.log("미니보드",path);
+const MiniBoard = ({ path }) => {
+  const boardList = dashBoardData.gameDashboard;
   return (
     <MiniBoard_wrap path={path}>
       <div className="pop board_list">

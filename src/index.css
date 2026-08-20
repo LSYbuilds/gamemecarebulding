@@ -1,92 +1,55 @@
 @charset "utf-8";
 
 @font-face {
-    font-family: 'SpokaHanSansNeo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Thin.woff') format('woff');
-    font-weight: 100;
-    font-display: swap;
+  font-family: "SpokaHanSansNeo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Thin.woff")
+    format("woff");
+  font-weight: 100;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'SpokaHanSansNeo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Light.woff') format('woff');
-    font-weight: 300;
-    font-display: swap;
+  font-family: "SpokaHanSansNeo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Light.woff")
+    format("woff");
+  font-weight: 300;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'SpokaHanSansNeo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
-    font-weight: normal;
-    font-display: swap;
+  font-family: "SpokaHanSansNeo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'SpokaHanSansNeo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Medium.woff') format('woff');
-    font-weight: 500;
-    font-display: swap;
+  font-family: "SpokaHanSansNeo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Medium.woff")
+    format("woff");
+  font-weight: 500;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'SpokaHanSansNeo';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Bold.woff') format('woff');
-    font-weight: 700;
-    font-display: swap;
+  font-family: "SpokaHanSansNeo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Bold.woff")
+    format("woff");
+  font-weight: 700;
+  font-display: swap;
 }
 
 /* wanted-sans!! */
 @import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css");
 
-
 @font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
-    font-weight: 100;
-    font-display: swap;
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2")
+    format("woff2");
+  font-weight: 100;
+  font-display: swap;
 }
-
-/* @font-face {
-  font-family: "Wanted Sans";
-  src: url("./assets/fonts/WantedSans-Regular.otf") format("opentype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Wanted Sans";
-  src: url("./assets/fonts/WantedSans-Medium.otf") format("opentype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Wanted Sans";
-  src: url("./assets/fonts/WantedSans-SemiBold.otf") format("opentype");
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "Wanted Sans";
-  src: url("./assets/fonts/WantedSans-Bold.otf") format("opentype");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Wanted Sans";
-  src: url("./assets/fonts/WantedSans-Black.otf") format("opentype");
-  font-weight: 800;
-}
-
-@font-face {
-  font-family: "Wanted Sans";
-  src: url("./assets/fonts/WantedSans-ExtraBold.otf") format("opentype");
-  font-weight: 900;
-}
-
-@font-face {
-  font-family: "Wanted Sans";
-  src: url("./assets/fonts/WantedSans-ExtraBlack.otf") format("opentype");
-  font-weight: 950;
-} */
 
 :root {
   --primaryMain: #3130a3;
@@ -101,7 +64,7 @@
   --neutralBlack: #191919;
   --neutralGray: #dedede;
   --neutralDeepGray: #979797;
-  --neutralWhite: #f4f4f4;
+  --neutralWhite: #f7f7f7;
 }
 
 * {
@@ -131,5 +94,5 @@ html {
 
 body {
   font-size: 16px;
-  font-family: "Wanted Sans", "SpokaHanSansNeo" , sans-serif;
+  font-family: "Wanted Sans", "SpokaHanSansNeo", sans-serif;
 }

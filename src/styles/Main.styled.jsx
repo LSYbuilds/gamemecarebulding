@@ -240,7 +240,6 @@ export const MainContainer = styled.main`
     }
     .game_section {
       display: flex;
-      background-color: var(--neutralBlack);
       border-top-right-radius: 8px;
       border-top-left-radius: 8px;
       overflow: hidden;
@@ -249,6 +248,7 @@ export const MainContainer = styled.main`
       .game_list {
         display: flex;
         flex-direction: column;
+        background-color: var(--neutralWhite);
         gap: 16px;
         border-top-right-radius: 8px;
         border-top-left-radius: 8px;
@@ -286,16 +286,16 @@ export const MainContainer = styled.main`
               height: 100%;
               gap: 16px;
               .thumb_img {
-                flex: 260;
+                flex: 310;
                 img {
                   width: 100%;
                   height: 100%;
-                  object-fit: contain;
+                  object-fit: cover;
                 }
               }
               .info_box {
-                flex: 534;
-                color: #fff;
+                flex: 480;
+                color: var(--neutralBlack);
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -323,13 +323,13 @@ export const MainContainer = styled.main`
                     border-radius: 2px;
                     font-size: 0.875em;
                     color: var(--neutralBlack);
-                    background-color: var(--neutralWhite);
+                    background-color: var(--neutralGray);
                   }
                 }
               }
             }
             a:hover {
-              background-color: #272727;
+              background-color: var(--neutralGray);
               transition-duration: 0.3s;
             }
           }
@@ -362,7 +362,7 @@ export const MainContainer = styled.main`
               }
               .info_box {
                 height: 165px;
-                color: #fff;
+                color: var(--neutralBlack);
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;

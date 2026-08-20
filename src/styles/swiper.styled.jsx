@@ -38,12 +38,11 @@ export const StyledSwiper = styled(Swiper)`
           position: absolute;
           bottom: 0px;
           left: 0px;
-          padding: 8px 16px;
-          height: 66px;
+          padding: 16px;
           width: 100%;
           background-color: var(--neutralBlack);
           p {
-            font-size: 1.25em;
+            font-size: 1em;
             font-weight: 700;
             color: var(--neutralWhite);
           }
@@ -82,9 +81,11 @@ export const ThumbSwiper = styled(Swiper)`
     display: flex;
     color: #fff;
     height: 100%;
-    div {
+    .swiper-slide {
       width: 100%;
       height: 100%;
+      border-radius: 16px;
+      overflow: hidden;
       .cate_item {
         position: relative;
         width: 100%;
@@ -92,7 +93,6 @@ export const ThumbSwiper = styled(Swiper)`
         .cate_img {
           width: 100%;
           height: 100%;
-          border-radius: 16px;
           overflow: hidden;
           img {
             width: 100%;
@@ -105,12 +105,13 @@ export const ThumbSwiper = styled(Swiper)`
           bottom: 0px;
           left: 0px;
           width: 100%;
-          height: 75px;
+          height: auto;
           background-color: rgb(25, 25, 25, 0.5);
-          padding: 12px;
+          padding: 16px;
+          border-radius: none;
           p {
             color: var(--neutralWhite);
-            font-size: 1.125em;
+            font-size: 1em;
             font-weight: 600;
           }
         }
@@ -173,10 +174,9 @@ export const TopnewsSwiper = styled(Swiper)`
     display: flex;
     color: #fff;
     height: 100%;
-    div {
+    .swiper-slide {
       width: 100%;
       height: 100%;
-
       .topitem {
         width: 100%;
         height: 100%;

@@ -342,6 +342,7 @@ const Header = ({ path, changeWidth }) => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
             style={{ overflow: "hidden" }}
+            onMouseLeave={() => setLabCall(!lnbcall)}
           >
             <div className="global_inner">
               <button

@@ -17,8 +17,6 @@ const GameInfo = ({ changeWidth }) => {
   const [cateActive, setcateActive] = useState(false);
   const [mobilecate, setMobileCate] = useState(false);
   const [mobileChange, setMobileChange] = useState(false);
-  console.log("이거안바뀌나?", changeWidth);
-  console.log(gameInfoData);
   const buttonMenu = [
     { id: "all", name: "전체" },
     { id: "online", name: "온라인", svg: Icon.internet },

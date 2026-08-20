@@ -145,7 +145,7 @@ export const PcSideCateWrap = styled.div`
         display: flex;
         flex-direction: column;
         li {
-          height: 42px;
+          height: 46px;
           padding: 0px 8px;
           cursor: pointer;
           span {
@@ -342,6 +342,7 @@ export const GameinfoWrap = styled.div`
                 flex-direction: column;
                 gap: 8px;
                 padding: 8px;
+                padding-top: 16px;
                 border-top: 1px solid var(--neutralGray);
                 .tags {
                   display: flex;

@@ -13,7 +13,6 @@ function App() {
   useEffect(() => {
     setPath(location.pathname);
   }, [location.pathname]);
-  console.log("root에서 불러옴", path);
 
   // useEffect(() => {
   //   const handlewidth = () => {

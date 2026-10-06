@@ -30,7 +30,6 @@ function App() {
 
     const handler = (e) => {
       setChangeWidth(e.matches);
-      console.log("이게뭐고?", e.matches);
     };
 
     media.addEventListener("change", handler);
@@ -39,7 +38,6 @@ function App() {
       media.removeEventListener("change", handler);
     };
   }, []);
-  console.log("이게뭐고?", changeWidth);
 
   return (
     <Wrap path={path}>

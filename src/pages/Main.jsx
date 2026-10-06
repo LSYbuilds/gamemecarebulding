@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MiniBoard from "../components/common/MiniBoard";
-import { MainContainer } from "../styles/main.styled";
+import { MainContainer } from "../styles/Main.styled";
 import sideSlideData from "../data/sideSlideData.json";
 import mainSlideData from "../data/slideData.json";
 import newsListData from "../data/newsData.json";
